@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { ReactNode } from "react";
-import uuid from "react-uuid";
+import { v1 as uuidv1 } from 'uuid';
 import img1 from "../../public/img/stuff/Olga1.jpg"
 import img2 from "../../public/img/stuff/Olga2.jpg"
 import diploma from "../../public/img/stuff/diploma.jpg"
@@ -48,7 +48,7 @@ type useFeedbacks = { feedbacks: IFeedback[] }
 export const useFeedbacks = create<useFeedbacks>(() => ({
   feedbacks: [
     {
-      id: uuid(),
+      id: uuidv1(),
       rating: 4,
       nickname: 'Иванов Иван Иванович',
       service: 'service1',
@@ -57,7 +57,7 @@ export const useFeedbacks = create<useFeedbacks>(() => ({
       specialistParam: "Nagaeva_O",
     },
     {
-      id: uuid(),
+      id: uuidv1(),
       rating: 5,
       nickname: 'Петров Петр Петрович',
       service: 'service2',
@@ -66,7 +66,7 @@ export const useFeedbacks = create<useFeedbacks>(() => ({
       specialistParam: "Olgovaya_O",
     },
     {
-      id: uuid(),
+      id: uuidv1(),
       rating: 5,
       nickname: 'Пупкин Иван Иванович',
       service: 'service3',
@@ -75,7 +75,7 @@ export const useFeedbacks = create<useFeedbacks>(() => ({
       specialistParam: "Nagaeva_O",
     },
     {
-      id: uuid(),
+      id: uuidv1(),
       rating: 4,
       nickname: 'Сидоров Сидор Сидорович',
       service: 'service4',
@@ -101,27 +101,27 @@ type Contacts = { contacts: IContacts[] }
 export const useContacts = create<Contacts>(() => ({
   contacts: [
     {
-      id: uuid(),
+      id: uuidv1(),
       title: 'Телефон',
       details: '+7 999 874 7811',
       img: <PhoneInTalkIcon />,
       link: 'tel:+79998747811',
     },
     {
-      id: uuid(),
+      id: uuidv1(),
       title: 'г.Москва',
       details: 'ул.Пушкина д.2, 2й этаж, оф.2',
       img: <RoomIcon />,
       link: 'https://yandex.kz/maps/-/CCUk7LUhLB',
     },
     {
-      id: uuid(),
+      id: uuidv1(),
       title: 'Режим работы:',
       details: 'ПН - ВС: с 10.00 - 22.00',
       img: <AccessTimeIcon />,
     },
     {
-      id: uuid(),
+      id: uuidv1(),
       title: 'E-mail:',
       details: 'test@test.ru',
       img: <EmailIcon />,
@@ -144,19 +144,19 @@ type Slogan = { slogans: ISlogan[] }
 export const useSlogan = create<Slogan>(() => ({
   slogans: [
     {
-      id: uuid(),
+      id: uuidv1(),
       name: "Ценим доверие",
       text: "Объясняем диагнозы и схему лечения, пишем разборчиво",
       icon: <SvgComponent id={"advantage"} />
     },
     {
-      id: uuid(),
+      id: uuidv1(),
       name: "5 лет",
       text: "Заботимся о здоровье взрослых и детей",
       icon: <SvgComponent id={"experience"} />
     },
     {
-      id: uuid(),
+      id: uuidv1(),
       name: "Специалисты",
       text: "Высокого уровня с огромным стажем",
       icon: <SvgComponent id={"health"} />
@@ -196,22 +196,22 @@ export const useServecies = create<Servecies>((set) => ({
   activeCategory: 'all',
   setActiveCategory: (cat) => set(() => ({ activeCategory: cat })),
   categories: [
-    { id: uuid(), name: "Все услуги", category: 'all', active: false },
-    { id: uuid(), name: "Эстетический педикюр", category: 'estetic_podology', active: false },
-    { id: uuid(), name: "Подологический маникюр", category: 'podology_manicure', active: false },
-    { id: uuid(), name: "Подологический педикюр стопы", category: 'podology_pedicur_feet', active: false },
-    { id: uuid(), name: "Подологическая обработка ноги", category: 'podology_feet_work', active: false },
-    { id: uuid(), name: "Титановая нить", category: 'titan_string', active: false },
-    { id: uuid(), name: "Коррекционная система 3ТО", category: 'zto-correction', active: false },
-    { id: uuid(), name: "Обработка ВПЧ (бородавка/шипица)", category: 'vpch_correction', active: false },
-    { id: uuid(), name: "Ортозы", category: 'ortozy', active: false },
-    { id: uuid(), name: "Эстетический маникюр", category: 'estetic_manicure', active: false },
+    { id: uuidv1(), name: "Все услуги", category: 'all', active: false },
+    { id: uuidv1(), name: "Эстетический педикюр", category: 'estetic_podology', active: false },
+    { id: uuidv1(), name: "Подологический маникюр", category: 'podology_manicure', active: false },
+    { id: uuidv1(), name: "Подологический педикюр стопы", category: 'podology_pedicur_feet', active: false },
+    { id: uuidv1(), name: "Подологическая обработка ноги", category: 'podology_feet_work', active: false },
+    { id: uuidv1(), name: "Титановая нить", category: 'titan_string', active: false },
+    { id: uuidv1(), name: "Коррекционная система 3ТО", category: 'zto-correction', active: false },
+    { id: uuidv1(), name: "Обработка ВПЧ (бородавка/шипица)", category: 'vpch_correction', active: false },
+    { id: uuidv1(), name: "Ортозы", category: 'ortozy', active: false },
+    { id: uuidv1(), name: "Эстетический маникюр", category: 'estetic_manicure', active: false },
   ],
 
   servecies: [
     //podology_manicure Подологический маникюр
     {
-      id: uuid(),
+      id: uuidv1(),
       name: 'Обработка всех ногтевых пластин',
       param: "Obrabotka-vsekh-nogtevyh-plastin",
       about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
@@ -222,7 +222,7 @@ export const useServecies = create<Servecies>((set) => ({
       category: 'podology_manicure'
     },
     {
-      id: uuid(),
+      id: uuidv1(),
       name: 'Обработка 1 ногтевой пластины',
       param: "Obrabotka-1-nogtevoj-plastiny",
       about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
@@ -234,7 +234,7 @@ export const useServecies = create<Servecies>((set) => ({
     },
     //estetic_podology стетический педикюр
     {
-      id: uuid(),
+      id: uuidv1(),
       name: 'Препаратный педикюр КАРТ',
       param: "Preparatnyj-pedikyur-KART",
       about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
@@ -245,7 +245,7 @@ export const useServecies = create<Servecies>((set) => ({
       category: 'estetic_podology'
     },
     {
-      id: uuid(),
+      id: uuidv1(),
       name: 'Комплексня обработка стоп и ногтей',
       param: "Kompleksnya-obrabotka-stop-i-nogtej",
       about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
@@ -256,7 +256,7 @@ export const useServecies = create<Servecies>((set) => ({
       category: 'estetic_podology'
     },
     {
-      id: uuid(),
+      id: uuidv1(),
       name: 'Обработка пальцев без стопы',
       param: "Obrabotka-palcev-bez-stopy",
       about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
@@ -267,7 +267,7 @@ export const useServecies = create<Servecies>((set) => ({
       category: 'estetic_podology'
     },
     {
-      id: uuid(),
+      id: uuidv1(),
       name: 'Покрытие гель-лак',
       param: "Pokrytie-gel-lak",
       about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
@@ -278,7 +278,7 @@ export const useServecies = create<Servecies>((set) => ({
       category: 'estetic_podology'
     },
     {
-      id: uuid(),
+      id: uuidv1(),
       name: 'Покрытие лак',
       param: "Pokrytie-lak",
       about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
@@ -289,7 +289,7 @@ export const useServecies = create<Servecies>((set) => ({
       category: 'estetic_podology'
     },
     {
-      id: uuid(),
+      id: uuidv1(),
       name: 'Снятие покрытия',
       param: "Snyatie-pokrytiya",
       about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
@@ -301,7 +301,7 @@ export const useServecies = create<Servecies>((set) => ({
     },
     //podology_pedicur_feet Подологический педикюр СТОПЫ
     {
-      id: uuid(),
+      id: uuidv1(),
       name: 'Консультация подолога',
       param: "Konsultaciya-podologa",
       about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
@@ -312,7 +312,7 @@ export const useServecies = create<Servecies>((set) => ({
       category: 'podology_pedicur_feet'
     },
     {
-      id: uuid(),
+      id: uuidv1(),
       name: 'Педикюр I степени сложности',
       param: "Pedikyur-I-stepeni-slozhnosti",
       about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
@@ -323,7 +323,7 @@ export const useServecies = create<Servecies>((set) => ({
       category: 'podology_pedicur_feet'
     },
     {
-      id: uuid(),
+      id: uuidv1(),
       name: 'Педикюр II степени сложности',
       param: "Pedikyur-II-stepeni-slozhnosti",
       about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
@@ -334,7 +334,7 @@ export const useServecies = create<Servecies>((set) => ({
       category: 'podology_pedicur_feet'
     },
     {
-      id: uuid(),
+      id: uuidv1(),
       name: 'Педикюр III степени сложности',
       param: "Pedikyur-III-stepeni-slozhnosti",
       about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
@@ -345,7 +345,7 @@ export const useServecies = create<Servecies>((set) => ({
       category: 'podology_pedicur_feet'
     },
     {
-      id: uuid(),
+      id: uuidv1(),
       name: 'Обработка стоп подологическая',
       param: "Obrabotka-stop-podologicheskaya",
       about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
@@ -356,7 +356,7 @@ export const useServecies = create<Servecies>((set) => ({
       category: 'podology_pedicur_feet'
     },
     {
-      id: uuid(),
+      id: uuidv1(),
       name: 'Обработка трещин с наложением рагрузки',
       param: "Obrabotka treshchin s nalozheniem ragruzki",
       about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
@@ -367,7 +367,7 @@ export const useServecies = create<Servecies>((set) => ({
       category: 'podology_pedicur_feet'
     },
     {
-      id: uuid(),
+      id: uuidv1(),
       name: 'Разгрузка на стопу',
       param: "Razgruzka na stopu",
       about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
@@ -379,7 +379,7 @@ export const useServecies = create<Servecies>((set) => ({
     },
     //podology_feet_work Подологическая обработа НОГТИ
     {
-      id: uuid(),
+      id: uuidv1(),
       name: 'Обработка пальцев подологическая',
       param: "Obrabotka-palcev-podologicheskaya",
       about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
@@ -390,7 +390,7 @@ export const useServecies = create<Servecies>((set) => ({
       category: 'podology_feet_work'
     },
     {
-      id: uuid(),
+      id: uuidv1(),
       name: 'Протезирование ногтевой пластины бол. палец',
       param: "Protezirovanie-nogtevoj-plastiny-bol.palec",
       about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
@@ -401,7 +401,7 @@ export const useServecies = create<Servecies>((set) => ({
       category: 'podology_feet_work'
     },
     {
-      id: uuid(),
+      id: uuidv1(),
       name: 'Обработка стержневой мозоли с разгрузкой\повязкой',
       param: "Obrabotka-sterzhnevoj-mozoli-s-razgruzkoj-povyazkoj",
       about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
@@ -412,7 +412,7 @@ export const useServecies = create<Servecies>((set) => ({
       category: 'podology_feet_work'
     },
     {
-      id: uuid(),
+      id: uuidv1(),
       name: 'Коррекция вросшего ногтя I стадия',
       param: "Korrekciya-vrosshego-nogtya-I-stadiya",
       about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
@@ -423,7 +423,7 @@ export const useServecies = create<Servecies>((set) => ({
       category: 'podology_feet_work'
     },
     {
-      id: uuid(),
+      id: uuidv1(),
       name: 'Коррекция вросшего ногтя I стадия',
       param: "Korrekciya-vrosshego-nogtya-I-stadiya",
       about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
@@ -434,7 +434,7 @@ export const useServecies = create<Servecies>((set) => ({
       category: 'podology_feet_work'
     },
     {
-      id: uuid(),
+      id: uuidv1(),
       name: 'Коррекция вросшего ногтя II и III стадия',
       param: "Korrekciya-vrosshego-nogtya-II-III-stadiya",
       about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
@@ -445,7 +445,7 @@ export const useServecies = create<Servecies>((set) => ({
       category: 'podology_feet_work'
     },
     {
-      id: uuid(),
+      id: uuidv1(),
       name: 'Плановый осмотр и повязка',
       param: "Planovyj-osmotr-i-povyazka",
       about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
@@ -456,7 +456,7 @@ export const useServecies = create<Servecies>((set) => ({
       category: 'podology_feet_work'
     },
     {
-      id: uuid(),
+      id: uuidv1(),
       name: 'Тампонирование',
       param: "Tamponirovanie",
       about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
@@ -468,7 +468,7 @@ export const useServecies = create<Servecies>((set) => ({
     },
     // titan_string Коррекционная система Титановая нить
     {
-      id: uuid(),
+      id: uuidv1(),
       name: 'Установка первичная Титановой нити на 1 ноготь',
       param: "Ustanovka-pervichnaya-Titanovoj-niti-na-1-nogot'",
       about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
@@ -479,7 +479,7 @@ export const useServecies = create<Servecies>((set) => ({
       category: 'titan_string'
     },
     {
-      id: uuid(),
+      id: uuidv1(),
       name: 'Установка первичная Титановой нити на 2 ноготя',
       param: "Ustanovka-pervichnaya-Titanovoj-niti-na-2-nogtya",
       about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
@@ -490,7 +490,7 @@ export const useServecies = create<Servecies>((set) => ({
       category: 'titan_string'
     },
     {
-      id: uuid(),
+      id: uuidv1(),
       name: 'Коррекция Титановой нити на 1 ноготь',
       param: "Korrekciya-Titanovoj-niti-na-1-nogot",
       about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
@@ -501,7 +501,7 @@ export const useServecies = create<Servecies>((set) => ({
       category: 'titan_string'
     },
     {
-      id: uuid(),
+      id: uuidv1(),
       name: 'Коррекция Титановой нити на 2 ноготя',
       param: "Korrekciya-Titanovoj-niti-na-2-nogtya",
       about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
@@ -513,7 +513,7 @@ export const useServecies = create<Servecies>((set) => ({
     },
     //Коррекционная система 3ТО 'zto_correction' Коррекционная система 3ТО
     {
-      id: uuid(),
+      id: uuidv1(),
       name: 'Установка первичная на 1 ноготь',
       param: "Ustanovka-pervichnaya-na-1-nogot-ZTO",
       about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
@@ -524,7 +524,7 @@ export const useServecies = create<Servecies>((set) => ({
       category: 'zto-correction'
     },
     {
-      id: uuid(),
+      id: uuidv1(),
       name: 'Установка первичная на 2 ноготя',
       param: "Ustanovka-pervichnaya-na-2-nogtya-ZTO",
       about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
@@ -535,7 +535,7 @@ export const useServecies = create<Servecies>((set) => ({
       category: 'zto-correction'
     },
     {
-      id: uuid(),
+      id: uuidv1(),
       name: 'Установка первичная на 2 ноготя',
       param: "Ustanovka-pervichnaya-na-2-nogtya-ZTO",
       about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
@@ -546,7 +546,7 @@ export const useServecies = create<Servecies>((set) => ({
       category: 'zto-correction'
     },
     {
-      id: uuid(),
+      id: uuidv1(),
       name: 'Коррекция скобы 3ТО на 1 ноготь',
       param: "Korrekciya-skoby-3TO-na-1-nogot",
       about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
@@ -557,7 +557,7 @@ export const useServecies = create<Servecies>((set) => ({
       category: 'zto-correction'
     },
     {
-      id: uuid(),
+      id: uuidv1(),
       name: 'Коррекция скобы 3ТО на 2 ноготя',
       param: "Korrekciya-skoby-3TO-na-2-nogtya",
       about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
@@ -569,7 +569,7 @@ export const useServecies = create<Servecies>((set) => ({
     },
     //vpch_correction Обработка ВПЧ (бородавка\шипица)
     {
-      id: uuid(),
+      id: uuidv1(),
       name: 'Обработка ВПЧ 1-3 шт.',
       param: "Obrabotka-VPCH-1-3-sht",
       about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
@@ -580,7 +580,7 @@ export const useServecies = create<Servecies>((set) => ({
       category: 'vpch_correction'
     },
     {
-      id: uuid(),
+      id: uuidv1(),
       name: 'Обработка ВПЧ 3-5 шт.',
       param: "Obrabotka-VPCH-3-5-sht",
       about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
@@ -591,7 +591,7 @@ export const useServecies = create<Servecies>((set) => ({
       category: 'vpch_correction'
     },
     {
-      id: uuid(),
+      id: uuidv1(),
       name: 'Обработка ВПЧ 5 и более шт.',
       param: "Obrabotka-VPCH-5-i-bolee-sh",
       about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
@@ -603,7 +603,7 @@ export const useServecies = create<Servecies>((set) => ({
     },
     //ortozy  Ортозы
     {
-      id: uuid(),
+      id: uuidv1(),
       name: 'Изготовление индивидуальных ортозов',
       param: "Izgotovlenie-individualnyh-ortozov",
       about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
@@ -615,7 +615,7 @@ export const useServecies = create<Servecies>((set) => ({
     },
     //estetic_manicure Эстетический маникюр
     {
-      id: uuid(),
+      id: uuidv1(),
       name: 'Мужской маникюр ´без лишних глаз´',
       param: "Muzhskoj-manikyur-bez-lishnih-glaz",
       about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
@@ -626,7 +626,7 @@ export const useServecies = create<Servecies>((set) => ({
       category: 'estetic_manicure'
     },
     {
-      id: uuid(),
+      id: uuidv1(),
       name: 'Маникюр гигиенический',
       param: "Manikyur-gigienicheskij",
       about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
@@ -637,7 +637,7 @@ export const useServecies = create<Servecies>((set) => ({
       category: 'estetic_manicure'
     },
     {
-      id: uuid(),
+      id: uuidv1(),
       name: 'Маникюр с покрытием гель-лак',
       param: "Manikyur-s-pokrytiem-gel-lak",
       about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
@@ -648,7 +648,7 @@ export const useServecies = create<Servecies>((set) => ({
       category: 'estetic_manicure'
     },
     {
-      id: uuid(),
+      id: uuidv1(),
       name: 'Снятие гель-лака в процедуре',
       param: "Snyatie-gel-laka-v-procedure",
       about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
@@ -659,7 +659,7 @@ export const useServecies = create<Servecies>((set) => ({
       category: 'estetic_manicure'
     },
     {
-      id: uuid(),
+      id: uuidv1(),
       name: 'Снятие гель-лака без покрытия',
       param: "Snyatie-gel-laka-bez-pokrytiya",
       about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
@@ -670,7 +670,7 @@ export const useServecies = create<Servecies>((set) => ({
       category: 'estetic_manicure'
     },
     {
-      id: uuid(),
+      id: uuidv1(),
       name: 'Укрепление ногтей акриловой пудрой',
       param: "Ukreplenie-nogtej-akrilovoj-pudroj",
       about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
@@ -681,7 +681,7 @@ export const useServecies = create<Servecies>((set) => ({
       category: 'estetic_manicure'
     },
     {
-      id: uuid(),
+      id: uuidv1(),
       name: 'Укрепление ногтей гелем',
       param: "Ukreplenie-nogtej-gelem",
       about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
@@ -692,7 +692,7 @@ export const useServecies = create<Servecies>((set) => ({
       category: 'estetic_manicure'
     },
     {
-      id: uuid(),
+      id: uuidv1(),
       name: 'Укрепление ногтей гелем',
       param: "Ukreplenie-nogtej-poligelem",
       about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
@@ -703,7 +703,7 @@ export const useServecies = create<Servecies>((set) => ({
       category: 'estetic_manicure'
     },
     {
-      id: uuid(),
+      id: uuidv1(),
       name: 'Наращивание ногтей',
       param: "Narashchivanie-nogtej",
       about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
@@ -714,7 +714,7 @@ export const useServecies = create<Servecies>((set) => ({
       category: 'estetic_manicure'
     },
     {
-      id: uuid(),
+      id: uuidv1(),
       name: 'Коррекция наращенных ногтей',
       param: "Korrekciya-narashchennyh-nogtej",
       about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
@@ -725,7 +725,7 @@ export const useServecies = create<Servecies>((set) => ({
       category: 'estetic_manicure'
     },
     {
-      id: uuid(),
+      id: uuidv1(),
       name: 'Дизайн ногтей',
       param: "Dizajn-nogtej",
       about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
@@ -736,7 +736,7 @@ export const useServecies = create<Servecies>((set) => ({
       category: 'estetic_manicure'
     },
     {
-      id: uuid(),
+      id: uuidv1(),
       name: 'Дизайн Френч',
       param: "Dizajn-french",
       about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
@@ -747,7 +747,7 @@ export const useServecies = create<Servecies>((set) => ({
       category: 'estetic_manicure'
     },
     {
-      id: uuid(),
+      id: uuidv1(),
       name: 'Ремонт, донаращивание 1 ногтя',
       param: "Remont-donarashchivanie-1-nogtya",
       about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
@@ -777,7 +777,7 @@ type Specilaists = { specialists: ISpecilaist[] }
 export const useSpecilaists = create<Specilaists>(() => ({
   specialists: [
     {
-      id: uuid(),
+      id: uuidv1(),
       name: 'Нагаева Ольга Владимировна',
       param: "Nagaeva_O",
       about: 'Руководитель студии, мастер подологии и маникюра',
@@ -787,7 +787,7 @@ export const useSpecilaists = create<Specilaists>(() => ({
       diplomas: [diploma, diploma, diploma],
     },
     {
-      id: uuid(),
+      id: uuidv1(),
       name: 'Ольговая Ольга Ольговна',
       param: "Olgovaya_O",
       img: img2,

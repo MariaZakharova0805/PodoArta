@@ -1,15 +1,15 @@
 import List from '@mui/material/List';
 import c from "./NavBar.module.css"
 import { NavLink } from "react-router-dom";
-import uuid from "react-uuid";
+import { v1 as uuidv1 } from 'uuid';
 
 const NavBarLinks = [
-  { id: uuid(), name: 'Главная', link: '/' },
-  { id: uuid(), name: 'О центре', link: '/about' },
-  { id: uuid(), name: 'Услуги', link: '/servecies' },
-  { id: uuid(), name: 'Специалисты', link: '/specialists' },
-  { id: uuid(), name: 'Наши работы', link: '/gallery' },
-  { id: uuid(), name: 'Контакты', link: '/contacts' },
+  { id: uuidv1(), name: 'Главная', link: '/' },
+  { id: uuidv1(), name: 'О центре', link: '/about' },
+  { id: uuidv1(), name: 'Услуги', link: '/servecies' },
+  { id: uuidv1(), name: 'Специалисты', link: '/specialists' },
+  { id: uuidv1(), name: 'Наши работы', link: '/gallery' },
+  { id: uuidv1(), name: 'Контакты', link: '/contacts' },
 ]
 
 export const NavBar = () => {

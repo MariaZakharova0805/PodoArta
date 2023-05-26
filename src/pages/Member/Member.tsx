@@ -1,6 +1,6 @@
 import { FC, Fragment } from "react";
 import c from "./Member.module.css"
-import uuid from "react-uuid";
+import { v1 as uuidv1 } from 'uuid';
 import { useParams } from "react-router";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { useSpecilaists } from "../../shared/store";
@@ -27,7 +27,7 @@ export const Member: FC = () => {
                     <p className={c.description}>{specialist.descrition}</p>
                     <HeaderH2>Образование</HeaderH2>
                     <List list={specialist.descrition}></List>
-                    <div className={c.diplomas}>{specialist.diplomas.map(img => <LazyLoadImage src={img} key={uuid()}
+                    <div className={c.diplomas}>{specialist.diplomas.map(img => <LazyLoadImage src={img} key={uuidv1()}
                         alt="diploma"
                     />)}</div>
                 </Container>
