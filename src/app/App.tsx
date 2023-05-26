@@ -3,7 +3,6 @@ import Header from '../widgets/Header/Header';
 import ScrollToTop from '../shared/ScrollTop';
 import { Footer } from '../widgets/Footer/Footer';
 import { Outlet } from "react-router-dom";
-import { FeedBackForm } from '../features/FeedBackForm/FeedBackForm';
 
 function App() {
   return (
@@ -13,7 +12,6 @@ function App() {
       <div className='App_content'>
         <Outlet />
       </div>
-      <FeedBackForm />
       <Footer />
     </div>
   )

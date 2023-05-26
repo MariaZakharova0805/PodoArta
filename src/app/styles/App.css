@@ -1,24 +1,17 @@
 @import "./normalize.css";
 @import "./vars.css";
 
-/* Шрифт Raleway raleway-regular - latin_cyrillic */
-/* @font-face {
-    font-family: "Raleway";
-    font-style: normal;
-    font-weight: 400;
-    src: url("./fonts/raleway-v28-latin_cyrillic-regular.eot");
-    src: local(""),
-      url("./app/fonts/raleway-v28-latin_cyrillic-regular.eot?#iefix")
-        format("embedded-opentype"),
-      url("./fonts/raleway-v28-latin_cyrillic-regular.woff2") format("woff2"),
-      url("./fonts/raleway-v28-latin_cyrillic-regular.woff") format("woff"),
-      url("./fonts/raleway-v28-latin_cyrillic-regular.ttf") format("truetype"),
-      url("./fonts/raleway-v28-latin_cyrillic-regular.svg#Raleway")
-        format("svg");
-  }
-  * {
-    font-family: "Raleway", Arial, sans-serif;
-  } */
+@font-face {
+  font-family: "Lovelanse";
+  font-style: normal;
+  font-weight: 500;
+  src: url("./fonts/LovelaceText-Regular.ttf");
+  src: local(""),
+    url("./fonts/LovelaceText-Regular.woff2") format("woff2"),
+    url("./fonts/LovelaceText-Regular.woff") format("woff"),
+    url("./fonts/LovelaceText-Regular.ttf") format("truetype"),
+    url("./fonts/LovelaceText-Regular.eot") format("eot"),
+}
 
 
 @font-face {
@@ -32,8 +25,16 @@
 
 * {
   font-family: "Montserrat-Regular", Arial, sans-serif;
+  font-size: 20px;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Lovelanse', "Montserrat-Regular", Arial, sans-serif;
+}
 
 .hover:hover {
   opacity: 0.8;
@@ -51,6 +52,26 @@ body {
 }
 
 .App_content {
-  margin-top: 100px;
+  margin-top: 85px;
   flex: 1 1 auto;
+}
+
+a {
+  width: 100%;
+}
+
+.swiper-pagination-bullet {
+  height: 10px !important;
+  width: 10px !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--dark-green) !important;
+}
+
+@media (min-width:500px) {
+  .swiper-pagination-bullet {
+    height: 16px !important;
+    width: 16px !important;
+  }
 }

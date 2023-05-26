@@ -7,6 +7,6 @@ type ChildProp = {
 
 export const LinkBtn: FC<ChildProp> = ({ children, width }) => {
     return (
-        <button className={c.btn} style={{width}}>{children}</button>
+        <a className={c.link} style={{width}}>{children}</a>
     )
 }

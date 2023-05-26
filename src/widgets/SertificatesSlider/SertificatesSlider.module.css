@@ -1,0 +1,21 @@
+.certificates {
+    margin-bottom: 80px;
+}
+
+.img {
+    margin-bottom: 40px;
+    cursor: grab;
+    height: 80vh
+}
+
+@media (min-width:768px) {
+    .certificates {
+        margin-bottom: 100px;
+    }
+}
+
+@media (min-width:1600px) {
+    .certificates {
+        margin-bottom: 180px;
+    }
+}

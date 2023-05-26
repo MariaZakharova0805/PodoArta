@@ -1,25 +1,51 @@
+.textBlock {
+    margin-bottom: 80px;
+}
+
 .bold {
     font-weight: 600;
-    font-size: 17px;
-    margin-bottom: 30px;
 }
 
 .center {
-    font-weight: 300;
-    font-size: 18px;
-    margin: 35px auto;
+    margin: 30px auto;
 }
 
 .normal {
-    font-weight: 300;
-    font-size: 14px;
     margin: 35px 0;
+    font-size: 20px;
+}
+
+.slogan {
+    font-weight: 600;
+    margin-top: 50px;
+    text-align: center;
+    font-size: 25px;
+}
+
+.sertificate img {
+    margin: 0 auto 100px;
 }
 
 @media (min-width: 576px) {
+
     .bold,
     .normal {
         text-align: justify;
-        /* text-indent:20px; */
     }
+}
+
+@media (min-width: 768px) {
+    .textBlock {
+        margin-bottom: 100px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .textBlock {
+        margin-bottom: 180px;
+    }
+}
+
+.centeredBlock {
+    text-align: center;
 }

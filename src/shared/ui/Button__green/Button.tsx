@@ -1,17 +1,21 @@
-import { FC, MouseEventHandler } from "react"
+import { MouseEventHandler, ReactElement, forwardRef } from "react"
 import c from "./Button.module.css"
-
+import { motion } from "framer-motion"
 
 type ChildProp = {
-    children: string,
-    width: string,
+    children: string | ReactElement,
+    width?: string,
+    height?: string,
     borderRadius?: string,
     margin?: string,
     onClick?: MouseEventHandler<HTMLButtonElement>;
 }
+export type Ref = HTMLButtonElement;
 
-export const Button: FC<ChildProp> = ({ children, width, borderRadius, margin, onClick }) => {
+export const Button = forwardRef<Ref, ChildProp>(({ onClick, width, height, borderRadius, margin, children }, ref) => {
     return (
-        <button onClick={onClick} className={c.btn} style={{ width, borderRadius, margin }}>{children}</button>
+        <button ref={ref} onClick={onClick} style={{ width, height, borderRadius, margin }} className={c.btn} >{children}</button>
     )
-}
+});
+
+export const MButton = motion(Button);

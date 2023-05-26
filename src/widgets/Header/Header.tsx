@@ -2,10 +2,11 @@ import * as React from 'react';
 import c from "./Header.module.css";
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
-import MenuIcon from '@mui/icons-material/Menu';
 import SocialLinksBlock from '../../entities/SocialLinksBlock/SocialLinksBlock';
-import { NavBar } from './NabBar/NavBar';
-import { Emblem } from '../../entities/Emblem/Emblem';
+import { NavBar } from '../../entities/NavBar/NavBar';
+import Logo from '../../entities/Logo/Logo';
+import BurgerMenu from "../../../public/burgerSM.svg";
+import { PhoneLink } from '../../entities/PhoneLink/PhoneLink';
 
 type Anchor = 'top';
 
@@ -33,7 +34,7 @@ export default function Header() {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <NavBar />
+      <NavBar navbar="navbar_sm"/>
     </Box>
   );
 
@@ -41,11 +42,16 @@ export default function Header() {
     <div className={c.header}>
       {(['top'] as const).map((anchor) => (
         <React.Fragment key={anchor}>
-          {/* Шапка хэдэра */}
           <div className={c.header_container}>
-            <MenuIcon onClick={toggleDrawer(anchor, true)} className={c.menuIcon} />
-            <Emblem/>
-            <SocialLinksBlock />
+            <Logo />
+            <div className={c.fullscreen_menu}>
+              <NavBar navbar="navbar_lg" />
+            </div>
+            <div className={c.socialLinksBlock}>
+              <SocialLinksBlock colorType='grey' /></div>
+            <div className={c.phone}>
+              <PhoneLink /></div>
+            <img src={BurgerMenu} onClick={toggleDrawer(anchor, true)} className={c.burberMenu} />
           </div>
           <Drawer
             anchor={anchor}

@@ -1,16 +1,16 @@
 import { FC } from 'react'
 import c from "./List.module.css"
-import uuid from "react-uuid";
-import AdjustRoundedIcon from '@mui/icons-material/AdjustRounded';
+import { v1 as uuidv1 } from 'uuid';
+import foot from "../../../../public/icons/footLeft.png"
 
 type ListProp = {
-  list: string[]
+  list: string[],
 }
 
 export const List: FC<ListProp> = ({ list }) => {
   return (<ul className={c.list}>
-    {list.map(item => <li key={uuid()} className={c.list__item}>
-      <span className={c.icon}><AdjustRoundedIcon /></span>
-      {item}</li>)}
+    {list.map(item => <li key={uuidv1()} className={c.list__item}>
+      <img src={foot}/><p className={c.list__item_text}>{item}</p>
+    </li>)}
   </ul>)
 }

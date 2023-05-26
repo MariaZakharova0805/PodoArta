@@ -1,97 +1,157 @@
 .footer {
-    width: 90%;
-    background-color: var(--white);
-    padding: 41px 0 100px 0;
-    height: 100px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr 20px;
-    grid-gap: 30px;
-}
-
-.header {
-    color: var(--green);
-    font-size: 18px;
-    font-weight: 900;
-}
-
-
-.text_sm {
-    text-align: center;
-    color: var(--grey);
-    font-size: 10px;
-    line-height: 10px;
-
-}
-
-/* AboutBlock */
-.about {
     width: 100%;
-    text-align: center;
+    background-color: var(--black);
+    color: var(--white);
+    padding: 40px 0;
+    position: relative;
+    overflow: hidden;
 }
 
-.about_text {
-    font-weight: 600;
-    text-align: center;
+.footer_inner {
+    width: 90%;
+    margin: 0 auto;
+    font-size: 20px;
+    display: grid;
+    grid-template-areas: "logo navbar navbar" "adress adress ." "time time ." "sociallinksblock sociallinksblock ." "phone phone ." "email email ." "instagaminfo instagaminfo ." "payments payments .";
+    gap: 20px;
 }
 
-/* SocilaLinksBlock */
-.social {
-    text-align: center;
-}
-
-/* PaymentBlock */
-.payment {
-    text-align: center;
-}
-
-.payment_icons {
+.adress,
+.time,
+.phone,
+.email {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    width: 180px;
-    margin: 0 auto;
-}
-
-/* ContactsBlock */
-.contacts {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-}
-
-.text {
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    transition: 0.8s;
+    font-weight: 200;
     font-size: 15px;
-    color: var(--grey);
-    text-decoration: none;
-    display: block;
-    transition: 0.5s;
 }
 
-.text:hover {
-    color: var(--green);
+.adress,
+.phone,
+.email {
+    opacity: 0.8;
 }
+
+.adress:hover,
+.phone:hover,
+.email:hover {
+    opacity: 6;
+}
+
+.adress img,
+.time img,
+.phone img,
+.email img {
+    margin-right: 16px;
+}
+
+.adress,
+.phone,
+.email {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.time ul {
+    list-style-type: none;
+}
+
+.time_text_block {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+}
+
+.time_text_block div {
+    margin-bottom: 16px;
+}
+
+.time_text_time {
+    margin-right: 8px;
+}
+
+.logo {
+    grid-area: logo;
+}
+
+.navbar {
+    grid-area: navbar;
+}
+
+.time {
+    grid-area: time;
+}
+
+.adress {
+    grid-area: adress;
+}
+
+.sociallinksblock {
+    grid-area: sociallinksblock;
+}
+
+.phone {
+    grid-area: phone;
+}
+
+.email {
+    grid-area: email;
+}
+
+.instagaminfo {
+    grid-area: instagaminfo;
+    font-size: 16px;
+    font-weight: 300;
+    max-width: 300px;
+}
+
+.payments {
+    grid-area: payments;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 130px;
+}
+
+@media (min-width:355px) {
+
+    .adress,
+    .time,
+    .phone,
+    .email {
+        font-size: 20px;
+    }
+}
+
 
 @media (min-width:768px) {
-    .footer {
-        grid-template-rows: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
+    .footer_inner {
+        grid-template-areas:
+            "logo navbar adress"
+            "logo navbar time"
+            "logo navbar time"
+            ". sociallinksblock sociallinksblock"
+            ". phone phone"
+            ". email email"
+            ". instagaminfo payments";
+    }
+
+    .payments img {
+        width: 36px;
     }
 }
 
-
-
-@media (min-width:992px) {
-    .footer {
-        width: 80%;
-        grid-template-rows: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
+@media (min-width:1600px) {
+    .footer_inner {
+        grid-template-areas:
+            "logo navbar adress time sociallinksblock"
+            "logo navbar adress time phone"
+            "logo navbar . time email"
+            "logo navbar . payments instagaminfo"
     }
-}
 
-@media (min-width: 1200px) {
-    .footer {
-        width: 1100px;
-    }
 }

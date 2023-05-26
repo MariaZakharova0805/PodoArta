@@ -1,0 +1,23 @@
+.normal {
+    margin: 35px 0;
+    font-size: 20px;
+}
+
+.slogan {
+    font-weight: 600;
+    margin-top: 50px;
+    text-align: center;
+    font-size: 25px;
+}
+
+.center {
+    margin: 30px auto;
+}
+
+.img {
+    cursor: pointer;
+    height: 100%;
+    overflow: hidden;
+    max-height: 500px;
+    margin: 0 auto 40px;
+}

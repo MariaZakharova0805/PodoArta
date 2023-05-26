@@ -1,839 +1,715 @@
 import { create } from "zustand";
-import { ReactNode } from "react";
-import uuid from "react-uuid";
-import img1 from "../../public/img/stuff/Olga1.jpg"
-import img2 from "../../public/img/stuff/Olga2.jpg"
-import diploma from "../../public/img/stuff/diploma.jpg"
-import clear from "../../public/img/servecies/clear.jpg"
-import feet from "../../public/img/servecies/feet.jpg"
-import { SvgComponent } from "./HomeSvgElector/SvgComponent";
-import PhoneInTalkIcon from '@mui/icons-material/PhoneInTalk';
-import RoomIcon from '@mui/icons-material/Room';
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
-import EmailIcon from '@mui/icons-material/Email';
-import { IClientData } from "./inteface";
+import { v1 as uuidv1 } from "uuid";
+import {
+  INavBarLinks,
+  IServecies,
+  IFeedback,
+  ISlogan,
+  ICategories,
+  ICabinetImage,
+  ISertificates,
+} from "./inteface";
+import advantage from "../../public/icons/advantage.svg";
+import experinece from "../../public/icons/experinece.svg";
+import care from "../../public/icons/care.svg";
+import mainImg from "../../public/img/main.png";
+import mainImgSm from "../../public/img/mainSM.png";
+//Images for servecies
+import pogology from "../../public/img/servecies/podology.jpg";
+import growin from "../../public/img/servecies/growin.jpg";
+import zto from "../../public/img/servecies/zto.jpg";
+import vpch from "../../public/img/servecies/vpch.jpg";
+import ortozy from "../../public/img/servecies/ortozy.jpg";
+import manicure from "../../public/img/servecies/manicure.jpg";
+//Images of cabinet
+import cab1 from "../../public/img/cabinet/cab1.jpg";
+import cab1SM from "../../public/img/cabinet/cab1.jpg";
+import cab3 from "../../public/img/cabinet/cab3.jpg";
+import cab3SM from "../../public/img/cabinet/cab3.jpg";
+import cab4 from "../../public/img/cabinet/cab4.jpg";
+import cab4SM from "../../public/img/cabinet/cab4.jpg";
+import cab5 from "../../public/img/cabinet/cab5.jpg";
+import cab5SM from "../../public/img/cabinet/cab5.jpg";
+import cab6 from "../../public/img/cabinet/cab6.jpg";
+import cab6SM from "../../public/img/cabinet/cab6.jpg";
+import cab7 from "../../public/img/cabinet/cab7.jpg";
+import cab7SM from "../../public/img/cabinet/cab7.jpg";
+import cab8 from "../../public/img/cabinet/cab8.jpg";
+import cab8SM from "../../public/img/cabinet/cab8.jpg";
+import cab9 from "../../public/img/cabinet/cab9.jpg";
+import cab9SM from "../../public/img/cabinet/cab9.jpg";
+import cab10 from "../../public/img/cabinet/cab10.jpg";
+import cab10SM from "../../public/img/cabinet/cab10.jpg";
+import cab12 from "../../public/img/cabinet/cab12.jpg";
+import cab12SM from "../../public/img/cabinet/cab12.jpg";
+import cab13 from "../../public/img/cabinet/cab13.jpg";
+import cab13SM from "../../public/img/cabinet/cab13.jpg";
+import cab14 from "../../public/img/cabinet/cab14.jpg";
+import cab14SM from "../../public/img/cabinet/cab14.jpg";
+import cab15 from "../../public/img/cabinet/cab15.jpg";
+import cab15SM from "../../public/img/cabinet/cab15.jpg";
+import cab16 from "../../public/img/cabinet/cab16.jpg";
+import cab16SM from "../../public/img/cabinet/cab16.jpg";
+//Images of sertificates
+import sert0 from "../../public/img/documents/sertificate.jpg";
+import sert0_sm from "../../public/img/documents/sertificate_sm.jpg";
+import sert1 from "../../public/img/documents/sert1.jpg";
+import sert1_sm from "../../public/img/documents/sert1_sm.jpg";
+import sert2 from "../../public/img/documents/sert2.jpg";
+import sert2_sm from "../../public/img/documents/sert1_sm.jpg";
+import sert3 from "../../public/img/documents/sert3.jpg";
+import sert3_sm from "../../public/img/documents/sert3_sm.jpg";
+import sert4 from "../../public/img/documents/sert4.jpg";
+import sert4_sm from "../../public/img/documents/sert4_sm.jpg";
+import sert5 from "../../public/img/documents/sert5.jpg";
+import sert5_sm from "../../public/img/documents/sert5_sm.jpg";
+import { solineLink } from "./constants";
+import { yearsPassed } from "./getDate";
 
-//FeedBackForm
-type FeedBack = {
-  clientData?: IClientData[],
-  setClientData: (clientData: IClientData[]) => void,
+//NavBar
+type NavBarLinks = {
+  links: INavBarLinks[];
+};
+export const NavBarLinks = create<NavBarLinks>(() => ({
+  links: [
+    { id: uuidv1(), name: "Главная", link: "/" },
+    { id: uuidv1(), name: "О центре", link: "/about" },
+    { id: uuidv1(), name: "Услуги", link: "/servecies" },
+    { id: uuidv1(), name: "Наши работы", link: "/gallery" },
+    { id: uuidv1(), name: "Контакты", link: "/contacts" },
+  ],
+}));
 
-  visible: boolean
-  setVisible: (visible: boolean) => void,
-}
+//Cabinet Images fro slider
+type CabinetImages = { cabImg: ICabinetImage[] };
+export const useCabinetImages = create<CabinetImages>(() => ({
+  cabImg: [
+    {
+      id: uuidv1(),
+      image: cab1,
+      imageSM: cab1SM,
+      placeholder: "кабинет",
+    },
+    {
+      id: uuidv1(),
+      image: cab3,
+      imageSM: cab3SM,
+      placeholder: "кабинет",
+    },
+    {
+      id: uuidv1(),
+      image: cab4,
+      imageSM: cab4SM,
+      placeholder: "кабинет",
+    },
+    {
+      id: uuidv1(),
+      image: cab5,
+      imageSM: cab5SM,
+      placeholder: "кабинет",
+    },
+    {
+      id: uuidv1(),
+      image: cab6,
+      imageSM: cab6SM,
+      placeholder: "кабинет",
+    },
+    {
+      id: uuidv1(),
+      image: cab7,
+      imageSM: cab7SM,
+      placeholder: "кабинет",
+    },
+    {
+      id: uuidv1(),
+      image: cab8,
+      imageSM: cab8SM,
+      placeholder: "кабинет",
+    },
+    {
+      id: uuidv1(),
+      image: cab9,
+      imageSM: cab9SM,
+      placeholder: "кабинет",
+    },
+    {
+      id: uuidv1(),
+      image: cab10,
+      imageSM: cab10SM,
+      placeholder: "кабинет",
+    },
+    {
+      id: uuidv1(),
+      image: cab12,
+      imageSM: cab12SM,
+      placeholder: "кабинет",
+    },
+    {
+      id: uuidv1(),
+      image: cab13,
+      imageSM: cab13SM,
+      placeholder: "кабинет",
+    },
+    {
+      id: uuidv1(),
+      image: cab14,
+      imageSM: cab14SM,
+      placeholder: "кабинет",
+    },
+    {
+      id: uuidv1(),
+      image: cab15,
+      imageSM: cab15SM,
+      placeholder: "кабинет",
+    },
+    {
+      id: uuidv1(),
+      image: cab16,
+      imageSM: cab16SM,
+      placeholder: "кабинет",
+    },
+  ],
+}));
 
-export const useFeedBackForm = create<FeedBack>((set) => ({
-  clientData: [],
-  setClientData: data => set({ clientData: data }),
+// Main page text
+type Texts = { mainPageText: string[]; mainImg: string; mainImgSm: string };
+export const useTexts = create<Texts>(() => ({
+  mainPageText: [
+    "Знаем все о здоровье ваших стоп",
+    "Сотрудничаем с врачами",
+    "Персональный подход к каждому клиенту",
+  ],
+  mainImg: mainImg,
+  mainImgSm: mainImgSm,
+}));
 
-  visible: false,
-  setVisible: visibility => set({ visible: visibility }),
-}))
-
-
-
-// Отзывы
-export interface IFeedback {
-  id: string,
-  rating: number,
-  nickname: string,
-  service: string,
-  text: string,
-  specialist: string,
-  specialistParam: string,
-}
-
-type useFeedbacks = { feedbacks: IFeedback[] }
-
+// FeedBacks block
+type useFeedbacks = { feedbacks: IFeedback[] };
 export const useFeedbacks = create<useFeedbacks>(() => ({
   feedbacks: [
     {
-      id: uuid(),
-      rating: 4,
-      nickname: 'Иванов Иван Иванович',
-      service: 'service1',
-      text: "все хорошо, конфеты слишком сладкие, а солнце слишком ярко светит",
-      specialist: 'Нагава Ольга Владимировна',
-      specialistParam: "Nagaeva_O",
-    },
-    {
-      id: uuid(),
+      id: uuidv1(),
       rating: 5,
-      nickname: 'Петров Петр Петрович',
-      service: 'service2',
-      text: "отличная работа",
-      specialist: 'Ольговая Ольга Ольговна',
-      specialistParam: "Olgovaya_O",
-    },
-    {
-      id: uuid(),
-      rating: 5,
-      nickname: 'Пупкин Иван Иванович',
-      service: 'service3',
-      text: "отличная работа",
-      specialist: 'Нагава Ольга Владимировна',
+      nickname: "Анастасия",
+      service: [
+        { id: uuidv1(), name: "педикюр", link: "podology" },
+        {
+          id: uuidv1(),
+          name: "коррекция врастания ногтей",
+          link: "growin_correction",
+        },
+      ],
+      text: "Это лучший мастер, который случался со мной и моим мужем. Ехали из Архангельска специально к Ольге (у меня и мужа проблема вросших ногтей)! Тот момент, когда ты уверен в работе человека на все 100% и готов приехать куда угодно. С моей придирчивостью за счастье найти золотые руки и качество услуг.",
+      specialist: "Нагава Ольга Владимировна",
       specialistParam: "Nagaeva_O",
+      link: "https://yandex.kz/web-maps/org/210589391248/reviews?reviews[publicId]=mydxvynaz8a1hqe6qvgezgyrf0&utm_source=review",
+      mainPage: false,
     },
     {
-      id: uuid(),
-      rating: 4,
-      nickname: 'Сидоров Сидор Сидорович',
-      service: 'service4',
-      text: "все понравилось",
-      specialist: 'Ольговая Ольга Ольговна',
-      specialistParam: "Olgovaya_O",
-    },
-
-  ]
-}))
-
-// Контакты
-export interface IContacts {
-  id: string;
-  title: string;
-  details: string;
-  img: ReactNode;
-  link?: string;
-}
-
-type Contacts = { contacts: IContacts[] }
-
-export const useContacts = create<Contacts>(() => ({
-  contacts: [
-    {
-      id: uuid(),
-      title: 'Телефон',
-      details: '+7 999 874 7811',
-      img: <PhoneInTalkIcon />,
-      link: 'tel:+79998747811',
+      id: uuidv1(),
+      rating: 5,
+      nickname: "Ксения К.",
+      service: [{ id: uuidv1(), name: "педикюр", link: "podology" }],
+      text: "Найти «своего» мастера педикюра достаточно сложно - то выпиливают ногти, то стирают до дыр пятки! Но мне повезло- я нашла Ольгу!! Профессионал с легкими руками, ненавязчивыми советами по правильному домашнему уходу, максимально аккуратно и бережно обрабатывает стопы и пальцы -и, вуаля...",
+      specialist: "Нагава Ольга Владимировна",
+      specialistParam: "Nagaeva_O",
+      link: "https://yandex.kz/web-maps/org/210589391248/reviews?reviews[publicId]=jxp68j1zqqwapnjew377w6v5y8&utm_source=review",
+      mainPage: true,
     },
     {
-      id: uuid(),
-      title: 'г.Москва',
-      details: 'ул.Пушкина д.2, 2й этаж, оф.2',
-      img: <RoomIcon />,
-      link: 'https://yandex.kz/maps/-/CCUk7LUhLB',
+      id: uuidv1(),
+      rating: 5,
+      nickname: "Мария К.",
+      service: [
+        { id: uuidv1(), name: "педикюр", link: "podology" },
+        { id: uuidv1(), name: "маниюкр", link: "manicure" },
+      ],
+      text: "Нас с Олей свела судьба😊 совершенно случайно. Была в поисках идеального мастера год и вот я счастливый клиент этой замечательной девушки уже почти 2 года. Золотые руки! Всегда оооочень аккуратно, красиво, со вкусом, учитывает любые пожелания клиента, работает на совесть...",
+      specialist: "Нагава Ольга Владимировна",
+      specialistParam: "Nagaeva_O",
+      link: "https://yandex.kz/web-maps/org/210589391248/reviews?reviews[publicId]=15xxfkjy8ctgqb8vj0wvqjnq1g&utm_source=review",
+      mainPage: true,
     },
     {
-      id: uuid(),
-      title: 'Режим работы:',
-      details: 'ПН - ВС: с 10.00 - 22.00',
-      img: <AccessTimeIcon />,
+      id: uuidv1(),
+      rating: 5,
+      nickname: "Кристина C.",
+      service: [
+        { id: uuidv1(), name: "педикюр", link: "podology" },
+        { id: uuidv1(), name: "маниюкр", link: "manicure" },
+      ],
+      text: "Считаю себя довольно требовательным клиентом к качеству исполнения работ по маникюру и педикюру, но Оле я всегда полностью доверяю без желания контролировать ее работу. Она отличный специалист, который знает свое свое дело. Делает все максимально качественно!",
+      specialist: "Нагава Ольга Владимировна",
+      specialistParam: "Nagaeva_O",
+      link: "https://yandex.kz/web-maps/org/210589391248/reviews?reviews[publicId]=5vnx8xbp4n4u9dqy4w3qphw7gg&utm_source=review",
+      mainPage: false,
     },
-    {
-      id: uuid(),
-      title: 'E-mail:',
-      details: 'test@test.ru',
-      img: <EmailIcon />,
-      link: 'mailto:atest@test.ru',
-    }
-  ]
-}))
+  ],
+}));
 
-
-// Слоган компании
-export interface ISlogan {
-  id: string;
-  name: string;
-  text: string;
-  icon: ReactNode;
-}
-
-type Slogan = { slogans: ISlogan[] }
-
+// Company Slogan
+type Slogan = { slogans: ISlogan[] };
 export const useSlogan = create<Slogan>(() => ({
   slogans: [
     {
-      id: uuid(),
-      name: "Ценим доверие",
-      text: "Объясняем диагнозы и схему лечения, пишем разборчиво",
-      icon: <SvgComponent id={"advantage"} />
+      id: uuidv1(),
+      name: "Доверие",
+      text: "Всегда на первом месте. Объясняем причины проблемы и способы исправить.",
+      icon: <img src={experinece} />,
     },
     {
-      id: uuid(),
-      name: "5 лет",
-      text: "Заботимся о здоровье взрослых и детей",
-      icon: <SvgComponent id={"experience"} />
+      id: uuidv1(),
+      name: `${yearsPassed} лет`,
+      text: "Заботимся о здоровье взрослых и детей.",
+      icon: <img src={care} />,
     },
     {
-      id: uuid(),
+      id: uuidv1(),
       name: "Специалисты",
-      text: "Высокого уровня с огромным стажем",
-      icon: <SvgComponent id={"health"} />
+      text: "Высокого уровня с огромным стажем.",
+      icon: <img src={advantage} />,
     },
-  ]
-}))
+  ],
+}));
 
-// Информация об услугах
-export interface ICategories {
-  id: string;
-  name: string;
-  category: string;
-  active: boolean;
-}
-
-export interface IServecies {
-  id: string;
-  name: string;
-  param: string;
-  about: string;
-  imgMain: string;
-  img: string[];
-  popular?: boolean;
-  price: number | string;
-  category: string;
-}
-
+// Servecies info
 type Servecies = {
   servecies: IServecies[];
   categories: ICategories[];
   activeCategory: string;
-  setActiveCategory: (cat: string) => void
-}
+  setActiveCategory: (cat: string) => void;
+};
 
 export const useServecies = create<Servecies>((set) => ({
   //категории для кнопок-фильтрации услуг
-  activeCategory: 'all',
+  activeCategory: "all",
   setActiveCategory: (cat) => set(() => ({ activeCategory: cat })),
   categories: [
-    { id: uuid(), name: "Все услуги", category: 'all', active: false },
-    { id: uuid(), name: "Эстетический педикюр", category: 'estetic_podology', active: false },
-    { id: uuid(), name: "Подологический маникюр", category: 'podology_manicure', active: false },
-    { id: uuid(), name: "Подологический педикюр стопы", category: 'podology_pedicur_feet', active: false },
-    { id: uuid(), name: "Подологическая обработка ноги", category: 'podology_feet_work', active: false },
-    { id: uuid(), name: "Титановая нить", category: 'titan_string', active: false },
-    { id: uuid(), name: "Коррекционная система 3ТО", category: 'zto-correction', active: false },
-    { id: uuid(), name: "Обработка ВПЧ (бородавка/шипица)", category: 'vpch_correction', active: false },
-    { id: uuid(), name: "Ортозы", category: 'ortozy', active: false },
-    { id: uuid(), name: "Эстетический маникюр", category: 'estetic_manicure', active: false },
+    { id: uuidv1(), name: "Все услуги", category: "all", active: true },
+    {
+      id: uuidv1(),
+      name: "Педикюр",
+      category: "podology",
+      active: false,
+      img: pogology,
+    },
+    {
+      id: uuidv1(),
+      name: "Коррекция врастания ногтей",
+      category: "growin_correction",
+      active: false,
+      img: growin,
+    },
+    {
+      id: uuidv1(),
+      name: "Коррекционные системы",
+      details: "Титановая нить, 3ТО, Фрезера",
+      category: "correction_systems",
+      active: false,
+      img: zto,
+    },
+    {
+      id: uuidv1(),
+      name: "Обработка ВПЧ",
+      details: "бородавка/шипица",
+      category: "vpch_correction",
+      active: false,
+      img: vpch,
+    },
+    {
+      id: uuidv1(),
+      name: "Ортозы",
+      category: "ortozy",
+      active: false,
+      img: ortozy,
+    },
+    {
+      id: uuidv1(),
+      name: "Маникюр",
+      category: "manicure",
+      active: false,
+      img: manicure,
+    },
   ],
 
   servecies: [
-    //podology_manicure Подологический маникюр
+    //podology Подология
     {
-      id: uuid(),
-      name: 'Обработка всех ногтевых пластин',
-      param: "Obrabotka-vsekh-nogtevyh-plastin",
-      about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
-      imgMain: clear,
-      img: [clear, clear, clear],
+      id: uuidv1(),
+      name: "Консультация подолога",
       popular: false,
-      price: 2000,
-      category: 'podology_manicure'
+      price: 1200,
+      category: "podology",
+      link: solineLink,
     },
     {
-      id: uuid(),
-      name: 'Обработка 1 ногтевой пластины',
-      param: "Obrabotka-1-nogtevoj-plastiny",
-      about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
-      imgMain: clear,
-      img: [clear, clear, clear],
+      id: uuidv1(),
+      name: "Сбор материала на анализ",
       popular: false,
       price: 500,
-      category: 'podology_manicure'
-    },
-    //estetic_podology стетический педикюр
-    {
-      id: uuid(),
-      name: 'Препаратный педикюр КАРТ',
-      param: "Preparatnyj-pedikyur-KART",
-      about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
-      imgMain: feet,
-      img: [clear, clear, clear, clear, clear],
-      popular: true,
-      price: 3000,
-      category: 'estetic_podology'
+      category: "podology",
+      link: solineLink,
     },
     {
-      id: uuid(),
-      name: 'Комплексня обработка стоп и ногтей',
-      param: "Kompleksnya-obrabotka-stop-i-nogtej",
-      about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
-      imgMain: feet,
-      img: [clear, clear, clear],
-      popular: true,
-      price: 2500,
-      category: 'estetic_podology'
-    },
-    {
-      id: uuid(),
-      name: 'Обработка пальцев без стопы',
-      param: "Obrabotka-palcev-bez-stopy",
-      about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
-      imgMain: clear,
-      img: [clear, clear, clear],
-      popular: true,
-      price: 1800,
-      category: 'estetic_podology'
-    },
-    {
-      id: uuid(),
-      name: 'Покрытие гель-лак',
-      param: "Pokrytie-gel-lak",
-      about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
-      imgMain: clear,
-      img: [clear, clear, clear],
-      popular: true,
-      price: 1000,
-      category: 'estetic_podology'
-    },
-    {
-      id: uuid(),
-      name: 'Покрытие лак',
-      param: "Pokrytie-lak",
-      about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
-      imgMain: clear,
-      img: [clear, clear, clear],
-      popular: false,
-      price: 600,
-      category: 'estetic_podology'
-    },
-    {
-      id: uuid(),
-      name: 'Снятие покрытия',
-      param: "Snyatie-pokrytiya",
-      about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
-      imgMain: clear,
-      img: [clear, clear, clear],
-      popular: false,
-      price: 300,
-      category: 'estetic_podology'
-    },
-    //podology_pedicur_feet Подологический педикюр СТОПЫ
-    {
-      id: uuid(),
-      name: 'Консультация подолога',
-      param: "Konsultaciya-podologa",
-      about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
-      imgMain: clear,
-      img: [clear, clear, clear],
-      popular: false,
-      price: 700,
-      category: 'podology_pedicur_feet'
-    },
-    {
-      id: uuid(),
-      name: 'Педикюр I степени сложности',
-      param: "Pedikyur-I-stepeni-slozhnosti",
-      about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
-      imgMain: clear,
-      img: [clear, clear, clear],
-      popular: false,
-      price: 3000,
-      category: 'podology_pedicur_feet'
-    },
-    {
-      id: uuid(),
-      name: 'Педикюр II степени сложности',
-      param: "Pedikyur-II-stepeni-slozhnosti",
-      about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
-      imgMain: clear,
-      img: [clear, clear, clear],
-      popular: false,
-      price: 3500,
-      category: 'podology_pedicur_feet'
-    },
-    {
-      id: uuid(),
-      name: 'Педикюр III степени сложности',
-      param: "Pedikyur-III-stepeni-slozhnosti",
-      about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
-      imgMain: clear,
-      img: [clear, clear, clear],
-      popular: false,
-      price: 4000,
-      category: 'podology_pedicur_feet'
-    },
-    {
-      id: uuid(),
-      name: 'Обработка стоп подологическая',
-      param: "Obrabotka-stop-podologicheskaya",
-      about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
-      imgMain: clear,
-      img: [clear, clear, clear],
-      popular: false,
-      price: 2500,
-      category: 'podology_pedicur_feet'
-    },
-    {
-      id: uuid(),
-      name: 'Обработка трещин с наложением рагрузки',
-      param: "Obrabotka treshchin s nalozheniem ragruzki",
-      about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
-      imgMain: clear,
-      img: [clear, clear, clear],
-      popular: false,
-      price: 'от 500',
-      category: 'podology_pedicur_feet'
-    },
-    {
-      id: uuid(),
-      name: 'Разгрузка на стопу',
-      param: "Razgruzka na stopu",
-      about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
-      imgMain: clear,
-      img: [clear, clear, clear],
-      popular: false,
-      price: 'от 350',
-      category: 'podology_pedicur_feet'
-    },
-    //podology_feet_work Подологическая обработа НОГТИ
-    {
-      id: uuid(),
-      name: 'Обработка пальцев подологическая',
-      param: "Obrabotka-palcev-podologicheskaya",
-      about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
-      imgMain: clear,
-      img: [clear, clear, clear],
-      popular: false,
-      price: 2500,
-      category: 'podology_feet_work'
-    },
-    {
-      id: uuid(),
-      name: 'Протезирование ногтевой пластины бол. палец',
-      param: "Protezirovanie-nogtevoj-plastiny-bol.palec",
-      about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
-      imgMain: clear,
-      img: [clear, clear, clear],
-      popular: false,
-      price: "от 1500",
-      category: 'podology_feet_work'
-    },
-    {
-      id: uuid(),
-      name: 'Обработка стержневой мозоли с разгрузкой\повязкой',
-      param: "Obrabotka-sterzhnevoj-mozoli-s-razgruzkoj-povyazkoj",
-      about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
-      imgMain: clear,
-      img: [clear, clear, clear],
-      popular: false,
-      price: 700,
-      category: 'podology_feet_work'
-    },
-    {
-      id: uuid(),
-      name: 'Коррекция вросшего ногтя I стадия',
-      param: "Korrekciya-vrosshego-nogtya-I-stadiya",
-      about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
-      imgMain: clear,
-      img: [clear, clear, clear],
-      popular: false,
-      price: 1000,
-      category: 'podology_feet_work'
-    },
-    {
-      id: uuid(),
-      name: 'Коррекция вросшего ногтя I стадия',
-      param: "Korrekciya-vrosshego-nogtya-I-stadiya",
-      about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
-      imgMain: clear,
-      img: [clear, clear, clear],
-      popular: false,
-      price: 1000,
-      category: 'podology_feet_work'
-    },
-    {
-      id: uuid(),
-      name: 'Коррекция вросшего ногтя II и III стадия',
-      param: "Korrekciya-vrosshego-nogtya-II-III-stadiya",
-      about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
-      imgMain: clear,
-      img: [clear, clear, clear],
-      popular: false,
-      price: 1500,
-      category: 'podology_feet_work'
-    },
-    {
-      id: uuid(),
-      name: 'Плановый осмотр и повязка',
-      param: "Planovyj-osmotr-i-povyazka",
-      about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
-      imgMain: clear,
-      img: [clear, clear, clear],
-      popular: false,
-      price: 500,
-      category: 'podology_feet_work'
-    },
-    {
-      id: uuid(),
-      name: 'Тампонирование',
-      param: "Tamponirovanie",
-      about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
-      imgMain: clear,
-      img: [clear, clear, clear],
-      popular: false,
-      price: 'от 350',
-      category: 'podology_feet_work'
-    },
-    // titan_string Коррекционная система Титановая нить
-    {
-      id: uuid(),
-      name: 'Установка первичная Титановой нити на 1 ноготь',
-      param: "Ustanovka-pervichnaya-Titanovoj-niti-na-1-nogot'",
-      about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
-      imgMain: clear,
-      img: [clear, clear, clear],
-      popular: false,
-      price: 3000,
-      category: 'titan_string'
-    },
-    {
-      id: uuid(),
-      name: 'Установка первичная Титановой нити на 2 ноготя',
-      param: "Ustanovka-pervichnaya-Titanovoj-niti-na-2-nogtya",
-      about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
-      imgMain: clear,
-      img: [clear, clear, clear],
-      popular: false,
-      price: 5000,
-      category: 'titan_string'
-    },
-    {
-      id: uuid(),
-      name: 'Коррекция Титановой нити на 1 ноготь',
-      param: "Korrekciya-Titanovoj-niti-na-1-nogot",
-      about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
-      imgMain: clear,
-      img: [clear, clear, clear],
-      popular: false,
-      price: 2000,
-      category: 'titan_string'
-    },
-    {
-      id: uuid(),
-      name: 'Коррекция Титановой нити на 2 ноготя',
-      param: "Korrekciya-Titanovoj-niti-na-2-nogtya",
-      about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
-      imgMain: clear,
-      img: [clear, clear, clear],
-      popular: false,
-      price: 3500,
-      category: 'titan_string'
-    },
-    //Коррекционная система 3ТО 'zto_correction' Коррекционная система 3ТО
-    {
-      id: uuid(),
-      name: 'Установка первичная на 1 ноготь',
-      param: "Ustanovka-pervichnaya-na-1-nogot-ZTO",
-      about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
-      imgMain: clear,
-      img: [clear, clear, clear],
-      popular: false,
-      price: 4000,
-      category: 'zto-correction'
-    },
-    {
-      id: uuid(),
-      name: 'Установка первичная на 2 ноготя',
-      param: "Ustanovka-pervichnaya-na-2-nogtya-ZTO",
-      about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
-      imgMain: clear,
-      img: [clear, clear, clear],
-      popular: false,
-      price: 4000,
-      category: 'zto-correction'
-    },
-    {
-      id: uuid(),
-      name: 'Установка первичная на 2 ноготя',
-      param: "Ustanovka-pervichnaya-na-2-nogtya-ZTO",
-      about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
-      imgMain: clear,
-      img: [clear, clear, clear],
-      popular: false,
-      price: 6000,
-      category: 'zto-correction'
-    },
-    {
-      id: uuid(),
-      name: 'Коррекция скобы 3ТО на 1 ноготь',
-      param: "Korrekciya-skoby-3TO-na-1-nogot",
-      about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
-      imgMain: clear,
-      img: [clear, clear, clear],
-      popular: false,
-      price: 3000,
-      category: 'zto-correction'
-    },
-    {
-      id: uuid(),
-      name: 'Коррекция скобы 3ТО на 2 ноготя',
-      param: "Korrekciya-skoby-3TO-na-2-nogtya",
-      about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
-      imgMain: clear,
-      img: [clear, clear, clear],
+      id: uuidv1(),
+      name: "Препаратный педикюр КАРТ(Израиль)",
       popular: false,
       price: 4500,
-      category: 'zto-correction'
+      category: "podology",
+      link: solineLink,
     },
-    //vpch_correction Обработка ВПЧ (бородавка\шипица)
     {
-      id: uuid(),
-      name: 'Обработка ВПЧ 1-3 шт.',
-      param: "Obrabotka-VPCH-1-3-sht",
-      about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
-      imgMain: clear,
-      img: [clear, clear, clear],
+      id: uuidv1(),
+      name: "Педикюр гигиенический",
       popular: false,
-      price: 1000,
-      category: 'vpch_correction'
+      price: 2500,
+      category: "podology",
+      link: solineLink,
     },
     {
-      id: uuid(),
-      name: 'Обработка ВПЧ 3-5 шт.',
-      param: "Obrabotka-VPCH-3-5-sht",
-      about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
-      imgMain: clear,
-      img: [clear, clear, clear],
-      popular: false,
-      price: 1300,
-      category: 'vpch_correction'
-    },
-    {
-      id: uuid(),
-      name: 'Обработка ВПЧ 5 и более шт.',
-      param: "Obrabotka-VPCH-5-i-bolee-sh",
-      about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
-      imgMain: clear,
-      img: [clear, clear, clear],
-      popular: false,
-      price: 1800,
-      category: 'vpch_correction'
-    },
-    //ortozy  Ортозы
-    {
-      id: uuid(),
-      name: 'Изготовление индивидуальных ортозов',
-      param: "Izgotovlenie-individualnyh-ortozov",
-      about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
-      imgMain: clear,
-      img: [clear, clear, clear],
-      popular: false,
-      price: "от 500",
-      category: 'ortozy'
-    },
-    //estetic_manicure Эстетический маникюр
-    {
-      id: uuid(),
-      name: 'Мужской маникюр ´без лишних глаз´',
-      param: "Muzhskoj-manikyur-bez-lishnih-glaz",
-      about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
-      imgMain: clear,
-      img: [clear, clear, clear],
-      popular: false,
-      price: '900-1300',
-      category: 'estetic_manicure'
-    },
-    {
-      id: uuid(),
-      name: 'Маникюр гигиенический',
-      param: "Manikyur-gigienicheskij",
-      about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
-      imgMain: clear,
-      img: [clear, clear, clear],
-      popular: false,
-      price: '900-1300',
-      category: 'estetic_manicure'
-    },
-    {
-      id: uuid(),
-      name: 'Маникюр с покрытием гель-лак',
-      param: "Manikyur-s-pokrytiem-gel-lak",
-      about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
-      imgMain: clear,
-      img: [clear, clear, clear],
-      popular: false,
-      price: '1700-2200',
-      category: 'estetic_manicure'
-    },
-    {
-      id: uuid(),
-      name: 'Снятие гель-лака в процедуре',
-      param: "Snyatie-gel-laka-v-procedure",
-      about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
-      imgMain: clear,
-      img: [clear, clear, clear],
-      popular: false,
-      price: '200-300',
-      category: 'estetic_manicure'
-    },
-    {
-      id: uuid(),
-      name: 'Снятие гель-лака без покрытия',
-      param: "Snyatie-gel-laka-bez-pokrytiya",
-      about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
-      imgMain: clear,
-      img: [clear, clear, clear],
-      popular: false,
-      price: 700,
-      category: 'estetic_manicure'
-    },
-    {
-      id: uuid(),
-      name: 'Укрепление ногтей акриловой пудрой',
-      param: "Ukreplenie-nogtej-akrilovoj-pudroj",
-      about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
-      imgMain: clear,
-      img: [clear, clear, clear],
-      popular: false,
-      price: 300,
-      category: 'estetic_manicure'
-    },
-    {
-      id: uuid(),
-      name: 'Укрепление ногтей гелем',
-      param: "Ukreplenie-nogtej-gelem",
-      about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
-      imgMain: clear,
-      img: [clear, clear, clear],
-      popular: false,
-      price: '400-500',
-      category: 'estetic_manicure'
-    },
-    {
-      id: uuid(),
-      name: 'Укрепление ногтей гелем',
-      param: "Ukreplenie-nogtej-poligelem",
-      about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
-      imgMain: clear,
-      img: [clear, clear, clear],
-      popular: false,
-      price: '500-700',
-      category: 'estetic_manicure'
-    },
-    {
-      id: uuid(),
-      name: 'Наращивание ногтей',
-      param: "Narashchivanie-nogtej",
-      about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
-      imgMain: clear,
-      img: [clear, clear, clear],
+      id: uuidv1(),
+      name: "Педикюр подологический",
       popular: false,
       price: 4000,
-      category: 'estetic_manicure'
+      category: "podology",
+      link: solineLink,
     },
     {
-      id: uuid(),
-      name: 'Коррекция наращенных ногтей',
-      param: "Korrekciya-narashchennyh-nogtej",
-      about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
-      imgMain: clear,
-      img: [clear, clear, clear],
+      id: uuidv1(),
+      name: "Обработка пальцев без стопы гигиеническая",
+      popular: true,
+      price: 2000,
+      category: "podology",
+      link: solineLink,
+    },
+    {
+      id: uuidv1(),
+      name: "Обработка пальцев без стопы подологическая",
       popular: false,
-      price: 3500,
-      category: 'estetic_manicure'
+      price: 2800,
+      category: "podology",
+      link: solineLink,
     },
     {
-      id: uuid(),
-      name: 'Дизайн ногтей',
-      param: "Dizajn-nogtej",
-      about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
-      imgMain: clear,
-      img: [clear, clear, clear],
+      id: uuidv1(),
+      name: "Обработка стоп без пальцев подологическая",
       popular: false,
-      price: 'от 300',
-      category: 'estetic_manicure'
+      price: 2800,
+      category: "podology",
+      link: solineLink,
     },
     {
-      id: uuid(),
-      name: 'Дизайн Френч',
-      param: "Dizajn-french",
-      about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
-      imgMain: clear,
-      img: [clear, clear, clear],
+      id: uuidv1(),
+      name: "Обработка диабетической стопы",
       popular: false,
-      price: '400-500',
-      category: 'estetic_manicure'
+      price: 5500,
+      category: "podology",
+      link: solineLink,
     },
     {
-      id: uuid(),
-      name: 'Ремонт, донаращивание 1 ногтя',
-      param: "Remont-donarashchivanie-1-nogtya",
-      about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
-      imgMain: clear,
-      img: [clear, clear, clear],
+      id: uuidv1(),
+      name: "Подстригание и форма ногтей",
+      popular: false,
+      price: 1500,
+      category: "podology",
+      link: solineLink,
+    },
+    {
+      id: uuidv1(),
+      name: "Протезирование ногтевой пластины",
+      popular: false,
+      price: 1000,
+      category: "podology",
+      link: solineLink,
+    },
+    {
+      id: uuidv1(),
+      name: "Обработка стержневой мозоли",
+      popular: false,
+      price: 1000,
+      category: "podology",
+      link: solineLink,
+    },
+    {
+      id: uuidv1(),
+      name: "Покрытие гель-лак",
+      popular: true,
+      price: 1000,
+      category: "podology",
+      link: solineLink,
+    },
+    {
+      id: uuidv1(),
+      name: "Покрытие лак",
+      popular: false,
+      price: 600,
+      category: "podology",
+      link: solineLink,
+    },
+    {
+      id: uuidv1(),
+      name: "Снятие покрытия гель-лак",
+      popular: false,
+      price: 300,
+      category: "podology",
+      link: solineLink,
+    },
+ 
+    // growin_correction Коррекция врастания ногтей
+    {
+      id: uuidv1(),
+      name: "Коррекция вросшего ногтя I стадия (1 угол)",
+      popular: false,
+      price: 2000,
+      category: "growin_correction",
+      link: solineLink,
+    },
+    {
+      id: uuidv1(),
+      name: "Коррекция вросшего ногтя II и III стадия (1 угол)",
+      popular: false,
+      price: 4000,
+      category: "growin_correction",
+      link: solineLink,
+    },
+    {
+      id: uuidv1(),
+      name: "Плановый осмотр с наложением повязки",
+      popular: false,
+      price: 1500,
+      category: "growin_correction",
+      link: solineLink,
+    },
+    // correction_systems Коррекционныая система титановая нить
+    {
+      id: uuidv1(),
+      name: "Титановая нить. Установка первичная на 1 ноготь",
+      popular: false,
+      price: 3800,
+      category: "correction_systems",
+      link: solineLink,
+    },
+    {
+      id: uuidv1(),
+      name: "Титановая нить.  Установка первичная на 2 ногтя",
+      popular: false,
+      price: 6000,
+      category: "correction_systems",
+      link: "https://widget.sonline.su/ru/mastersAndDate/?counts=1&gender=&master=662152&placeid=999963927&services=9299047",
+    },
+    {
+      id: uuidv1(),
+      name: "Титановая нить. Установка повторная на 1 ноготь",
+      popular: false,
+      price: 2250,
+      category: "correction_systems",
+      link: solineLink,
+    },
+    {
+      id: uuidv1(),
+      name: "Титановая нить. Установка повторная на 2 ногтя",
+      popular: false,
+      price: 4500,
+      category: "correction_systems",
+      link: solineLink,
+    },
+
+    // correction_systems Коррекционныая система ЗТО
+    {
+      id: uuidv1(),
+      name: "ЗТО. Установка первичная на 1 ноготь",
+      popular: false,
+      price: 6000,
+      category: "correction_systems",
+      link: solineLink,
+    },
+    {
+      id: uuidv1(),
+      name: "ЗТО. Установка первичная на 2 ногтя",
+      popular: false,
+      price: 12000,
+      category: "correction_systems",
+      link: solineLink,
+    },
+    {
+      id: uuidv1(),
+      name: "ЗТО. Установка повторная на 1 ноготь",
+      popular: false,
+      price: 4500,
+      category: "correction_systems",
+      link: solineLink,
+    },
+    {
+      id: uuidv1(),
+      name: "ЗТО. Установка первичная на 2 ногтя",
+      popular: false,
+      price: 9000,
+      category: "correction_systems",
+      link: solineLink,
+    },
+    // vpch_correction Обработка ВПЧ (бородавка\шипица)
+    {
+      id: uuidv1(),
+      name: "Обработка ВПЧ 1 еденицы",
+      popular: false,
+      price: 1500,
+      category: "vpch_correction",
+      link: solineLink,
+    },
+    {
+      id: uuidv1(),
+      name: "Обработка ВПЧ 3-5 едениц",
+      popular: false,
+      price: 2000,
+      category: "vpch_correction",
+      link: solineLink,
+    },
+    {
+      id: uuidv1(),
+      name: "Обработка ВПЧ более 6 едениц",
+      popular: false,
+      price: 2500,
+      category: "vpch_correction",
+      link: solineLink,
+    },
+    //  ortozy Ортозы
+    {
+      id: uuidv1(),
+      name: "Изготовление индивидуальных ортозов",
       popular: false,
       price: 200,
-      category: 'estetic_manicure'
+      category: "ortozy",
+      link: solineLink,
     },
-  ]
-}))
-
-// Информация о специалистах
-export interface ISpecilaist {
-  id: string;
-  name: string;
-  param: string;
-  about: string;
-  descrition: string[];
-  img: string;
-  servecies: string[];
-  diplomas: string[];
-}
-
-type Specilaists = { specialists: ISpecilaist[] }
-
-export const useSpecilaists = create<Specilaists>(() => ({
-  specialists: [
+    //manicure МАНИКЮР
     {
-      id: uuid(),
-      name: 'Нагаева Ольга Владимировна',
-      param: "Nagaeva_O",
-      about: 'Руководитель студии, мастер подологии и маникюра',
-      img: img1,
-      servecies: ['ss', "ddd", "kkk"],
-      descrition: ['Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio'],
-      diplomas: [diploma, diploma, diploma],
+      id: uuidv1(),
+      name: "Маникюр гигиенический",
+      popular: false,
+      price: 1600,
+      category: "manicure",
+      link: solineLink,
     },
     {
-      id: uuid(),
-      name: 'Ольговая Ольга Ольговна',
-      param: "Olgovaya_O",
-      img: img2,
-      about: 'Мастер маникюра',
-      servecies: ['11', "dd22d", "44"],
-      descrition: ['Lorem ipsum, dolor sit amet consectetur adipisicing elit', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio'],
-      diplomas: [diploma, diploma, diploma]
-    }]
-}))
+      id: uuidv1(),
+      name: "Маникюр подологический",
+      popular: false,
+      price: 2500,
+      category: "manicure",
+      link: solineLink,
+    },
+    {
+      id: uuidv1(),
+      name: "Маникюр с покрытием гель-лак",
+      popular: false,
+      price: 2500,
+      category: "manicure",
+      link: solineLink,
+    },
+    {
+      id: uuidv1(),
+      name: "Наращивание ногтей",
+      popular: false,
+      price: 4000,
+      category: "manicure",
+      link: solineLink,
+    },
+    {
+      id: uuidv1(),
+      name: "Коррекция наращенных ногтей",
+      popular: false,
+      price: 3500,
+      category: "manicure",
+      link: solineLink,
+    },
+    {
+      id: uuidv1(),
+      name: "Снятие покрытия полное с маникюром",
+      popular: false,
+      price: 2000,
+      category: "manicure",
+      link: solineLink,
+    },
+    {
+      id: uuidv1(),
+      name: "Снятие покрытия полное",
+      popular: false,
+      price: 700,
+      category: "manicure",
+      link: solineLink,
+    },
+    {
+      id: uuidv1(),
+      name: "Дизайн френч",
+      popular: false,
+      price: 500,
+      category: "manicure",
+      link: solineLink,
+    },
+    {
+      id: uuidv1(),
+      name: "Дизайн легкий",
+      popular: false,
+      price: 500,
+      category: "manicure",
+      link: solineLink,
+    },
+  ],
+}));
 
-
-// Тексты
-type Texts = { mainPageText: string[] }
-
-export const useTexts = create<Texts>(() => ({
-  mainPageText: [
-    'mainPageText Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
-    'mainPageText Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
-    'mainPageText Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.'
-  ]
-}))
-
-// //Страница О Клинике
-
+//About page text
 type ServeciesTexts = {
   servecies: string[];
-  help: string[];
-}
-
+};
 export const useAbout = create<ServeciesTexts>(() => ({
   servecies: [
-    'лечение/зачистку грибка',
-    'обработку вросшего ногтя',
-    'выпрямление скрученного/деформированного ногтя',
-    'обработку диабетической стопы и сложных патологий',
-    'удаление подошвенных бородавок',
-    'обработку мозолей/трещин/натоптышей',
-    'парамедицинский педикюр (комплексная обработка стоп)'
+    "натоптыши, мозоли, бородавки и трещины на стопах",
+    "грибковые и бактериальные инфекции",
+    "деформация ногтей и исправление их формы",
+    "патологии ногтевого аппарата",
+    "профессиональный уход за стопами при псориазе, экземе и сахарном диабете",
+    "излишняя потливость стоп и гиперкератоз",
   ],
-  help: [
-    'изменился цвет, структура или форма ногтя',
-    'беспокоит зуд, шелушение кожи стоп',
-    'появились мозоли/натоптыши/трещины',
-    'обработку диабетической стопы и сложных патологий',
-    'ноготь врастает, причиняя боль',
-    'появились дискомфортные ощущения при ходьбе',
-    'имеются сложные патологии'
-  ]
-}))
+}));
+
+type Sertificates = { sertificates: ISertificates[] };
+export const useSertificates = create<Sertificates>(() => ({
+  sertificates: [
+    {
+      id: uuidv1(),
+      image: sert0,
+      imageSM: sert0_sm,
+      alt: "Сертификат онихолизиц, протезрование ногтевой пластины",
+    },
+    {
+      id: uuidv1(),
+      image: sert1,
+      imageSM: sert1_sm,
+      alt: "Сертификат SMART мастер",
+    },
+    {
+      id: uuidv1(),
+      image: sert2,
+      imageSM: sert2_sm,
+      alt: "Сертификат врозший ноготь",
+    },
+    {
+      id: uuidv1(),
+      image: sert3,
+      imageSM: sert3_sm,
+      alt: "Сертификат SMART мастер",
+    },
+    {
+      id: uuidv1(),
+      image: sert4,
+      imageSM: sert4_sm,
+      alt: "Сертификат PodiaFarm",
+    },
+    {
+      id: uuidv1(),
+      image: sert5,
+      imageSM: sert5_sm,
+      alt: "Сертификат медицинский педикюр",
+    },
+  ],
+}));

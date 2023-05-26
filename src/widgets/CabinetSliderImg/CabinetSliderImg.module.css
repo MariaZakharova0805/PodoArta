@@ -1,0 +1,16 @@
+.img {
+    padding-bottom: 35px;
+    cursor: pointer;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+@media (min-width:540px) {
+    .img {
+        padding-bottom: 60px;
+        max-height: 80vh;
+        width: auto;
+        margin: 0 auto;
+    }
+}

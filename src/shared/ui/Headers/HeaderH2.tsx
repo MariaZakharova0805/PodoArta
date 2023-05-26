@@ -1,13 +1,17 @@
-import { FC } from "react"
+import { FC } from "react";
 import c from "./header.module.css";
-type ChildProp = {
-    children: string
+
+type HeaderH2Prop = {
+    children: any,
+    textAlign?: 'left' | 'right' | 'center',
+
 }
 
-export const HeaderH2: FC<ChildProp> = ({ children }) => {
+export const HeaderH2: FC<HeaderH2Prop> = ({ children, textAlign }) => {
     return (
-        <h1 className={c.h2}>
-        {children}
-    </h1>
+        <h2 className={c.h2} style={{ textAlign }}>
+            {children}
+        </h2>
     )
 }
+

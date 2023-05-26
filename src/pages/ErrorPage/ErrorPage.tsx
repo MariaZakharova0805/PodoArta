@@ -1,4 +1,4 @@
-import { Container } from "../../shared/ui/Container_big/Container"
+import { Container } from "../../shared/ui/Container/Container"
 import { useRouteError } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { Button } from "../../shared/ui/Button__green/Button";
@@ -15,7 +15,7 @@ const ErrorPage = () => {
         <HeaderH2>Упс!</HeaderH2>
         <p>Что-то пошло не так...</p>
         <p>Пожалуй, лучше вернуться на главную.</p>
-        <Link to={`/`}><Button width={"200px"}>вернуться на главную</Button></Link>
+        <Link to={`/`}><Button width={"250px"}>вернуться на главную</Button></Link>
       </div>
     </Container>
 

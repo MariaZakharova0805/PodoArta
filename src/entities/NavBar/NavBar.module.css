@@ -1,0 +1,66 @@
+.menu {
+    background-color: var(--grey);
+    padding: 56px 32px;
+}
+
+
+/* navbar common*/
+.link,
+.link_active {
+    display: block;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.5s;
+    padding: 10px 0;
+    width: 100%;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.link_active,
+.link:hover {
+    color: var(--dark-green);
+}
+
+/* navbar_lg */
+.menu_big {
+    display: flex;
+    flex-direction: row;
+}
+
+.menu_big .link,
+.menu_big .link_active {
+    margin: 0 10px;
+    padding: 10px 0;
+}
+
+.SocialLinksBlock {
+    margin: 24px 0;
+}
+
+/* navbar sm*/
+.PhoneLink {
+    width: 250px;
+}
+
+/* navbar footer*/
+.menu_footer {
+    display: flex;
+    flex-direction: column;
+    color: var(--white);
+}
+
+.menu_footer .link {
+    color: rgba(255, 255, 255, 0.673);
+}
+
+.menu_footer .link_active {
+    color: rgb(255, 255, 255);
+}
+
+.menu_footer .link:hover {
+    color: rgb(255, 255, 255);
+}

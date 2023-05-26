@@ -1,0 +1,130 @@
+.bday_img img,
+.pension_img img {
+    border-radius: 100%;
+    transition: 1s;
+    display: block;
+    width: 100%;
+}
+
+.bday:hover img,
+.pension:hover img {
+    transform: scale(1.1);
+}
+
+
+.bday_text,
+.pension_text {
+    background-color: var(--green);
+    padding: 8px 14px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.block h3 {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 28px;
+}
+
+.block h4 {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.bday,
+.pension {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    position: relative;
+}
+
+.bday {
+    margin-bottom: 48px;
+}
+
+.bday_img {
+    grid-column: 1 / 5;
+    grid-row: 1;
+}
+
+.bday_text {
+    grid-column: 2 / 6;
+    grid-row: 1;
+    z-index: 1;
+    height: fit-content;
+    margin-top: 80%;
+}
+
+.pension_img {
+    grid-column: 2 / 6;
+    grid-row: 1;
+}
+
+.pension_text {
+    grid-column: 1 / 5;
+    grid-row: 1;
+    z-index: 1;
+    height: fit-content;
+    margin-top: 80%;
+}
+
+@media (min-width: 768px) {
+    .bday {
+        margin-bottom: 32px;
+    }
+
+    .block h4 {
+        font-size: 18px;
+    }
+
+    .bday_img {
+        grid-column: 1 / 4;
+        grid-row: 1;
+    }
+
+    .bday_text {
+        grid-column: 3 / 6;
+        margin-top: 10%;
+    }
+
+    .pension_img {
+        grid-column: 3 / 6;
+        grid-row: 1;
+    }
+
+    .pension_text {
+        grid-column: 2 / 4;
+        grid-row: 1;
+        z-index: 1;
+        height: fit-content;
+        margin-top: 80%;
+    }
+
+}
+
+
+@media (min-width: 992px) {
+    .bday_text {
+        grid-column: 3 / 5;
+        margin-top: 10%;
+    }
+
+    .bday {
+        margin-bottom: 0;
+    }
+
+}
+
+@media (min-width: 1200px) {
+    .block h3 {
+        font-size: 36px;
+        line-height: 50px;
+    }
+
+    .block h4 {
+        font-size: 24px;
+        line-height: 33px;
+    }
+
+}

@@ -14,6 +14,7 @@ h1,
 h2,
 h3,
 h4,
+h5,
 p,
 ul[class],
 ol[class],
@@ -66,4 +67,8 @@ select {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+a {
+  text-decoration: none;
+  color: inherit;
 }

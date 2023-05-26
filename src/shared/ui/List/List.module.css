@@ -1,19 +1,31 @@
 .list {
     text-align: left;
-    content: "\e800";
 }
 
 .list__item {
-    margin-bottom: 10px;
-    line-height: 28px;
-    font-size: 14px;
-    font-weight: 400;
+    margin-bottom: 5px;
+    font-size: 20px;
+    line-height: 40px;
+    display: flex;
+    flex-direction: row;
 }
 
-.icon svg {
-    color: var(--green);
-    vertical-align: middle;
-    margin-right: 5px;
-    height: 18px;
+.list__item img {
+    margin-right: 16px;
     width: 18px;
+    height: 35px;
+}
+
+.list__item:nth-child(2n) img {
+    margin-left: 25px;
+    transform: scale(-1, 1)
+}
+
+.list__item_text {
+    margin-top: 0px;
+}
+
+.list::marker {
+    position: absolute;
+    margin-bottom: 5px;
 }

@@ -1,0 +1,13 @@
+.scrollToTop {
+    color: var(--hover-green);
+    transition: 0.5s;
+    text-align: center;
+    margin: 40px auto 0;
+    font-size: 30px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.scrollToTop:hover {
+    opacity: 0.6;
+}

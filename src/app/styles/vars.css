@@ -1,10 +1,12 @@
 :root {
-    --white: #ffffff;
-    --dark: #002A3A;
-    --green: #129E7D;
-    --dark-green: #067057;
-    --grey: #7d7b7b;
-    --dark-grey: #e1dede;
-    --light-grey: #F5F5F9;
-    --feedBAck: rgba(0, 42, 58, 0.56);
+    --bg-main: rgb(205, 208, 201);
+    --bg-green: #E8ECE5;
+    --green: #B3C4B5;
+    --dark-green: #717867; 
+    --white: #FAFAF9;
+    --black: #2D3029;
+    --header: rgba(193, 196, 189, 0.9);
+    --grey: #C5C8C1;
+    --hover-green: #76895B;
+    --dark-white: rgba(255, 255, 255, 0.673);
 }

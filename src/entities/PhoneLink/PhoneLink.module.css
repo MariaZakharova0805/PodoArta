@@ -1,0 +1,39 @@
+.phone {
+    border: 1px solid var(--dark-green);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 10px 20px 7px;
+    border-radius: 40px;
+    transition: 0.5s;
+    min-width: 270px;
+}
+
+.mobile {
+    border: 2px solid var(--dark-green);
+    height: 27.43px;
+    width: 16px;
+    border-radius: 3px;
+    margin-right: 16px;
+    transition: 0.5s;
+}
+
+.mobile_btn {
+    width: 6px;
+    border: 1px solid var(--dark-green);
+    margin: 19px auto 0;
+    transition: 0.5s;
+}
+
+.phone:hover {
+    background-color: var(--dark-green);
+    color: var(--white);
+}
+
+.phone:hover .mobile {
+    border: 2px solid var(--white);
+}
+
+.phone:hover .mobile_btn {
+    border: 1px solid var(--white);
+}
