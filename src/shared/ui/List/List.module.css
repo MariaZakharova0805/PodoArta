@@ -1,0 +1,19 @@
+.list {
+    text-align: left;
+    content: "\e800";
+}
+
+.list__item {
+    margin-bottom: 10px;
+    line-height: 28px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.icon svg {
+    color: var(--green);
+    vertical-align: middle;
+    margin-right: 5px;
+    height: 18px;
+    width: 18px;
+}

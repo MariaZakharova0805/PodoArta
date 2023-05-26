@@ -1,0 +1,38 @@
+.svgblock {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    justify-content: right;
+}
+
+.svgblock__item,
+.openForm {
+    transition: 0.4s;
+}
+
+.svgblock__item svg,
+.openForm svg {
+    width: 25px;
+    height: 25px;
+}
+
+.openForm {
+    border: none;
+    background-color: var(--white);
+    color: var(--dark-green);
+    cursor: pointer;
+}
+
+.svgblock__item:hover,
+.openForm:hover {
+    opacity: 0.5;
+}
+
+@media (min-width: 300px) {
+    .svgblock__item svg,
+    .openForm svg {
+        width: 35px;
+        height: 35px;
+    }
+}

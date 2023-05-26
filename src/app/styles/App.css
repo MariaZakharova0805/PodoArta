@@ -1,0 +1,56 @@
+@import "./normalize.css";
+@import "./vars.css";
+
+/* Шрифт Raleway raleway-regular - latin_cyrillic */
+/* @font-face {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 400;
+    src: url("./fonts/raleway-v28-latin_cyrillic-regular.eot");
+    src: local(""),
+      url("./app/fonts/raleway-v28-latin_cyrillic-regular.eot?#iefix")
+        format("embedded-opentype"),
+      url("./fonts/raleway-v28-latin_cyrillic-regular.woff2") format("woff2"),
+      url("./fonts/raleway-v28-latin_cyrillic-regular.woff") format("woff"),
+      url("./fonts/raleway-v28-latin_cyrillic-regular.ttf") format("truetype"),
+      url("./fonts/raleway-v28-latin_cyrillic-regular.svg#Raleway")
+        format("svg");
+  }
+  * {
+    font-family: "Raleway", Arial, sans-serif;
+  } */
+
+
+@font-face {
+  font-family: "Montserrat-Regular";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/Montserrat-Regular.ttf");
+  src: local(""),
+    url("./fonts/Montserrat-Regular.ttf") format("truetype"),
+}
+
+* {
+  font-family: "Montserrat-Regular", Arial, sans-serif;
+}
+
+
+.hover:hover {
+  opacity: 0.8;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.App {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.App_content {
+  margin-top: 100px;
+  flex: 1 1 auto;
+}

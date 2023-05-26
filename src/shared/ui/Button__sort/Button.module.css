@@ -1,0 +1,24 @@
+.btn_active,
+.btn {
+    border: 1px solid var(--dark-green);
+    height: 40px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.5s;
+    padding: 5px 10px;
+    margin: 5px;
+}
+
+.btn {
+    background-color: var(--white);
+    color: var(--dark-green);
+
+}
+
+
+.btn_active,
+.btn:hover {
+    background-color: var(--dark-green);
+    color: var(--white);
+}

@@ -1,0 +1,6 @@
+.block {
+    width: 100%;
+    background-color: var(--light-grey);
+    padding: 50px 0;
+    text-align: center;
+}
