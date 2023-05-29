@@ -2,18 +2,14 @@ import { SvgComponent } from "../../shared/HomeSvgElector/SvgComponent"
 import c from './SocialLinksBlock.module.css'
 import PhoneInTalkIcon from '@mui/icons-material/PhoneInTalk';
 import { useFeedBackForm } from "../../shared/store";
+import { ILinkInfo } from "../../shared/inteface";
 
-interface LinkInfo {
-  href: string,
-  id: string
-}
-
-const LinkInfo: LinkInfo[] = [
+const LinkInfo: ILinkInfo[] = [
   { href: '#', id: 'call' },
   { href: 'https://vk.com/podoarta', id: 'vk' },
   { href: 'https://www.instagram.com/nagaeva_podoarta', id: 'instagram' },
   { href: 'https://t.me/PodoArta_nagaeva', id: 'telegramm' },
-  { href: 'https://api.whatsapp.com/send?phone=79998747811', id: 'whatsapp' },
+  { href: 'https://wa.me/79998747811?text=Здравствуйте,%20пишу%20Вам%20с%20сайта%20https://podo-arta.vercel.app/%0D%0A', id: 'whatsapp' },
 ]
 
 const SocialLinksBlock = () => {

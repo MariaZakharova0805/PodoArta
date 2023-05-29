@@ -80,7 +80,7 @@ export const useContacts = create<Contacts>(() => ({
     {
       id: uuidv1(),
       title: 'Телефон',
-      details: '+7 999 874 7811',
+      details: '+79998747811',
       img: <PhoneInTalkIcon />,
       link: 'tel:+79998747811',
     },
@@ -102,11 +102,10 @@ export const useContacts = create<Contacts>(() => ({
       title: 'E-mail:',
       details: 'test@test.ru',
       img: <EmailIcon />,
-      link: 'mailto:atest@test.ru',
+      link: 'mailto:atest@test.ru?subject=Сообщение%20с%20сайта%20https://podo-arta.vercel.app/&body=Здравствуйте!%0D%0A%0D%0A',
     }
   ]
 }))
-
 
 // Company Slogan
 type Slogan = { slogans: ISlogan[] }
@@ -196,7 +195,7 @@ export const useServecies = create<Servecies>((set) => ({
     },
     {
       id: uuidv1(),
-      name: 'Комплексня обработка стоп и ногтей',
+      name: 'Комплексная обработка стоп и ногтей',
       param: "Kompleksnya-obrabotka-stop-i-nogtej",
       about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
       imgMain: feet,

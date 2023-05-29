@@ -20,7 +20,9 @@ export const Member: FC = () => {
                     <LazyLoadImage src={specialist.img} alt={specialist.param} className={c.img} />
                     <p className={c.about}>{specialist.about}</p>
                     <HeaderH2>{specialist.name}</HeaderH2>
-                    <Button width="200px">Записаться на прием</Button>
+                    <Button width="200px">
+                        <a href={`https://wa.me/79998747811?text=Здравствуйте.%20Хочу%20записаться%20на%20прием%20к%20специалисту%20${specialist.name}.%0D%0A`} target="_blank">Записаться на прием</a>
+                    </Button>
                     <p className={c.description}>{specialist.descrition}</p>
                     <HeaderH2>Образование</HeaderH2>
                     <List list={specialist.descrition}></List>

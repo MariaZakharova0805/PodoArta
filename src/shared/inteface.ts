@@ -75,8 +75,12 @@ export interface ISpecilaist {
   diplomas: IDiplomas[];
 }
 
-
-
+//SocialLinksBlock
+export interface ILinkInfo {
+  href: string,
+  id: string,
+  text?: string,
+}
 
 
 
