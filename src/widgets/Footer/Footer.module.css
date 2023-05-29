@@ -40,6 +40,12 @@
     text-align: center;
 }
 
+.socialLinksBlock {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
 /* PaymentBlock */
 .payment {
     text-align: center;

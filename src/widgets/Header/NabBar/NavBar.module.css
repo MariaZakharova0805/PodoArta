@@ -11,6 +11,7 @@
     padding: 10px 0;
 }
 
+.link_active,
 .link_active:hover {
     color: var(--green);
 }

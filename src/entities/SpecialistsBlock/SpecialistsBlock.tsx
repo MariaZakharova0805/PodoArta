@@ -4,6 +4,7 @@ import { useSpecilaists } from "../../shared/store";
 import { Link } from "react-router-dom";
 import { LinkBtn } from "../../shared/ui/Link/Link";
 import { FC } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component"
 
 export const SpecilalistBlock: FC = () => {
     const specialists = useSpecilaists((state) => state.specialists);
@@ -11,7 +12,7 @@ export const SpecilalistBlock: FC = () => {
         <div className={c.block}>
             {specialists.map(specialist =>
                 <div key={specialist.id} className={c.block__item}>
-                    <img src={specialist.img} className={c.img} />
+                    <LazyLoadImage src={specialist.img} alt={specialist.param} className={c.img} />
                     <p className={c.block__item_about}>{specialist.about}</p>
                     <p className={c.block__item_header}>{specialist.name}</p>
                     <Button width={"100%"}>Записаться</Button>

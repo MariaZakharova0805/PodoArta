@@ -27,6 +27,12 @@
     grid-template-columns: 1fr 1fr 1fr;
 }
 
+.socialLinksBlock {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+}
+
 @media (min-width: 992px) {
     .header_container {
         width: 80%;

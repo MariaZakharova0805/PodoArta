@@ -1,9 +1,9 @@
-import { FC, MouseEventHandler } from "react"
+import { FC, MouseEventHandler, ReactElement } from "react"
 import c from "./Button.module.css"
 
 
 type ChildProp = {
-    children: string,
+    children: string | ReactElement,
     width: string,
     borderRadius?: string,
     margin?: string,

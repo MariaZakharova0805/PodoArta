@@ -44,8 +44,8 @@ export default function Header() {
           {/* Шапка хэдэра */}
           <div className={c.header_container}>
             <MenuIcon onClick={toggleDrawer(anchor, true)} className={c.menuIcon} />
-            <Emblem/>
-            <SocialLinksBlock />
+            <Emblem />
+            <div className={c.socialLinksBlock}><SocialLinksBlock /></div>
           </div>
           <Drawer
             anchor={anchor}

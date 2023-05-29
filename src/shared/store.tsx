@@ -1,9 +1,9 @@
 import { create } from "zustand";
-import { ReactNode } from "react";
 import { v1 as uuidv1 } from 'uuid';
 import img1 from "../../public/img/stuff/Olga1.jpg"
 import img2 from "../../public/img/stuff/Olga2.jpg"
 import diploma from "../../public/img/stuff/diploma.jpg"
+import placeholder from "../../public/img/stuff/diplomaPH.jpg"
 import clear from "../../public/img/servecies/clear.jpg"
 import feet from "../../public/img/servecies/feet.jpg"
 import { SvgComponent } from "./HomeSvgElector/SvgComponent";
@@ -11,13 +11,12 @@ import PhoneInTalkIcon from '@mui/icons-material/PhoneInTalk';
 import RoomIcon from '@mui/icons-material/Room';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import EmailIcon from '@mui/icons-material/Email';
-import { IClientData } from "./inteface";
+import { IServecies, IClientData, IFeedback, ISpecilaist, IContacts, ISlogan, ICategories } from "./inteface";
 
-//FeedBackForm
+//Pop up FeedBackForm
 type FeedBack = {
   clientData?: IClientData[],
   setClientData: (clientData: IClientData[]) => void,
-
   visible: boolean
   setVisible: (visible: boolean) => void,
 }
@@ -30,21 +29,8 @@ export const useFeedBackForm = create<FeedBack>((set) => ({
   setVisible: visibility => set({ visible: visibility }),
 }))
 
-
-
-// Отзывы
-export interface IFeedback {
-  id: string,
-  rating: number,
-  nickname: string,
-  service: string,
-  text: string,
-  specialist: string,
-  specialistParam: string,
-}
-
+// FeedBacks block
 type useFeedbacks = { feedbacks: IFeedback[] }
-
 export const useFeedbacks = create<useFeedbacks>(() => ({
   feedbacks: [
     {
@@ -87,17 +73,8 @@ export const useFeedbacks = create<useFeedbacks>(() => ({
   ]
 }))
 
-// Контакты
-export interface IContacts {
-  id: string;
-  title: string;
-  details: string;
-  img: ReactNode;
-  link?: string;
-}
-
+// Contacts
 type Contacts = { contacts: IContacts[] }
-
 export const useContacts = create<Contacts>(() => ({
   contacts: [
     {
@@ -131,16 +108,8 @@ export const useContacts = create<Contacts>(() => ({
 }))
 
 
-// Слоган компании
-export interface ISlogan {
-  id: string;
-  name: string;
-  text: string;
-  icon: ReactNode;
-}
-
+// Company Slogan
 type Slogan = { slogans: ISlogan[] }
-
 export const useSlogan = create<Slogan>(() => ({
   slogans: [
     {
@@ -164,26 +133,7 @@ export const useSlogan = create<Slogan>(() => ({
   ]
 }))
 
-// Информация об услугах
-export interface ICategories {
-  id: string;
-  name: string;
-  category: string;
-  active: boolean;
-}
-
-export interface IServecies {
-  id: string;
-  name: string;
-  param: string;
-  about: string;
-  imgMain: string;
-  img: string[];
-  popular?: boolean;
-  price: number | string;
-  category: string;
-}
-
+// Servecies info
 type Servecies = {
   servecies: IServecies[];
   categories: ICategories[];
@@ -760,20 +710,8 @@ export const useServecies = create<Servecies>((set) => ({
   ]
 }))
 
-// Информация о специалистах
-export interface ISpecilaist {
-  id: string;
-  name: string;
-  param: string;
-  about: string;
-  descrition: string[];
-  img: string;
-  servecies: string[];
-  diplomas: string[];
-}
-
+// Specialists/doctors info
 type Specilaists = { specialists: ISpecilaist[] }
-
 export const useSpecilaists = create<Specilaists>(() => ({
   specialists: [
     {
@@ -784,7 +722,9 @@ export const useSpecilaists = create<Specilaists>(() => ({
       img: img1,
       servecies: ['ss', "ddd", "kkk"],
       descrition: ['Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio'],
-      diplomas: [diploma, diploma, diploma],
+      diplomas: [{ id: uuidv1(), img: diploma, placeholder: placeholder, src: 'diploma1' },
+      { id: uuidv1(), img: diploma, placeholder: placeholder, src: 'diploma1' },
+      { id: uuidv1(), img: diploma, placeholder: placeholder, src: 'diploma1' }],
     },
     {
       id: uuidv1(),
@@ -794,14 +734,15 @@ export const useSpecilaists = create<Specilaists>(() => ({
       about: 'Мастер маникюра',
       servecies: ['11', "dd22d", "44"],
       descrition: ['Lorem ipsum, dolor sit amet consectetur adipisicing elit', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio'],
-      diplomas: [diploma, diploma, diploma]
+      diplomas: [{ id: uuidv1(), img: diploma, placeholder: placeholder, src: 'diploma1' },
+      { id: uuidv1(), img: diploma, placeholder: placeholder, src: 'diploma1' },
+      { id: uuidv1(), img: diploma, placeholder: placeholder, src: 'diploma1' }],
     }]
 }))
 
 
-// Тексты
+// Main page text
 type Texts = { mainPageText: string[] }
-
 export const useTexts = create<Texts>(() => ({
   mainPageText: [
     'mainPageText Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
@@ -810,13 +751,11 @@ export const useTexts = create<Texts>(() => ({
   ]
 }))
 
-// //Страница О Клинике
-
+//About page text
 type ServeciesTexts = {
   servecies: string[];
   help: string[];
 }
-
 export const useAbout = create<ServeciesTexts>(() => ({
   servecies: [
     'лечение/зачистку грибка',

@@ -2,8 +2,6 @@
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    width: 100%;
-    justify-content: right;
 }
 
 .svgblock__item,
@@ -30,6 +28,7 @@
 }
 
 @media (min-width: 300px) {
+
     .svgblock__item svg,
     .openForm svg {
         width: 35px;
