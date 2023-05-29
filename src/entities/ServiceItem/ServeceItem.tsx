@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from "react"
+import { FC } from "react"
 
 import c from "./ServeceItem.module.css"
 import { Button } from "../../shared/ui/Button__green/Button"
