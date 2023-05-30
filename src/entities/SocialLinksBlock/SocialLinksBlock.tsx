@@ -30,7 +30,7 @@ const SocialLinksBlock = () => {
         if (link.id === 'call') {
           return <button key={1} onClick={openForm} className={c.openForm}><PhoneInTalkIcon /></button>
         } else {
-          return <a key={link.id} href={link.href} target="_blank" className={c.svgblock__item}><SvgComponent id={link.id} /></a>
+          return <a key={link.id} href={link.href} target="_blank" className={c.svgblock__item}><SvgComponent id={link.id}/></a>
         }
       }
       )}

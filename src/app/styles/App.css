@@ -1,24 +1,28 @@
 @import "./normalize.css";
 @import "./vars.css";
 
-/* Шрифт Raleway raleway-regular - latin_cyrillic */
-/* @font-face {
-    font-family: "Raleway";
-    font-style: normal;
-    font-weight: 400;
-    src: url("./fonts/raleway-v28-latin_cyrillic-regular.eot");
-    src: local(""),
-      url("./app/fonts/raleway-v28-latin_cyrillic-regular.eot?#iefix")
-        format("embedded-opentype"),
-      url("./fonts/raleway-v28-latin_cyrillic-regular.woff2") format("woff2"),
-      url("./fonts/raleway-v28-latin_cyrillic-regular.woff") format("woff"),
-      url("./fonts/raleway-v28-latin_cyrillic-regular.ttf") format("truetype"),
-      url("./fonts/raleway-v28-latin_cyrillic-regular.svg#Raleway")
-        format("svg");
-  }
-  * {
-    font-family: "Raleway", Arial, sans-serif;
-  } */
+/* Шрифт Fixel-Display */
+@font-face {
+  font-family: "Fixel-Display";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/FixelDisplay-Medium.ttf");
+  src: local(""),
+    url("./fonts/FixelDisplay-Medium.woff2") format("woff2"),
+    url("./fonts/FixelDisplay-Medium.ttf") format("truetype"),
+}
+
+
+/* Шрифт Fixel-Text */
+@font-face {
+  font-family: "Fixel-Text";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/FixelText-Medium.ttf");
+  src: local(""),
+    url("./fonts/FixelText-Medium.woff2") format("woff2"),
+    url("./fonts/FixelText-Medium.ttf") format("truetype"),
+}
 
 
 @font-face {
@@ -31,9 +35,9 @@
 }
 
 * {
-  font-family: "Montserrat-Regular", Arial, sans-serif;
+  font-family: "Fixel-Display", "Montserrat-Regular", Arial, sans-serif;
+  font-size: 20px;
 }
-
 
 .hover:hover {
   opacity: 0.8;

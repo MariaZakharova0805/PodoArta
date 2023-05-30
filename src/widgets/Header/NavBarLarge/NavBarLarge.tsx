@@ -1,5 +1,4 @@
-import List from '@mui/material/List';
-import c from "./NavBar.module.css"
+import c from "./NavBarLarge.module.css"
 import { NavLink } from "react-router-dom";
 import { v1 as uuidv1 } from 'uuid';
 
@@ -12,9 +11,9 @@ const NavBarLinks = [
   { id: uuidv1(), name: 'Контакты', link: '/contacts' },
 ]
 
-export const NavBar = () => {
+export const NavBarLarge = () => {
   return (
-    <List>
+    <div className={c.list}>
       {NavBarLinks.map((text) => (
         <NavLink key={text.id}
           to={text.link}
@@ -29,7 +28,7 @@ export const NavBar = () => {
           {text.name}
         </NavLink>
       ))}
-    </List>
+    </div>
   )
 }
 

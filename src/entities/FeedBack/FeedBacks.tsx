@@ -3,7 +3,8 @@ import { useFeedbacks } from '../../shared/store'
 import MiscellaneousServicesIcon from '@mui/icons-material/MiscellaneousServices';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { Link } from "react-router-dom";
-import Rating from '@mui/material/Rating';
+// import Rating from '@mui/material/Rating';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 export const FeedBack = () => {
   const { feedbacks } = useFeedbacks((state) => state);
@@ -14,7 +15,7 @@ export const FeedBack = () => {
           <div className={c.block__item_header}>
             <div className={c.rating}>
               <div>{client.nickname}</div>
-              <Rating name="read-only" value={client.rating} precision={0.5} readOnly />
+              {/* <Rating name="read-only" value={client.rating} precision={0.5} readOnly /> */}
             </div>
             <hr />
             <div className={c.header_item}>
@@ -28,7 +29,8 @@ export const FeedBack = () => {
             </div>
           </div>
           <div className={c.block__item_text}>
-            <p>{client.text}</p>
+            <div className={c.text}><p>{client.text}</p><a href={client.link} className={c.link}>смотреть отзыв</a></div>
+            <div className={c.image}><LazyLoadImage src={client.img} /></div>
           </div>
         </div>
       )}

@@ -4,9 +4,16 @@
     flex-wrap: nowrap;
 }
 
+.svgblock__item svg{
+    color: red;
+
+}
+
 .svgblock__item,
 .openForm {
     transition: 0.4s;
+    color: red;
+   
 }
 
 .svgblock__item svg,

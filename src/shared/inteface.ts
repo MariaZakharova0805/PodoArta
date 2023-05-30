@@ -19,6 +19,8 @@ export interface IFeedback {
   text: string,
   specialist: string,
   specialistParam: string,
+  link?: string,
+  img?: string,
 }
 
 // Contacts

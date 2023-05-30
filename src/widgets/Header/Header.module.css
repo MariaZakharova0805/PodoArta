@@ -11,6 +11,7 @@
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0px 1px 30px 2px rgba(179, 179, 179, 0.35);
 }
 
 .menuIcon {
@@ -33,9 +34,21 @@
     justify-content: right;
 }
 
+.fullscreen_menu {
+    display: none;
+}
+
 @media (min-width: 992px) {
     .header_container {
         width: 80%;
+    }
+
+    .burger_menu {
+        display: none;
+    }
+
+    .fullscreen_menu {
+        display: block
     }
 }
 

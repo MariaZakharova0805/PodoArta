@@ -1,13 +1,12 @@
 .list {
-    text-align: left;
+    text-align: center;
     content: "\e800";
 }
 
 .list__item {
-    margin-bottom: 10px;
-    line-height: 28px;
-    font-size: 14px;
-    font-weight: 400;
+    margin-bottom: 5px;
+    font-size: 18px;
+    line-height: 22px;
 }
 
 .icon svg {
@@ -16,4 +15,10 @@
     margin-right: 5px;
     height: 18px;
     width: 18px;
+}
+@media (min-width:786px) {
+    .list {
+        text-align: left;
+        content: "\e800";
+    } 
 }

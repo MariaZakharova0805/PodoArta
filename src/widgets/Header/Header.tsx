@@ -6,6 +6,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import SocialLinksBlock from '../../entities/SocialLinksBlock/SocialLinksBlock';
 import { NavBar } from './NabBar/NavBar';
 import { Emblem } from '../../entities/Emblem/Emblem';
+import { NavBarLarge } from './NavBarLarge/NavBarLarge';
 
 type Anchor = 'top';
 
@@ -41,9 +42,11 @@ export default function Header() {
     <div className={c.header}>
       {(['top'] as const).map((anchor) => (
         <React.Fragment key={anchor}>
-          {/* Шапка хэдэра */}
           <div className={c.header_container}>
-            <MenuIcon onClick={toggleDrawer(anchor, true)} className={c.menuIcon} />
+            <div className={c.burger_menu}><MenuIcon onClick={toggleDrawer(anchor, true)} className={c.menuIcon} /></div>
+           <div className={c.fullscreen_menu}>
+            <NavBarLarge/>
+           </div>
             <Emblem />
             <div className={c.socialLinksBlock}><SocialLinksBlock /></div>
           </div>

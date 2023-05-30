@@ -1,17 +1,33 @@
 import { create } from "zustand";
 import { v1 as uuidv1 } from 'uuid';
+import mainImg from "../../public/img/main.jpg"
 import img1 from "../../public/img/stuff/Olga1.jpg"
 import img2 from "../../public/img/stuff/Olga2.jpg"
 import diploma from "../../public/img/stuff/diploma.jpg"
 import placeholder from "../../public/img/stuff/diplomaPH.jpg"
 import clear from "../../public/img/servecies/clear.jpg"
 import feet from "../../public/img/servecies/feet.jpg"
+import fb1 from "../../public/img/feedbacks/feedback1.jpg"
+import fb2 from "../../public/img/feedbacks/fb2.jpg"
+import fb3 from "../../public/img/feedbacks/fb3.jpg"
 import { SvgComponent } from "./HomeSvgElector/SvgComponent";
 import PhoneInTalkIcon from '@mui/icons-material/PhoneInTalk';
 import RoomIcon from '@mui/icons-material/Room';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import EmailIcon from '@mui/icons-material/Email';
 import { IServecies, IClientData, IFeedback, ISpecilaist, IContacts, ISlogan, ICategories } from "./inteface";
+
+// Main page text
+type Texts = { mainPageText: string[], mainImg: string }
+export const useTexts = create<Texts>(() => ({
+  mainPageText: [
+    'Заботимся и здороьве и красоте ваших ног',
+    'Предоставляем услуги высокого качества',
+    'Всегда думаем и вас'
+  ],
+  mainImg: mainImg
+}))
+
 
 //Pop up FeedBackForm
 type FeedBack = {
@@ -35,41 +51,37 @@ export const useFeedbacks = create<useFeedbacks>(() => ({
   feedbacks: [
     {
       id: uuidv1(),
-      rating: 4,
+      rating: 5,
       nickname: 'Иванов Иван Иванович',
       service: 'service1',
-      text: "все хорошо, конфеты слишком сладкие, а солнце слишком ярко светит",
+      text: "Спасибо за эту прелесть 🥰🥰🥰🥰😍😍",
       specialist: 'Нагава Ольга Владимировна',
       specialistParam: "Nagaeva_O",
+      link: "https://www.instagram.com/p/CUAhNT-M-Fq/",
+      img: fb1,
     },
     {
       id: uuidv1(),
       rating: 5,
       nickname: 'Петров Петр Петрович',
       service: 'service2',
-      text: "отличная работа",
-      specialist: 'Ольговая Ольга Ольговна',
-      specialistParam: "Olgovaya_O",
+      text: "Оля, спасибо за превосходный маникюр. Ты чудесный мастер, который может удовлетворить все пожелания и идеи в дизайне. У нас получился просто упомрочительный результат",
+      specialist: 'Нагава Ольга Владимировна',
+      specialistParam: "Nagaeva_O",
+      link: 'https://www.instagram.com/stories/highlights/17930742814168940/',
+      img: fb2,
     },
     {
       id: uuidv1(),
       rating: 5,
       nickname: 'Пупкин Иван Иванович',
       service: 'service3',
-      text: "отличная работа",
+      text: "И совсем не больно. Легкая рука и очень аккуратно",
       specialist: 'Нагава Ольга Владимировна',
       specialistParam: "Nagaeva_O",
+      link: "https://www.instagram.com/stories/highlights/17930742814168940/",
+      img: fb3,
     },
-    {
-      id: uuidv1(),
-      rating: 4,
-      nickname: 'Сидоров Сидор Сидорович',
-      service: 'service4',
-      text: "все понравилось",
-      specialist: 'Ольговая Ольга Ольговна',
-      specialistParam: "Olgovaya_O",
-    },
-
   ]
 }))
 
@@ -189,7 +201,7 @@ export const useServecies = create<Servecies>((set) => ({
       about: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
       imgMain: feet,
       img: [clear, clear, clear, clear, clear],
-      popular: true,
+      popular: false,
       price: 3000,
       category: 'estetic_podology'
     },
@@ -740,15 +752,7 @@ export const useSpecilaists = create<Specilaists>(() => ({
 }))
 
 
-// Main page text
-type Texts = { mainPageText: string[] }
-export const useTexts = create<Texts>(() => ({
-  mainPageText: [
-    'mainPageText Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
-    'mainPageText Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.',
-    'mainPageText Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio, error nisi impedit minima esse illo voluptatum porro ipsum voluptates quasi animi, dolorem facere aut dicta.'
-  ]
-}))
+
 
 //About page text
 type ServeciesTexts = {
