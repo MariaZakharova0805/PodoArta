@@ -6,11 +6,14 @@ type HeaderH1Prop = {
     marginBottom?: string,
     marginTop?: string,
 }
+export type Ref = HTMLHeadingElement;
 
 export const HeaderH1: FC<HeaderH1Prop> = ({ children, marginBottom, marginTop }) => {
     return (
-        <h1 className={c.h1} style={{marginBottom, marginTop}}>
+        <h1 className={c.h1} style={{ marginBottom, marginTop }}>
             {children}
         </h1>
     )
 }
+
+

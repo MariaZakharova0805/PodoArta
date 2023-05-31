@@ -5,7 +5,17 @@ import { Button } from "../../shared/ui/Button__green/Button";
 import { useForm } from 'react-hook-form';
 import { HeaderH2 } from "../../shared/ui/Headers/HeaderH2";
 
-export const FeedBackForm:FC = () => {
+const empty = {
+  name: "",
+  surname: "",
+  lastName: "",
+  phone: "",
+  email: "",
+  text: "",
+};
+
+
+export const FeedBackForm: FC = () => {
   const { visible, setVisible, clientData, setClientData } = useFeedBackForm((state) => state);
   const {
     register,
@@ -25,31 +35,21 @@ export const FeedBackForm:FC = () => {
     }
   });
 
-  const empty = {
-    name: "",
-    surname: "",
-    lastName: "",
-    phone: "",
-    email: "",
-    text: "",
+  const onSubmit = () => {
+    console.log(clientData)
+    reset(empty);
+    clearErrors();
   };
 
-  /* @ts-ignore */
-  useEffect((value) => {
-    setClientData(value);
+  useEffect(() => {
+    /* @ts-ignore */
+    watch((value) => { setClientData(value) });
   }, [watch]);
 
   const rootClasses = [c.myAlert];
   if (visible) {
     rootClasses.push(c.active);
   }
-
-  const onSubmit = () => {
-    reset(empty);
-    clearErrors();
-    setVisible(false);
-    console.log(clientData);
-  };
 
   return (
     <div className={rootClasses.join(" ")} onClick={() => setVisible(false)}>
@@ -83,7 +83,7 @@ export const FeedBackForm:FC = () => {
           </div>
 
           <div className={c.textfiled}>
-            <input {...register('text')} placeholder="Ваше сообщение" className={c.textfiled_input}/>
+            <input {...register('text')} placeholder="Ваше сообщение" className={c.textfiled_input} />
           </div>
 
           <div className={c.btn}><Button width="100%">отправить</Button></div>

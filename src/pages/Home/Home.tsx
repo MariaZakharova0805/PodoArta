@@ -21,15 +21,20 @@ export const Home: FC = () => {
         <>
             <Container>
                 <ContainerBlock>
-                    <div className={c.topBlock}>
-                        <div className={c.topBlock_text}><HeaderH1 marginBottom="40px">Центр подологии и педикюра</HeaderH1>
+                    <div
+                        className={c.topBlock}>
+                        <div className={c.topBlock_text}>
+                            <HeaderH1 marginBottom="40px">Центр подологии и педикюра</HeaderH1>
                             <List list={mainPageText} />
-                            <Link to={`/about`}><Button width={"200px"}>подробнее</Button></Link></div>
-                        <div className={c.topBlock_img}><LazyLoadImage src={mainImg} /></div>
+                            <Button width={"200px"}><Link to={`/about`}>подробнее</Link></Button>
+                        </div>
+                        <div className={c.topBlock_img}>
+                            <LazyLoadImage src={mainImg} />
+                        </div>
                     </div>
                 </ContainerBlock>
                 <ContainerBlock>
-                    <HeaderH2>Популярные услуги</HeaderH2>
+                    <HeaderH1 >Популярные услуги</HeaderH1>
                     <ServeciesBlock />
                     <Link to={`/servecies`}><Button width={"250px"}>смотреть все услуги</Button></Link>
                 </ContainerBlock>

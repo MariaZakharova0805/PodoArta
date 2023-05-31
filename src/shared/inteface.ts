@@ -2,12 +2,12 @@ import { ReactNode } from "react";
 
 //Pop up FeedBackForm
 export interface IClientData {
-  name?: string,
-  surname?: string,
-  lastName?: string,
-  phone?: string,
-  email?: string,
-  text?: string,
+  name: string | undefined,
+  surname?: string | undefined,
+  lastName: string | undefined,
+  phone: string | undefined,
+  email: string | undefined,
+  text?: string | undefined,
 }
 
 // FeedBacks block

@@ -25,14 +25,13 @@
 
 .block__item_title {
     color: var(--grey);
-    font-size: 12px;
-
+    font-size: 18px;
 }
 
 .block__item_details {
     color: var(--black);
     font-weight: 600;
-    font-size: 15px;
+    font-size: 20px;
 }
 
 .block_item__img svg {

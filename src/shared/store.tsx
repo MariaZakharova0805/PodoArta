@@ -21,7 +21,7 @@ import { IServecies, IClientData, IFeedback, ISpecilaist, IContacts, ISlogan, IC
 type Texts = { mainPageText: string[], mainImg: string }
 export const useTexts = create<Texts>(() => ({
   mainPageText: [
-    'Заботимся и здороьве и красоте ваших ног',
+    'Заботимся и здоровье и красоте ваших ног',
     'Предоставляем услуги высокого качества',
     'Всегда думаем и вас'
   ],
@@ -31,15 +31,21 @@ export const useTexts = create<Texts>(() => ({
 
 //Pop up FeedBackForm
 type FeedBack = {
-  clientData?: IClientData[],
-  setClientData: (clientData: IClientData[]) => void,
+  clientData: IClientData[],
+  setClientData: (item: IClientData) => void,
   visible: boolean
   setVisible: (visible: boolean) => void,
 }
 
 export const useFeedBackForm = create<FeedBack>((set) => ({
   clientData: [],
-  setClientData: data => set({ clientData: data }),
+  // setClientData: data => set(({ clientData }) => ({ clientData: [...clientData, data] })),
+  setClientData: (data) => {
+    set(() => ({
+      clientData: [data],
+    }));
+  },
+
 
   visible: false,
   setVisible: visibility => set({ visible: visibility }),

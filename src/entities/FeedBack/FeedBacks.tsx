@@ -5,13 +5,19 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { Link } from "react-router-dom";
 // import Rating from '@mui/material/Rating';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { motion } from "framer-motion"
+import { goUpAnimation } from '../../shared/animation';
 
 export const FeedBack = () => {
   const { feedbacks } = useFeedbacks((state) => state);
   return (
-    <div className={c.block}>
-      {feedbacks.map(client =>
-        <div key={client.id} className={c.block__item}>
+    <motion.div 
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ amount: 0.2, once: true }}
+    className={c.block}>
+      {feedbacks.map((client,num) =>
+        <motion.div custom={num++} variants={goUpAnimation} key={client.id} className={c.block__item}>
           <div className={c.block__item_header}>
             <div className={c.rating}>
               <div>{client.nickname}</div>
@@ -32,8 +38,8 @@ export const FeedBack = () => {
             <div className={c.text}><p>{client.text}</p><a href={client.link} className={c.link}>смотреть отзыв</a></div>
             <div className={c.image}><LazyLoadImage src={client.img} /></div>
           </div>
-        </div>
+        </motion.div>
       )}
-    </div>
+    </motion.div>
   )
 }

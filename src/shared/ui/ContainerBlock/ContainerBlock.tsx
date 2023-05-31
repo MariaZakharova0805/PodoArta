@@ -1,8 +1,6 @@
 import { FC } from "react"
 import c from "./ContainerBlock.module.css"
 
-
-
 type ContainerProp = {
     children: JSX.Element | JSX.Element[],
 }

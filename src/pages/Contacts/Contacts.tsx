@@ -6,7 +6,7 @@ import { ContactsBlock } from "../../entities/ContactsBlock/ContactsBlock";
 import IFrame from "../../entities/IFrame/IFrame";
 import c from "./Contacts.module.css"
 
-export const Contacts:FC = () => {
+export const Contacts: FC = () => {
     return (
         <ContainerGrey>
             <Container>

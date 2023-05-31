@@ -48,7 +48,7 @@ export const About: FC = () => {
             <ContainerBlock>
                 <HeaderH2>Оставьте свой отзыв</HeaderH2>
                 <p className={c.center}>Мы всегда открыты к Вашим отзывами и предложениям!</p>
-                <Button width={"150px"} onClick={openForm}>Оставить отзыв</Button>
+                <Button width={"200px"} onClick={openForm}>Оставить отзыв</Button>
             </ContainerBlock>
         </Container>
     )
