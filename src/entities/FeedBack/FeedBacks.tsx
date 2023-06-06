@@ -3,25 +3,19 @@ import { useFeedbacks } from '../../shared/store'
 import MiscellaneousServicesIcon from '@mui/icons-material/MiscellaneousServices';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { Link } from "react-router-dom";
-// import Rating from '@mui/material/Rating';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
-import { motion } from "framer-motion"
-import { goUpAnimation } from '../../shared/animation';
+import Rating from '@mui/material/Rating';
 
 export const FeedBack = () => {
   const { feedbacks } = useFeedbacks((state) => state);
   return (
-    <motion.div 
-    initial="hidden"
-    whileInView="visible"
-    viewport={{ amount: 0.2, once: true }}
-    className={c.block}>
-      {feedbacks.map((client,num) =>
-        <motion.div custom={num++} variants={goUpAnimation} key={client.id} className={c.block__item}>
+    <div
+      className={c.block}>
+      {feedbacks.map(client =>
+        <div key={client.id} className={c.block__item}>
           <div className={c.block__item_header}>
             <div className={c.rating}>
               <div>{client.nickname}</div>
-              {/* <Rating name="read-only" value={client.rating} precision={0.5} readOnly /> */}
+              <Rating name="read-only" value={client.rating} precision={0.5} readOnly />
             </div>
             <hr />
             <div className={c.header_item}>
@@ -35,11 +29,10 @@ export const FeedBack = () => {
             </div>
           </div>
           <div className={c.block__item_text}>
-            <div className={c.text}><p>{client.text}</p><a href={client.link} className={c.link}>смотреть отзыв</a></div>
-            <div className={c.image}><LazyLoadImage src={client.img} /></div>
+            <p>{client.text}</p><a href={client.link} target='_blank' className={c.link}>смотреть отзыв в источнике</a>
           </div>
-        </motion.div>
+        </div>
       )}
-    </motion.div>
+    </div>
   )
 }

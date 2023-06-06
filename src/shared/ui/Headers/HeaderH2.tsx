@@ -1,19 +1,17 @@
-import { forwardRef } from "react";
-import { motion } from "framer-motion";
+import { FC } from "react";
 import c from "./header.module.css";
 
-type ChildProp = {
-    children: string
+type HeaderH2Prop = {
+    children: string,
+    marginBottom?: string,
+    marginTop?: string,
 }
 
-export type Ref = HTMLHeadingElement;
-
-export const HeaderH2 = forwardRef<Ref, ChildProp>(({ children }, ref) => {
+export const HeaderH2: FC<HeaderH2Prop> = ({ children, marginBottom, marginTop }) => {
     return (
-        <h1 ref={ref} className={c.h2}>
+        <h2 className={c.h2} style={{ marginBottom, marginTop }}>
             {children}
-        </h1>)
-});
+        </h2>
+    )
+}
 
-
-export const MHeaderH2 = motion(HeaderH2);

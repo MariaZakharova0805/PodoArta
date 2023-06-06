@@ -6,17 +6,16 @@ import { motion } from "framer-motion"
 type ChildProp = {
     children: string | ReactElement,
     width: string,
+    height?: string,
     borderRadius?: string,
     margin?: string,
     onClick?: MouseEventHandler<HTMLButtonElement>;
 }
 export type Ref = HTMLButtonElement;
-// { children, width, borderRadius, margin, onClick },
-//style={{props.width, props.borderRadius, props.margin }}
 
-export const Button = forwardRef<Ref, ChildProp>(({ onClick, width, borderRadius, margin, children }, ref) => {
+export const Button = forwardRef<Ref, ChildProp>(({ onClick, width, height, borderRadius, margin, children }, ref) => {
     return (
-        <button ref={ref} onClick={onClick} style={{ width, borderRadius, margin }} className={c.btn} >{children}</button>
+        <button ref={ref} onClick={onClick} style={{ width, height, borderRadius, margin }} className={c.btn} >{children}</button>
     )
 });
 

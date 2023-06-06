@@ -4,41 +4,24 @@
     flex-wrap: nowrap;
 }
 
-.svgblock__item svg{
-    color: red;
-
+.svgblock__item {
+    transition: 0.5s;
 }
 
-.svgblock__item,
-.openForm {
-    transition: 0.4s;
-    color: red;
-   
+.svgblock__item svg {
+    width: 35px;
+    height: 35px;
 }
 
-.svgblock__item svg,
-.openForm svg {
-    width: 25px;
-    height: 25px;
-}
-
-.openForm {
-    border: none;
-    background-color: var(--white);
-    color: var(--dark-green);
-    cursor: pointer;
-}
-
-.svgblock__item:hover,
-.openForm:hover {
+.svgblock__item:hover {
     opacity: 0.5;
 }
 
 @media (min-width: 300px) {
 
     .svgblock__item svg,
-    .openForm svg {
-        width: 35px;
-        height: 35px;
-    }
+    {
+    width: 35px;
+    height: 35px;
+}
 }

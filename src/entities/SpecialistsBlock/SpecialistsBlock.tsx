@@ -5,20 +5,14 @@ import { Link } from "react-router-dom";
 import { LinkBtn } from "../../shared/ui/Link/Link";
 import { FC } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { motion } from "framer-motion";
-import { goDownAnimation } from "../../shared/animation";
 
 export const SpecilalistBlock: FC = () => {
   const specialists = useSpecilaists((state) => state.specialists);
   return (
-    <motion.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ amount: 0.2, once: true }}
+    <div
       className={c.block}>
-      {specialists.map((specialist, num) =>
-        <motion.div
-          custom={num++} variants={goDownAnimation}
+      {specialists.map(specialist =>
+        <div
           key={specialist.id} className={c.item}>
           <LazyLoadImage src={specialist.img} alt={specialist.param} className={c.item_image} />
           <div className={c.item_descrition}>
@@ -36,8 +30,8 @@ export const SpecilalistBlock: FC = () => {
               </Link></LinkBtn>
             </div>
           </div>
-        </motion.div>
+        </div>
       )}
-    </motion.div>
+    </div>
   )
 }

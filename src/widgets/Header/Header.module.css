@@ -34,21 +34,64 @@
     justify-content: right;
 }
 
+.socialLinksBlock svg {
+    color: var(--green);
+    cursor: pointer;
+}
+
 .fullscreen_menu {
     display: none;
 }
 
+.socialLinksBlock_phoneIcon svg {
+    min-width: 25px;
+    min-height: 35px;
+}
+
+.socialLinksBlock_phoneText {
+    display: none;
+}
+
+
 @media (min-width: 992px) {
     .header_container {
         width: 80%;
+        grid-template-columns: 1fr 1fr;
     }
 
-    .burger_menu {
+    .burger_menu,
+    .emblem {
         display: none;
     }
 
     .fullscreen_menu {
         display: block
+    }
+
+    .socialLinksBlock_phoneText {
+        display: block;
+    }
+
+    .socialLinksBlock_phone {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: center;
+        color: var(--green);
+        padding-bottom: 10px;
+        transition: 0.5s;
+    }
+    .socialLinksBlock_phone svg {
+        width: 15px;
+    }
+
+    .socialLinksBlock_phone:hover {
+        opacity: 0.7;
+    }
+
+    .socialLinksBlock_phoneText {
+        padding-bottom: 7px;
     }
 }
 

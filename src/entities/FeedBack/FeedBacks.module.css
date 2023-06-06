@@ -107,16 +107,6 @@
         align-items: center;
     }
 
-    .block__item_text {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .image, .text {
-        width: 50%;
-        margin: 0;
-    }
 }
 
 @media (min-width:992px) {

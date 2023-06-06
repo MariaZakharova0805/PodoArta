@@ -6,7 +6,6 @@ type HeaderH1Prop = {
     marginBottom?: string,
     marginTop?: string,
 }
-export type Ref = HTMLHeadingElement;
 
 export const HeaderH1: FC<HeaderH1Prop> = ({ children, marginBottom, marginTop }) => {
     return (

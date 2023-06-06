@@ -21,6 +21,7 @@ export interface IFeedback {
   specialistParam: string,
   link?: string,
   img?: string,
+  mainPage: boolean,
 }
 
 // Contacts
@@ -51,12 +52,15 @@ export interface IServecies {
   popular?: boolean;
   price: number | string;
   category: string;
+  link?: string;
 }
 export interface ICategories {
   id: string;
   name: string;
   category: string;
   active: boolean;
+  img?: string;
+  imgSM?: string;
 }
 
 // Specialists/doctors info

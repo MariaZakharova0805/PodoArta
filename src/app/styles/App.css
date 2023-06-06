@@ -24,7 +24,6 @@
     url("./fonts/FixelText-Medium.ttf") format("truetype"),
 }
 
-
 @font-face {
   font-family: "Montserrat-Regular";
   font-style: normal;
@@ -35,7 +34,7 @@
 }
 
 * {
-  font-family: "Fixel-Display", "Montserrat-Regular", Arial, sans-serif;
+  font-family: "Montserrat-Regular", Arial, sans-serif;
   font-size: 20px;
 }
 
@@ -57,4 +56,8 @@ body {
 .App_content {
   margin-top: 85px;
   flex: 1 1 auto;
+}
+
+a {
+  width: 100%;
 }

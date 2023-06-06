@@ -7,22 +7,21 @@ import { Button } from "../../shared/ui/Button__green/Button"
 import { Container } from "../../shared/ui/Container_big/Container"
 import { HeaderH2 } from "../../shared/ui/Headers/HeaderH2"
 import { List } from "../../shared/ui/List/List"
+import { HeaderH1 } from "../../shared/ui/Headers/HeaderH1";
 
 export const Member: FC = () => {
-
     const { specialists } = useSpecilaists((state) => state);
     const { param } = useParams();
-
     const description = specialists.map(specialist => {
         if (specialist.param === param) {
             return (
                 <Container key={specialist.id}>
                     <LazyLoadImage src={specialist.img} alt={specialist.param} className={c.img} />
                     <p className={c.about}>{specialist.about}</p>
-                    <HeaderH2>{specialist.name}</HeaderH2>
-                    <Button width="200px">
-                        <a href={`https://wa.me/79998747811?text=Здравствуйте.%20Хочу%20записаться%20на%20прием%20к%20специалисту%20${specialist.name}.%0D%0A`} target="_blank">Записаться на прием</a>
-                    </Button>
+                    <HeaderH1>{specialist.name}</HeaderH1>
+                    <div className={c.btn}><Button width="200px" height="60px">
+                        <a href='https://widget.sonline.su/ru/services/9298887/?master=662152&placeid=999963927' target="_blank">Записаться на прием</a>
+                    </Button></div>
                     <p className={c.description}>{specialist.descrition}</p>
                     <HeaderH2>Образование</HeaderH2>
                     <List list={specialist.descrition}></List>

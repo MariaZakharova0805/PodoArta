@@ -5,9 +5,9 @@ export const ServiseList = () => {
     const { servecies, activeCategory } = useServecies((state) => state)
     return (
         <div>{servecies.map(service => {
-            if (activeCategory === service.category) { return <ServeceItem name={service.name} price={service.price} key={service.id} /> }
+            if (activeCategory === service.category) { return <ServeceItem name={service.name} price={service.price} key={service.id} link={service.link}/> }
             else if (activeCategory === 'all') {
-                return <ServeceItem name={service.name} price={service.price} key={service.id} />
+                return <ServeceItem name={service.name} price={service.price} key={service.id} link={service.link}/>
             }
         }
         )}</div>

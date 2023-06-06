@@ -7,6 +7,7 @@ import SocialLinksBlock from '../../entities/SocialLinksBlock/SocialLinksBlock';
 import { NavBar } from './NabBar/NavBar';
 import { Emblem } from '../../entities/Emblem/Emblem';
 import { NavBarLarge } from './NavBarLarge/NavBarLarge';
+import PhoneInTalkIcon from '@mui/icons-material/PhoneInTalk';
 
 type Anchor = 'top';
 
@@ -44,11 +45,14 @@ export default function Header() {
         <React.Fragment key={anchor}>
           <div className={c.header_container}>
             <div className={c.burger_menu}><MenuIcon onClick={toggleDrawer(anchor, true)} className={c.menuIcon} /></div>
-           <div className={c.fullscreen_menu}>
-            <NavBarLarge/>
-           </div>
-            <Emblem />
-            <div className={c.socialLinksBlock}><SocialLinksBlock /></div>
+            <div className={c.fullscreen_menu}>
+              <NavBarLarge />
+            </div>
+            <span className={c.emblem}><Emblem /></span>
+            <div className={c.socialLinksBlock}>
+              <a href='tel:+79045682983' className={c.socialLinksBlock_phone}><span className={c.socialLinksBlock_phoneIcon}><PhoneInTalkIcon /></span><span className={c.socialLinksBlock_phoneText}>79045682983</span>
+              </a>
+              <SocialLinksBlock /></div>
           </div>
           <Drawer
             anchor={anchor}
