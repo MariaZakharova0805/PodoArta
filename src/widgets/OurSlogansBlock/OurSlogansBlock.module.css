@@ -1,6 +1,7 @@
 .block {
     display: grid;
     grid-template-columns: 1fr;
+    text-align: center;
 }
 
 .block_item {
@@ -9,7 +10,10 @@
     margin-bottom: 30px;
 }
 
-
+.block__item_name {
+    font-size: 23px;
+    margin-bottom: 20px;
+}
 
 @media (min-width:768px) {
     .block {
@@ -17,5 +21,4 @@
         grid-gap: 20px;
         text-align: center;
     }
-
 }

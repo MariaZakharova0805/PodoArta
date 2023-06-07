@@ -10,12 +10,19 @@ export interface IClientData {
   text?: string | undefined,
 }
 
+export interface IServece {
+  id: string,
+  name: string,
+  link: string,
+}
+
+
 // FeedBacks block
 export interface IFeedback {
   id: string,
   rating: number,
   nickname: string,
-  service: string,
+  service: IServece[],
   text: string,
   specialist: string,
   specialistParam: string,
@@ -88,6 +95,12 @@ export interface ILinkInfo {
   text?: string,
 }
 
-
+//Cabinet images
+export interface ICabinetImage {
+  id: string,
+  image: string,
+  imageSM: string,
+  placeholder: string
+}
 
 

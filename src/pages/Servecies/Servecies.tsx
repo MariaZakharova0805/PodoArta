@@ -1,6 +1,6 @@
 import { Container } from "../../shared/ui/Container_big/Container"
 import { ServiseList } from "./ServiceList";
-import { ServiseBtns } from "../../entities/ServiseBtns/ServiseBtns";
+import { ServiseBtns } from "../../widgets/ServiseBtns/ServiseBtns";
 import { HeaderH2 } from '../../shared/ui/Headers/HeaderH2'
 import { ContainerBlock } from "../../shared/ui/ContainerBlock/ContainerBlock";
 export const Servecies = () => {

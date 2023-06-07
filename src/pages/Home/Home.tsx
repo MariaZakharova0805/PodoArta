@@ -11,7 +11,10 @@ import { ServeciesBlock } from "../../entities/ServeciesBlock/ServeciesBlock";
 import { Link } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import c from "./Home.module.css"
-import { FeedBack } from "../../entities/FeedBack/FeedBacks";
+import { FeedBack } from "../../widgets/FeedBacksBlock/FeedBacksBlock";
+import online from "../../../public/img/online.jpg"
+import onlineSM from "../../../public/img/onlineSM.jpg"
+
 
 export const Home: FC = () => {
     const { mainPageText, mainImg, mainImgSm } = useTexts((state) => state);
@@ -57,8 +60,13 @@ export const Home: FC = () => {
             <ContainerGrey>
                 <Container>
                     <HeaderH2>Хотите получить первую консультацию от префессионального подолога?</HeaderH2>
-                    <p>Восльзуйтесь удобной платформой для быстрой онлайн-записи и выберете подходящее для вас время</p>
-                    <Button width="200px" margin="40px auto"><a href="https://widget.sonline.su/ru/services/?placeid=999963927" target="_blank">онлайн запись</a></Button>
+                    <div className={c.online}>
+                        <div>
+                            <p>Воспользуйтесь удобной платформой для быстрой онлайн-записи и выберете подходящее для вас время</p>
+                            <Button width="200px" margin="40px auto"><a href="https://widget.sonline.su/ru/services/?placeid=999963927" target="_blank">онлайн запись</a></Button>
+                        </div>
+                        <LazyLoadImage src={online} placeholderSrc={onlineSM} alt="онлайн запись" />
+                    </div>
                 </Container>
             </ContainerGrey>
         </>

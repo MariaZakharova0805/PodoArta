@@ -1,7 +1,7 @@
 import { FC } from "react"
 import { Container } from "../../shared/ui/Container_big/Container"
 import { HeaderH1 } from "../../shared/ui/Headers/HeaderH1"
-import { SpecilalistBlock } from "../../entities/SpecialistsBlock/SpecialistsBlock"
+import { SpecilalistBlock } from "../../widgets/SpecialistsBlock/SpecialistsBlock"
 
 export const Specialists:FC = () => {
    return (

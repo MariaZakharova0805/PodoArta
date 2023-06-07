@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { ContainerGrey } from "../../shared/ui/ContainerGrey/ContainerGrey"
 import { Container } from "../../shared/ui/Container_big/Container"
-import { ContactsBlock } from "../../entities/ContactsBlock/ContactsBlock";
+import { ContactsBlock } from "../../widgets/ContactsBlock/ContactsBlock";
 import IFrame from "../../entities/IFrame/IFrame";
 import c from "./Contacts.module.css"
 import { HeaderH2 } from "../../shared/ui/Headers/HeaderH2";

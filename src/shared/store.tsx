@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { v1 as uuidv1 } from 'uuid';
-import { IServecies, IFeedback, ISpecilaist, IContacts, ISlogan, ICategories } from "./inteface";
+import { IServecies, IFeedback, ISpecilaist, IContacts, ISlogan, ICategories, ICabinetImage } from "./inteface";
 import { SvgComponent } from "./HomeSvgElector/SvgComponent";
 import mainImg from "../../public/img/main.jpg"
 import mainImgSm from "../../public/img/mainSM.jpg"
@@ -8,6 +8,7 @@ import olga from "../../public/img/stuff/olga.jpg"
 import diploma from "../../public/img/stuff/diploma.jpg"
 import placeholder from "../../public/img/stuff/diplomaPH.jpg"
 import clear from "../../public/img/servecies/clear.jpg"
+//Images for servecies
 import pogology from "../../public/img/servecies/pogology.jpg"
 import growin from "../../public/img/servecies/growin.jpg"
 import zto from "../../public/img/servecies/zto.jpg"
@@ -15,10 +16,53 @@ import vpch from "../../public/img/servecies/vpch.jpg"
 import ortozy from "../../public/img/servecies/ortozy.jpg"
 import manicure from "../../public/img/servecies/manicure.jpg"
 import feet from "../../public/img/servecies/feet.jpg"
+//Icons for ContacktsBlock
 import PhoneInTalkIcon from '@mui/icons-material/PhoneInTalk';
 import RoomIcon from '@mui/icons-material/Room';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import EmailIcon from '@mui/icons-material/Email';
+//Images of cabinet
+import cab1 from "../../public/img/cabinet/cab1.jpg"
+import cab1SM from "../../public/img/cabinet/cab1SM.jpg"
+import cab2 from "../../public/img/cabinet/cab2.jpg"
+import cab2SM from "../../public/img/cabinet/cab2SM.jpg"
+import cab3 from "../../public/img/cabinet/cab3.jpg"
+import cab3SM from "../../public/img/cabinet/cab3SM.jpg"
+import cab4 from "../../public/img/cabinet/cab4.jpg"
+import cab4SM from "../../public/img/cabinet/cab4SM.jpg"
+
+//Cabinet Images fro slider
+type CabinetImages = { cabImg: ICabinetImage[] }
+export const useCabinetImages = create<CabinetImages>(() => ({
+  cabImg: [
+    {
+      id: uuidv1(),
+      image: cab1,
+      imageSM: cab1SM,
+      placeholder: 'кабинет'
+    },
+    {
+      id: uuidv1(),
+      image: cab2,
+      imageSM: cab2SM,
+      placeholder: 'стол для маникюра'
+    },
+    {
+      id: uuidv1(),
+      image: cab3,
+      imageSM: cab3SM,
+      placeholder: 'кресло для педикюра'
+    },
+    {
+      id: uuidv1(),
+      image: cab4,
+      imageSM: cab4SM,
+      placeholder: 'аппарат для Smart педикюра'
+    }
+  ]
+}))
+
+
 
 // Main page text
 type Texts = { mainPageText: string[], mainImg: string, mainImgSm: string }
@@ -39,9 +83,20 @@ export const useFeedbacks = create<useFeedbacks>(() => ({
     {
       id: uuidv1(),
       rating: 5,
+      nickname: 'Анастасия',
+      service: [{ id: uuidv1(), name: "#подология", link: 'podology' }, { id: uuidv1(), name: "#коррекция_врастания_ногтей", link: 'growin_correction' }],
+      text: "Это лучший мастер, который случался со мной и моим мужем. Ехали из Архангельска специально к Ольге (у меня и мужа проблема вросших ногтей)! Тот момент, когда ты уверен в работе человека на все 100% и готов приехать куда угодно. С моей придирчивостью за счастье найти золотые руки и качество услуг.",
+      specialist: 'Нагава Ольга Владимировна',
+      specialistParam: "Nagaeva_O",
+      link: "https://yandex.kz/web-maps/org/183344334290/reviews?reviews[publicId]=mydxvynaz8a1hqe6qvgezgyrf0&utm_source=review",
+      mainPage: false,
+    },
+    {
+      id: uuidv1(),
+      rating: 5,
       nickname: 'Кристина С.',
-      service: 'service1',
-      text: "Найти «своего» мастера педикюра достаточно сложно- то выпиливают ногти, то стирают до дыр пятки! Но мне повезло- я нашла Ольгу!! Профессионал с легкими руками, ненавязчивыми советами по правильному домашнему уходу, максимально аккуратно и бережно обрабатывает стопы и пальцы -и, вуаля, пяточки как у младенца! Я предпочитаю педикюр Kart, он идеально мне подошел. После него нежная кожа стоп, долго не появляются натоптыши, нет трещин и сухости.. Рекомендую и боюсь в следующий раз не записаться к подологу Ольге Нагаевой)",
+      service: [{ id: uuidv1(), name: "#подология", link: 'podology' }],
+      text: "Найти «своего» мастера педикюра достаточно сложно - то выпиливают ногти, то стирают до дыр пятки! Но мне повезло- я нашла Ольгу!! Профессионал с легкими руками, ненавязчивыми советами по правильному домашнему уходу, максимально аккуратно и бережно обрабатывает стопы и пальцы -и, вуаля, пяточки как у младенца! Я предпочитаю педикюр Kart, он идеально мне подошел. После него нежная кожа стоп, долго не появляются натоптыши, нет трещин и сухости.. Рекомендую и боюсь в следующий раз не записаться к подологу Ольге Нагаевой)",
       specialist: 'Нагава Ольга Владимировна',
       specialistParam: "Nagaeva_O",
       link: "https://yandex.kz/web-maps/org/183344334290/reviews?reviews[publicId]=5vnx8xbp4n4u9dqy4w3qphw7gg&utm_source=review",
@@ -50,8 +105,8 @@ export const useFeedbacks = create<useFeedbacks>(() => ({
     {
       id: uuidv1(),
       rating: 5,
-      nickname: 'Мария К',
-      service: 'service2',
+      nickname: 'Мария К.',
+      service: [{ id: uuidv1(), name: "#подология", link: 'podology' }, { id: uuidv1(), name: "#маниюкр", link: 'manicure' }],
       text: "Нас с Олей свела судьба😊 совершенно случайно. Была в поисках идеального мастера год и вот я счастливый клиент этой замечательной девушки уже почти 2 года. Золотые руки! Всегда оооочень аккуратно, красиво, со вкусом, учитывает любые пожелания клиента, работает на совесть, что ручки что ножки после Оли всегда в идеальном состоянии! И да, таки гладких пяток у меня не было никогда. У Ольги проффесиональная косметика для ухода, которую я беру с собой и дома продолжаю поддерживать её труды. Рекомендую Ольгу от души. Прекрасный как мастер так и человек.",
       specialist: 'Нагава Ольга Владимировна',
       specialistParam: "Nagaeva_O",
@@ -61,12 +116,12 @@ export const useFeedbacks = create<useFeedbacks>(() => ({
     {
       id: uuidv1(),
       rating: 5,
-      nickname: 'Ксения К.',
-      service: 'service3',
-      text: "Найти «своего» мастера педикюра достаточно сложно- то выпиливают ногти, то стирают до дыр пятки! Но мне повезло- я нашла Ольгу!! Профессионал с легкими руками, ненавязчивыми советами по правильному домашнему уходу, максимально аккуратно и бережно обрабатывает стопы и пальцы -и, вуаля, пяточки как у младенца! Я предпочитаю педикюр Kart, он идеально мне подошел. После него нежная кожа стоп, долго не появляются натоптыши, нет трещин и сухости.. Рекомендую и боюсь в следующий раз не записаться к подологу Ольге Нагаевой)",
+      nickname: 'Кристина C.',
+      service: [{ id: uuidv1(), name: "#подология", link: 'podology' }, { id: uuidv1(), name: "#маниюкр", link: 'manicure' }],
+      text: "Считаю себя довольно требовательным клиентом к качеству исполнения работ по маникюру и педикюру, но Оле я всегда полностью доверяю без желания контролировать ее работу. Она отличный специалист, который знает свое свое дело. Делает все максимально качественно! Порекомендовала ее девчонкам на работе, теперь все вместе ходим к ней)) Делаю аппаратные маникюр, педикюр и покрытия гель лаками. Рекомендую!👍",
       specialist: 'Нагава Ольга Владимировна',
       specialistParam: "Nagaeva_O",
-      link: "https://yandex.kz/web-maps/org/183344334290/reviews?reviews[publicId]=jxp68j1zqqwapnjew377w6v5y8&utm_source=review",
+      link: "https://yandex.kz/web-maps/org/183344334290/reviews?reviews[publicId]=5vnx8xbp4n4u9dqy4w3qphw7gg&utm_source=review",
       mainPage: false,
     }
   ]
@@ -112,14 +167,14 @@ export const useSlogan = create<Slogan>(() => ({
   slogans: [
     {
       id: uuidv1(),
-      name: "Ценим доверие",
-      text: "Объясняем диагнозы и схему лечения, пишем разборчиво",
+      name: "Доверие",
+      text: "Всегда на первом месте. Объясняю диагнозы и схему лечения",
       icon: <SvgComponent id={"advantage"} />
     },
     {
       id: uuidv1(),
       name: "5 лет",
-      text: "Заботимся о здоровье взрослых и детей",
+      text: "Забочусь о здоровье взрослых и детей",
       icon: <SvgComponent id={"experience"} />
     },
     {
@@ -626,12 +681,13 @@ type ServeciesTexts = {
 }
 export const useAbout = create<ServeciesTexts>(() => ({
   servecies: [
-    'лечение/зачистку грибка',
-    'обработку вросшего ногтя',
+    'аппаратный и традиционный педикюр',
+    'спа-уход для ногтей',
+    'обработка вросшего ногтя',
     'выпрямление скрученного/деформированного ногтя',
-    'обработку диабетической стопы и сложных патологий',
+    'обработка диабетической стопы и сложных патологий',
     'удаление подошвенных бородавок',
-    'обработку мозолей/трещин/натоптышей',
+    'обработка мозолей/трещин/натоптышей',
     'парамедицинский педикюр (комплексная обработка стоп)'
   ],
   help: [
