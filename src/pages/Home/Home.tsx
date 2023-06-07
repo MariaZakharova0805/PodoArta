@@ -57,7 +57,7 @@ export const Home: FC = () => {
             <ContainerGrey>
                 <Container>
                     <HeaderH2>Хотите получить первую консультацию от префессионального подолога?</HeaderH2>
-                    <p>Восльзуйтесь удобной платформой для быстрой онлайн-записи и выберету подходящее для вас время</p>
+                    <p>Восльзуйтесь удобной платформой для быстрой онлайн-записи и выберете подходящее для вас время</p>
                     <Button width="200px" margin="40px auto"><a href="https://widget.sonline.su/ru/services/?placeid=999963927" target="_blank">онлайн запись</a></Button>
                 </Container>
             </ContainerGrey>

@@ -68,18 +68,7 @@ export const useFeedbacks = create<useFeedbacks>(() => ({
       specialistParam: "Nagaeva_O",
       link: "https://yandex.kz/web-maps/org/183344334290/reviews?reviews[publicId]=jxp68j1zqqwapnjew377w6v5y8&utm_source=review",
       mainPage: false,
-    },
-    {
-      id: uuidv1(),
-      rating: 5,
-      nickname: 'Оксана Ф.',
-      service: 'service3',
-      text: "Лучший мастер!! За качественным педикюром, гладкими пяточками, идеальным покрытием только к Ольге. Моя проблема вростающих уголков после долгих лет поисков решилась только у Ольги.",
-      specialist: 'Нагава Ольга Владимировна',
-      specialistParam: "Nagaeva_O",
-      link: "https://yandex.kz/web-maps/org/183344334290/reviews?reviews[publicId]=d8megtn9hwreyd42j9jxje99kc&utm_source=review",
-      mainPage: false,
-    },
+    }
   ]
 }))
 

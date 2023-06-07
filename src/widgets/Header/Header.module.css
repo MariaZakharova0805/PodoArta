@@ -52,8 +52,18 @@
     display: none;
 }
 
+@media (min-width: 572px) {
+    .socialLinksBlock {
+        width: 170px;
+
+    }
+}
 
 @media (min-width: 992px) {
+    .socialLinksBlock {
+        width: auto;
+
+    }
     .header_container {
         width: 80%;
         grid-template-columns: 1fr 1fr;
@@ -64,12 +74,9 @@
         display: none;
     }
 
-    .fullscreen_menu {
-        display: block
-    }
-
+    .fullscreen_menu,
     .socialLinksBlock_phoneText {
-        display: block;
+        display: block
     }
 
     .socialLinksBlock_phone {
@@ -82,6 +89,7 @@
         padding-bottom: 10px;
         transition: 0.5s;
     }
+
     .socialLinksBlock_phone svg {
         width: 15px;
     }
