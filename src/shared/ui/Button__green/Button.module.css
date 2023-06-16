@@ -1,16 +1,24 @@
 .btn {
-    background-color: var(--green);
-    height: 40px;
+    background-color: var(--dark-green);
     border: none;
-    border-radius: 4px;
+    border-radius: 60px;
     color: var(--white);
-    font-size: 20px;
-    font-weight: 400;
+    font-size: 18px;
+    font-weight: 600;
     cursor: pointer;
     transition: 0.5s;
-    padding: 5px 0 2px;
+    padding: 20px 44px 20px;
+    text-transform: uppercase;
 }
 
 .btn:hover {
-    background-color: var(--dark-green);
+    background-color: rgba(0, 0, 0, 0);
+    color: var(--dark-green);
+    border: 1px solid var(--dark-green);
+}
+
+@media (min-width:1200px) {
+    .btn {
+        font-size: 20px;
+    }
 }

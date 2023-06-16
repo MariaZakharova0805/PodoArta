@@ -1,0 +1,52 @@
+.menu {
+    background-color: var(--grey);
+    padding: 56px 32px;
+}
+
+.link,
+.link_active {
+    display: block;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.5s;
+    padding: 10px 0;
+    width: 100%;
+}
+
+.link_active,
+.link:hover {
+    color: var(--dark-green);
+}
+
+.exit {
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 70px;
+}
+
+.exit:before,
+.exit:after {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 4px;
+    background: gray;
+}
+
+.exit:before {
+    transform: rotate(45deg);
+}
+
+.exit:after {
+    transform: rotate(-45deg);
+}
+
+.SocialLinksBlock {
+    margin: 24px 0;
+}
+
+.PhoneLink {
+    width: 250px;
+}

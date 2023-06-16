@@ -1,5 +1,12 @@
 import { ReactNode } from "react";
 
+//INavBarLinks
+
+export interface INavBarLinks {
+  id: string,
+  name: string,
+  link: string,
+}
 //Pop up FeedBackForm
 export interface IClientData {
   name: string | undefined,
@@ -54,14 +61,12 @@ export interface IServecies {
   name: string;
   param: string;
   about: string;
-  imgMain: string;
-  img: string[];
-  popular?: boolean;
   price: number | string;
   category: string;
   link?: string;
 }
 export interface ICategories {
+  details?: string;
   id: string;
   name: string;
   category: string;
@@ -93,6 +98,9 @@ export interface ILinkInfo {
   href: string,
   id: string,
   text?: string,
+  src: any,
+  srcW: any,
+  tag?: string,
 }
 
 //Cabinet images

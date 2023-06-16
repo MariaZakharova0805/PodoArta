@@ -4,7 +4,7 @@ import { useParams } from "react-router";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { useSpecilaists } from "../../shared/store";
 import { Button } from "../../shared/ui/Button__green/Button"
-import { Container } from "../../shared/ui/Container_big/Container"
+import { Container } from "../../shared/ui/Container/Container"
 import { HeaderH2 } from "../../shared/ui/Headers/HeaderH2"
 import { List } from "../../shared/ui/List/List"
 import { HeaderH1 } from "../../shared/ui/Headers/HeaderH1";

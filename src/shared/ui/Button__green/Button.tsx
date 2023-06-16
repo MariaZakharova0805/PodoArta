@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 
 type ChildProp = {
     children: string | ReactElement,
-    width: string,
+    width?: string,
     height?: string,
     borderRadius?: string,
     margin?: string,

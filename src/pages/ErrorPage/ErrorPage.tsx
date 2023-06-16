@@ -1,4 +1,4 @@
-import { Container } from "../../shared/ui/Container_big/Container"
+import { Container } from "../../shared/ui/Container/Container"
 import { useRouteError } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { Button } from "../../shared/ui/Button__green/Button";

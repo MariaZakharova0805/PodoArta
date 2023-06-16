@@ -1,19 +1,19 @@
 import { FC } from "react";
+import c from "./Home.module.css"
 import { Button } from "../../shared/ui/Button__green/Button";
-import { ContainerBlock } from "../../shared/ui/ContainerBlock/ContainerBlock";
+import { Container } from "../../shared/ui/Container/Container";
 import { ContainerGrey } from "../../shared/ui/ContainerGrey/ContainerGrey";
-import { Container } from "../../shared/ui/Container_big/Container"
 import { HeaderH1 } from "../../shared/ui/Headers/HeaderH1";
 import { HeaderH2 } from "../../shared/ui/Headers/HeaderH2";
 import { List } from "../../shared/ui/List/List";
 import { useTexts, useServecies } from "../../shared/store";
-import { ServeciesBlock } from "../../entities/ServeciesBlock/ServeciesBlock";
+import { ServeciesBlock } from "../../widgets/ServeciesBlock/ServeciesBlock";
 import { Link } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import c from "./Home.module.css"
 import { FeedBack } from "../../widgets/FeedBacksBlock/FeedBacksBlock";
-import online from "../../../public/img/online.jpg"
-import onlineSM from "../../../public/img/onlineSM.jpg"
+import { ContainerGreen } from "../../shared/ui/ContainerGreen/ContainerGreen";
+import { SpecialOffers } from "../../widgets/SpecialOffers/SpecialOffers";
+import { OnlineBooking } from "../../widgets/OnlineBooking/OnlineBooking";
 
 
 export const Home: FC = () => {
@@ -22,53 +22,41 @@ export const Home: FC = () => {
 
     return (
         <>
-            <Container>
-                <ContainerBlock>
+            <ContainerGrey>
+                <Container>
                     <div className={c.topBlock}>
                         <div className={c.topBlock_text}>
-                            <HeaderH1 marginBottom="40px">Подолог Нагаева Ольга</HeaderH1>
+                            <HeaderH2>Центр подологии</HeaderH2>
+                            <HeaderH1>Ольги Нагаевой</HeaderH1>
                             <List list={mainPageText} />
-                            <div className={c.center}><Link to={`/specialists/Nagaeva_O`}><Button width={"200px"}>подробнее</Button></Link></div>
+                            <div className={c.center}><Link to={`/specialists/Nagaeva_O`}><Button width={"241px"}>подробнее</Button></Link></div>
                         </div>
                         <div className={c.topBlock_img}>
                             <LazyLoadImage src={mainImg} placeholderSrc={mainImgSm} alt="Podolog Nagaeva Olga" />
                         </div>
                     </div>
-                </ContainerBlock>
-                <ContainerBlock>
-                    <HeaderH2>Услуги</HeaderH2>
-                    <ServeciesBlock />
-                    <div className={c.center}><Link to={`/servecies`}><Button onClick={() => setActiveCategory('all')} width={"250px"}>смотреть все услуги</Button></Link></div>
-                </ContainerBlock>
-            </Container>
-            <ContainerGrey>
-                <Container>
-                    <HeaderH2>Акции</HeaderH2>
                 </Container>
             </ContainerGrey>
-            <Container>
-                <ContainerBlock>
-                    <HeaderH2>Отзывы</HeaderH2>
-                    <FeedBack />
-                    <div className={c.center}>
-                        <Link to={`https://yandex.kz/maps/org/podoarta/183344334290/reviews/?ll=37.620510%2C55.793343&z=15`} target="_blank"><Button width="250px">
-                            смотреть все отзывы
-                        </Button></Link>
-                    </div>
-                </ContainerBlock>
+            <Container padding="0 0 80px 0">
+                <HeaderH2 textAlign="center" margin="88px 0">Услуги</HeaderH2>
+                <ServeciesBlock />
+                <div className={c.button}><Link to={`/servecies`}><Button onClick={() => setActiveCategory('all')} width="319px">смотреть все услуги</Button></Link></div>
             </Container>
-            <ContainerGrey>
-                <Container>
-                    <HeaderH2>Хотите получить первую консультацию от префессионального подолога?</HeaderH2>
-                    <div className={c.online}>
-                        <div>
-                            <p>Воспользуйтесь удобной платформой для быстрой онлайн-записи и выберете подходящее для вас время</p>
-                            <Button width="200px" margin="40px auto"><a href="https://widget.sonline.su/ru/services/?placeid=999963927" target="_blank">онлайн запись</a></Button>
-                        </div>
-                        <LazyLoadImage src={online} placeholderSrc={onlineSM} alt="онлайн запись" />
-                    </div>
+            <ContainerGreen>
+                <Container padding="80px 0">
+                    <HeaderH2 textAlign="center" margin="0 0 40px">Программы лояльности</HeaderH2>
+                    <SpecialOffers />
                 </Container>
-            </ContainerGrey>
+            </ContainerGreen>
+            <Container padding="80px 0 80px 0">
+                <HeaderH2 textAlign="center" margin="0 0 80px 0">Что клиенты говорят<br />о нашей работе</HeaderH2>
+                <FeedBack />
+                <div className={c.button}>
+                    <Link to={`https://yandex.kz/maps/org/podoarta/183344334290/reviews/?ll=37.620510%2C55.793343&z=15`} target="_blank">
+                        <Button margin="40px 0 0 0">читать все отзывы</Button></Link>
+                </div>
+            </Container>
+            <OnlineBooking />
         </>
     )
 }

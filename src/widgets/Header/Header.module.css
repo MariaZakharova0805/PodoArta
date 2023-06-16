@@ -1,110 +1,49 @@
 .header {
     width: 100%;
+    height: 92px;
     position: fixed;
     top: 0;
-    background-color: var(--white);
-    padding: 41px 0;
-    z-index: 12;
-    height: 56px;
+    background-color: var(--header);
+    z-index: 99;
+    width: 100%;
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
     align-items: center;
-    box-shadow: 0px 1px 30px 2px rgba(179, 179, 179, 0.35);
-}
-
-.menuIcon {
-    color: var(--green);
-    width: 100px;
-    height: 100px;
-    cursor: pointer;
 }
 
 .header_container {
-    width: 90%;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-
-.socialLinksBlock {
+    width: 100%;
     display: flex;
-    flex-direction: row;
-    justify-content: right;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.socialLinksBlock svg {
-    color: var(--green);
-    cursor: pointer;
-}
-
-.fullscreen_menu {
+.fullscreen_menu,
+.socialLinksBlock,
+.phone {
     display: none;
 }
 
-.socialLinksBlock_phoneIcon svg {
-    min-width: 25px;
-    min-height: 35px;
-}
 
-.socialLinksBlock_phoneText {
-    display: none;
-}
-
-@media (min-width: 572px) {
-    .socialLinksBlock {
-        width: 170px;
-
+@media (min-width: 768px) {
+    .header {
+        height: 128px;
+    }
+    .phone {
+        display: block;
     }
 }
 
-@media (min-width: 992px) {
-    .socialLinksBlock {
-        width: auto;
 
-    }
-    .header_container {
-        width: 80%;
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .burger_menu,
-    .emblem {
+@media (min-width: 1300px) {
+    .burberMenu {
         display: none;
     }
 
     .fullscreen_menu,
-    .socialLinksBlock_phoneText {
-        display: block
+    .socialLinksBlock,
+    .phone {
+        display: block;
     }
 
-    .socialLinksBlock_phone {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-items: center;
-        justify-content: center;
-        color: var(--green);
-        padding-bottom: 10px;
-        transition: 0.5s;
-    }
 
-    .socialLinksBlock_phone svg {
-        width: 15px;
-    }
-
-    .socialLinksBlock_phone:hover {
-        opacity: 0.7;
-    }
-
-    .socialLinksBlock_phoneText {
-        padding-bottom: 7px;
-    }
-}
-
-@media (min-width: 1200px) {
-    .header_container {
-        width: 1100px;
-    }
 }

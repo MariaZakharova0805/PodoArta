@@ -1,5 +1,5 @@
 import { FC } from "react"
-import { Container } from "../../shared/ui/Container_big/Container"
+import { Container } from "../../shared/ui/Container/Container"
 import { HeaderH1 } from "../../shared/ui/Headers/HeaderH1"
 import { SpecilalistBlock } from "../../widgets/SpecialistsBlock/SpecialistsBlock"
 

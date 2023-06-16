@@ -1,0 +1,25 @@
+.list {
+    display: flex;
+    flex-direction: column
+}
+
+.link,
+.link_active {
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.5s;
+    margin: 0 10px;
+    padding: 10px 0;
+    position: relative;
+    cursor: pointer;
+    line-height: 1;
+    text-decoration: none;
+}
+
+.link_active {
+    font-weight: 700;
+}
+.link:hover {
+    opacity: 0.5;
+}

@@ -2,14 +2,15 @@ import { FC } from "react";
 import c from "./header.module.css";
 
 type HeaderH2Prop = {
-    children: string,
-    marginBottom?: string,
-    marginTop?: string,
+    children: any,
+    padding?: string,
+    margin?: string,
+    textAlign?: 'left' | 'right' | 'center',
 }
 
-export const HeaderH2: FC<HeaderH2Prop> = ({ children, marginBottom, marginTop }) => {
+export const HeaderH2: FC<HeaderH2Prop> = ({ children, margin, padding, textAlign }) => {
     return (
-        <h2 className={c.h2} style={{ marginBottom, marginTop }}>
+        <h2 className={c.h2} style={{ margin, padding, textAlign }}>
             {children}
         </h2>
     )

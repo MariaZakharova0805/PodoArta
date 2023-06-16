@@ -2,13 +2,13 @@ import * as React from 'react';
 import c from "./Header.module.css";
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
-import MenuIcon from '@mui/icons-material/Menu';
 import SocialLinksBlock from '../../entities/SocialLinksBlock/SocialLinksBlock';
-import { NavBar } from './NabBar/NavBar';
-import { Emblem } from '../../entities/Emblem/Emblem';
-import { NavBarLarge } from './NavBarLarge/NavBarLarge';
-import PhoneInTalkIcon from '@mui/icons-material/PhoneInTalk';
-
+import { NavBar} from '../../entities/NavBar/NavBar';
+import { NavBarLarge} from '../../entities/NavBar/NavBarLarge';
+import Logo from '../../entities/Logo/Logo';
+import BurgerMenu from "../../../public/burgerSM.svg";
+import { PhoneLink } from '../../entities/PhoneLink/PhoneLink';
+import { Container } from '../../shared/ui/Container/Container';
 type Anchor = 'top';
 
 export default function Header() {
@@ -35,7 +35,7 @@ export default function Header() {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <NavBar />
+      <NavBar/>
     </Box>
   );
 
@@ -43,17 +43,19 @@ export default function Header() {
     <div className={c.header}>
       {(['top'] as const).map((anchor) => (
         <React.Fragment key={anchor}>
-          <div className={c.header_container}>
-            <div className={c.burger_menu}><MenuIcon onClick={toggleDrawer(anchor, true)} className={c.menuIcon} /></div>
-            <div className={c.fullscreen_menu}>
-              <NavBarLarge />
+          <Container>
+            <div className={c.header_container}>
+              <Logo />
+              <div className={c.fullscreen_menu}>
+                <NavBarLarge />
+              </div>
+              <div className={c.socialLinksBlock}>
+                <SocialLinksBlock colorType='grey' /></div>
+              <div className={c.phone}>
+                <PhoneLink /></div>
+              <img src={BurgerMenu} onClick={toggleDrawer(anchor, true)} className={c.burberMenu} />
             </div>
-            <span className={c.emblem}><Emblem /></span>
-            <div className={c.socialLinksBlock}>
-              <a href='tel:+79045682983' className={c.socialLinksBlock_phone}><span className={c.socialLinksBlock_phoneIcon}><PhoneInTalkIcon /></span><span className={c.socialLinksBlock_phoneText}>79045682983</span>
-              </a>
-              <SocialLinksBlock /></div>
-          </div>
+          </Container>
           <Drawer
             anchor={anchor}
             open={state[anchor]}

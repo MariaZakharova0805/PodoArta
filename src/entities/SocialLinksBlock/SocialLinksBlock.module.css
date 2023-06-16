@@ -2,26 +2,26 @@
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 200px;
 }
 
 .svgblock__item {
     transition: 0.5s;
-}
-
-.svgblock__item svg {
-    width: 35px;
-    height: 35px;
+    display: block;
+    margin-right: 25px;
+    min-width: 32px;
+    min-height: 32px;
 }
 
 .svgblock__item:hover {
     opacity: 0.5;
 }
-
-@media (min-width: 300px) {
-
-    .svgblock__item svg,
-    {
-    width: 35px;
-    height: 35px;
+.tagBlock {
+    display: flex;
+    flex-direction: row;
 }
+.tag {
+    margin: -5px 0 0 3px;
 }
