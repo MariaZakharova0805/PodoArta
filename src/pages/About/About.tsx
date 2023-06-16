@@ -10,8 +10,8 @@ import { CabinetSliderImg } from "../../widgets/CabinetSliderImg/CabinetSliderIm
 export const About: FC = () => {
     const { servecies, help } = useAbout((state) => state);
     return (
-        <Container margin="100px auto">
-            <HeaderH2 textAlign="center" margin="0 0 40px 0">О центре</HeaderH2>
+        <Container>
+            <HeaderH2 textAlign="center" padding="60px 0 0">О центре</HeaderH2>
             <p className={c.slogan}>Доверьте красоту и здоровье ваших ног тому, кому это действителньо важно</p>
             <p className={c.normal}>Ухоженные пяточки и пальцы ног — это акцент, который привнесет в ваш образ завершенность и подарит трудноуловимое, но такое важное для женщины ощущение ненавязчивого шика. Скажите "нет" мозолям, трещинам и грибам на ногах. Красота - это прежде всего здоровье.</p>
             <p className={c.normal}>Что вам в этом поможет:</p>

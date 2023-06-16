@@ -20,6 +20,19 @@
 .link_active {
     font-weight: 700;
 }
-.link:hover {
-    opacity: 0.5;
+
+.link:after {
+    display: block;
+    position: relative;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--white);
+    content: "";
+    transition: width 0.3s ease-out;
+}
+
+.link:hover:after,
+.link:focus:after {
+    width: 55%;
 }

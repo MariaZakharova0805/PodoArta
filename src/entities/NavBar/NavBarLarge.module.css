@@ -18,10 +18,24 @@
 }
 
 .link_active {
+    display: block;
+    position: relative;
     font-weight: 700;
 }
-.link:hover {
-    opacity: 0.5;
+.link:after {
+    display: block;
+    position: relative;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--dark-green);
+    content: "";
+    transition: width 0.3s ease-out;
+}
+
+.link:hover:after,
+.link:focus:after {
+    width: 100%;
 }
 
 @media (min-width: 900px) {

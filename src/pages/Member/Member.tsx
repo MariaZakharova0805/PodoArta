@@ -7,7 +7,6 @@ import { Button } from "../../shared/ui/Button__green/Button"
 import { Container } from "../../shared/ui/Container/Container"
 import { HeaderH2 } from "../../shared/ui/Headers/HeaderH2"
 import { List } from "../../shared/ui/List/List"
-import { HeaderH1 } from "../../shared/ui/Headers/HeaderH1";
 
 export const Member: FC = () => {
     const { specialists } = useSpecilaists((state) => state);
@@ -18,12 +17,12 @@ export const Member: FC = () => {
                 <Container key={specialist.id}>
                     <LazyLoadImage src={specialist.img} alt={specialist.param} className={c.img} />
                     <p className={c.about}>{specialist.about}</p>
-                    <HeaderH1>{specialist.name}</HeaderH1>
-                    <div className={c.btn}><Button width="200px" height="60px">
+                    <HeaderH2 textAlign="center" padding="40px 0">{specialist.name}</HeaderH2>
+                    <div className={c.btn}><Button>
                         <a href='https://widget.sonline.su/ru/services/9298887/?master=662152&placeid=999963927' target="_blank">Записаться на прием</a>
                     </Button></div>
                     <p className={c.description}>{specialist.descrition}</p>
-                    <HeaderH2>Образование</HeaderH2>
+                    <HeaderH2 padding="20px 0">Образование</HeaderH2>
                     <List list={specialist.descrition}></List>
                     <div className={c.diplomas}>{specialist.diplomas.map(diploma =>
                         <LazyLoadImage src={diploma.img} key={diploma.id} placeholderSrc={diploma.placeholder} effect="blur"

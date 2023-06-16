@@ -12,9 +12,7 @@
 }
 
 .btn:hover {
-    background-color: rgba(0, 0, 0, 0);
-    color: var(--dark-green);
-    border: 1px solid var(--dark-green);
+    background-color: var(--hover-green);
 }
 
 @media (min-width:1200px) {

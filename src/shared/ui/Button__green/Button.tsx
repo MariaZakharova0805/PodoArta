@@ -2,7 +2,6 @@ import { MouseEventHandler, ReactElement, forwardRef } from "react"
 import c from "./Button.module.css"
 import { motion } from "framer-motion"
 
-
 type ChildProp = {
     children: string | ReactElement,
     width?: string,

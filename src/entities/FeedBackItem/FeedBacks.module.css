@@ -34,7 +34,7 @@
 }
 
 .links p:hover {
-    color: var(--green); 
+    color: var(--green);
 }
 
 .block__text {
@@ -49,19 +49,30 @@
     cursor: pointer;
     color: var(--dark-green);
     transition: 0.5s;
-    width: 100%;
     text-align: right;
     font-size: 20px;
     line-height: 23px;
 }
 
-.block__link:hover {
-    color: var(--green);
+.links_name a:after {
+    display: block;
+    position: relative;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--dark-green);
+    content: "";
+    transition: width 0.3s ease-out;
+}
+
+.links_name a:hover:after,
+.links_name a:focus:after {
+    width: 100%;
 }
 
 @media (min-width:576) {
     .block {
         padding: 25px 40px;
         margin-bottom: 60px;
-    } 
+    }
 }

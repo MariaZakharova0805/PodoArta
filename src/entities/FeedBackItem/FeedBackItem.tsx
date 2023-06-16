@@ -19,9 +19,9 @@ const FeedBackItem: FC<FeedBackItemProps> = ({ client }) => {
                     <img src={foot} />
                     <div className={c.links}>
                         {client.service.map((item: IServece) =>
-                            <Link to="./servecies" key={item.id}>
-                                <p onClick={() => setActiveCategory(item.link)}>{item.name}</p>
-                            </Link>
+                            <div className={c.links_name} key={item.id} onClick={() => setActiveCategory(item.link)}>
+                                <Link to="./servecies">{item.name}</Link>
+                            </div>
                         )}
                     </div>
                 </div>

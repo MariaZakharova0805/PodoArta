@@ -18,9 +18,11 @@
     background-position: center bottom;
     transition: 0.5s;
 }
+
 .block__item:hover {
     opacity: 0.6;
 }
+
 .block__item_name {
     text-align: center;
     display: flex;
@@ -34,7 +36,7 @@
 }
 
 .block__item_header {
-    font-size: 24px;
+    font-size: 20px;
     text-transform: uppercase;
     font-weight: 600;
     color: var(--black);
@@ -47,17 +49,25 @@
         grid-template-rows: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
     }
+
+    .block__item_header {
+        font-size: 24px;
+    }
+
 }
+
 @media (min-width:992px) {
     .block__item {
         height: 500px;
     }
 }
+
 @media (min-width:1600px) {
     .block {
         grid-template-rows: 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr;
     }
+
     .block__item {
         height: 572px;
         background-position: center center;

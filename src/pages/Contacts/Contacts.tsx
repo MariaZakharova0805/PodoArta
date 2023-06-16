@@ -11,9 +11,9 @@ export const Contacts: FC = () => {
     return (
         <ContainerGrey>
             <Container>
-                <HeaderH2>Контакты</HeaderH2>
+                <HeaderH2 textAlign="center" padding="20px 0">Контакты</HeaderH2>
                 <div className={c.grid}>
-                    <div><ContactsBlock /><Button width="200px" margin="40px auto"><a href="https://widget.sonline.su/ru/services/?placeid=999963927" target="_blank">онлайн запись</a></Button></div>
+                    <div><ContactsBlock /><Button width="280px" margin="40px auto"><a href="https://widget.sonline.su/ru/services/?placeid=999963927" target="_blank">онлайн запись</a></Button></div>
                     <IFrame />
                 </div>
             </Container>

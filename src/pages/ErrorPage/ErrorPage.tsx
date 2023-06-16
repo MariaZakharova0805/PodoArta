@@ -12,10 +12,10 @@ const ErrorPage = () => {
   return (
     <Container>
       <div id="error-page" className={c.error}>
-        <HeaderH2>Упс!</HeaderH2>
+        <HeaderH2 padding="60px 0">Упс!</HeaderH2>
         <p>Что-то пошло не так...</p>
         <p>Пожалуй, лучше вернуться на главную.</p>
-        <Link to={`/`}><Button width={"200px"}>вернуться на главную</Button></Link>
+        <Link to={`/`}><Button width={"250px"}>вернуться на главную</Button></Link>
       </div>
     </Container>
 

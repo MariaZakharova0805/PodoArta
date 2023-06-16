@@ -6,8 +6,8 @@ import c from "./Examples.module.css"
 export const Examples: FC = () => {
   return (
     <Container>
-      <HeaderH2>Примеры работ</HeaderH2>
-      <div className={c.center}><Button width="200px" margin="40px auto"><a href="https://widget.sonline.su/ru/services/?placeid=999963927" target="_blank">онлайн запись</a></Button>
+      <HeaderH2 textAlign="center" padding="60px 0 0">Примеры работ</HeaderH2>
+      <div className={c.center}><Button width="300px" margin="40px auto"><a href="https://widget.sonline.su/ru/services/?placeid=999963927" target="_blank">онлайн запись</a></Button>
       </div>
     </Container>
   )

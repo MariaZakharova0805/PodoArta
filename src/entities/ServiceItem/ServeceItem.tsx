@@ -12,7 +12,7 @@ export const ServeceItem: FC<ChildProp> = ({ name, price, link }) => {
         <div className={c.item}>
             <h4>{name}</h4>
             <p>{price} P</p>
-            <Button width="150px" borderRadius="150px">
+            <Button borderRadius="150px">
                 <a href={link} target="_blank"
                 >записаться</a>
             </Button>

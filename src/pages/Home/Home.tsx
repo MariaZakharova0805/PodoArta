@@ -38,7 +38,7 @@ export const Home: FC = () => {
                 </Container>
             </ContainerGrey>
             <Container padding="0 0 80px 0">
-                <HeaderH2 textAlign="center" margin="88px 0">Услуги</HeaderH2>
+                <HeaderH2 textAlign="center" margin="140px 0 80px">Услуги</HeaderH2>
                 <ServeciesBlock />
                 <div className={c.button}><Link to={`/servecies`}><Button onClick={() => setActiveCategory('all')} width="319px">смотреть все услуги</Button></Link></div>
             </Container>

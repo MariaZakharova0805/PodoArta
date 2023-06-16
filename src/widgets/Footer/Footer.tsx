@@ -18,7 +18,7 @@ export const Footer = () => {
                 <div className={c.footer_inner}>
                     <div className={c.logo}><Logo /></div>
                     <div className={c.navbar}><NavBarFooter /></div>
-                    <div className={c.adress}><img src={map} />г.Москва,<br />ул. Сущёвский Вал, 63<br />1 этаж</div>
+                    <a href="https://yandex.kz/web-maps/org/podoarta/183344334290/?ll=37.620510%2C55.793343&utm_source=review&z=16" target="_blank" className={c.adress}><img src={map} />г.Москва,<br />ул. Сущёвский Вал, 63<br />1 этаж</a>
                     <div className={c.time}><img src={clock} />
                         <div className={c.time_text}>
                             <div className={c.time_text_block}>
@@ -33,11 +33,10 @@ export const Footer = () => {
                                 <p className={c.time_text_time}>10:00-16:00</p><p>Воскресенье</p>
                             </div>
                         </div>
-
                     </div>
-                    <div className={c.sociallinksblock}> <SocialLinksBlock colorType="white" /></div>
-                    <div className={c.phone}><a href="tel:79045682983" className={c.phone}><img src={phoneW} />+7 904 56 82 983</a></div>
-                    <div className={c.email}><img src={mail} />test@test.ru</div>
+                    <div className={c.sociallinksblock}><SocialLinksBlock colorType="white" /></div>
+                    <a href="tel:79045682983" className={c.phone}><img src={phoneW} />+7 904 56 82 983</a>
+                    <a href="mailto:test@test.ru" className={c.email}><img src={mail} />test@test.ru</a>
                     <p className={c.instagaminfo}>*Instagram продукт компании Мета, запрещенной на территории РФ</p>
                     <div className={c.payments}>
                         <img src={master} /><img src={visa} /><img src={mir} />

@@ -3,13 +3,11 @@ import c from "./Container.module.css"
 
 type ContainerProp = {
     children: JSX.Element | JSX.Element[],
-    margin?: string,
     padding?: string,
-    marginTop?:string,
 }
 
-export const Container: FC<ContainerProp> = ({ children, margin, padding, marginTop }) => {
+export const Container: FC<ContainerProp> = ({ children, padding }) => {
     return (
-        <div className={c.container} style={{margin, padding, marginTop}}>{children}</div>
+        <div className={c.container} style={{ padding }}>{children}</div>
     )
 }

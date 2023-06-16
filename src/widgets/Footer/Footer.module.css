@@ -16,13 +16,6 @@
     transition: 0.5s;
 }
 
-.adress:hover,
-.time:hover,
-.phone:hover,
-.email:hover {
-    opacity: 0.8;
-}
-
 .adress img,
 .time img,
 .phone img,
@@ -76,14 +69,52 @@
     grid-area: sociallinksblock;
 }
 
+.adress,
+.phone,
+.email {
+    position: relative;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 .phone {
     grid-area: phone;
+
 }
 
 .email {
     grid-area: email;
 }
 
+.email::after,
+.phone::after,
+.adress::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    left: 45px;
+    width: 0%;
+    height: 2px;
+    background-color: var(--white);
+    transition: width 0.35s;
+}
+
+.email::after {
+    bottom: 7px;
+}
+
+.phone:hover:after {
+    width: 45%;
+}
+
+.email:hover:after {
+    width: 35%;
+}
+
+.adress:hover:after {
+    width: 60%;
+}
 .instagaminfo {
     grid-area: instagaminfo;
     font-size: 16px;
@@ -98,6 +129,10 @@
     justify-content: space-between;
     width: 130px;
 }
+
+
+
+
 
 @media (min-width:768px) {
     .footer_inner {
