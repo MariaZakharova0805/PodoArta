@@ -8,7 +8,7 @@
 - Прямая связть через мессенджеры(whatsapp, telegram ,vk)
 
 ## Deploy
-<a href="https://podo-arta.vercel.app/" target="_blank">podoarta.com</a>
+<a href="https://podo-arta-29ni.vercel.app/" target="_blank">podoarta.com</a>
 
 ## Технологии
 - TS
