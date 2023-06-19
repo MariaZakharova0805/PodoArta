@@ -4,7 +4,6 @@ import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import SocialLinksBlock from '../../entities/SocialLinksBlock/SocialLinksBlock';
 import { NavBar } from '../../entities/NavBar/NavBar';
-import { NavBarLarge } from '../../entities/NavBar/NavBarLarge';
 import Logo from '../../entities/Logo/Logo';
 import BurgerMenu from "../../../public/burgerSM.svg";
 import { PhoneLink } from '../../entities/PhoneLink/PhoneLink';
@@ -35,7 +34,7 @@ export default function Header() {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <NavBar />
+      <NavBar navbar="navbar_sm"/>
     </Box>
   );
 
@@ -46,7 +45,7 @@ export default function Header() {
           <div className={c.header_container}>
             <Logo />
             <div className={c.fullscreen_menu}>
-              <NavBarLarge />
+              <NavBar navbar="navbar_lg" />
             </div>
             <div className={c.socialLinksBlock}>
               <SocialLinksBlock colorType='grey' /></div>

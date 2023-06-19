@@ -3,12 +3,17 @@ import { NavLink } from "react-router-dom";
 import SocialLinksBlock from "../SocialLinksBlock/SocialLinksBlock";
 import { PhoneLink } from "../PhoneLink/PhoneLink";
 import { NavBarLinks } from "../../shared/store";
+import { FC } from "react";
 
-export const NavBar = () => {
+type NavBarProps = {
+  navbar?: 'navbar_footer' | 'navbar_lg' | 'navbar_sm'
+}
+
+export const NavBar: FC<NavBarProps> = ({ navbar }) => {
   const navbarlinks = NavBarLinks((state) => state.links);
   return (
-    <div className={c.menu}>
-      <div className={c.exit}></div>
+
+    <div className={navbar === 'navbar_sm' ? c.menu : navbar === 'navbar_lg' ? c.menu_big : c.menu_footer}>
       {navbarlinks.map((text) => (
         <NavLink key={text.id}
           to={text.link}
@@ -23,8 +28,8 @@ export const NavBar = () => {
           {text.name}
         </NavLink>
       ))}
-      <div className={c.SocialLinksBlock}><SocialLinksBlock colorType="grey" /></div>
-      <div className={c.PhoneLink}><PhoneLink /></div>
+      {navbar === 'navbar_sm' ? <><div className={c.SocialLinksBlock}><SocialLinksBlock colorType="grey" /></div>
+        <div className={c.PhoneLink}><PhoneLink /></div></> : <></>}
     </div>
   )
 }

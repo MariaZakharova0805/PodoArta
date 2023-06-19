@@ -3,6 +3,7 @@
     background-color: var(--black);
     color: var(--white);
     padding: 40px 0;
+
 }
 
 .footer_inner {
@@ -24,12 +25,19 @@
     align-items: flex-start;
     transition: 0.8s;
     font-weight: 200;
+
+}
+
+.adress,
+.phone,
+.email {
+    opacity: 0.8;
 }
 
 .adress:hover,
 .phone:hover,
 .email:hover {
-    font-weight: 900;
+    opacity: 6;
 }
 
 .adress img,
