@@ -1,6 +1,7 @@
 import c from './SocialLinksBlock.module.css'
 import { ILinkInfo } from "../../shared/inteface";
-import vk from '../../../public/icons/vk.svg'
+import vk from "../../../public/icons/vk.svg"
+import vk_w from "../../../public/icons/vk_w.svg"
 import instagram from "../../../public/icons/instagram.svg"
 import telegram from "../../../public/icons/telegram.svg"
 import whatsapp from "../../../public/icons/whatsapp.svg"
@@ -17,7 +18,7 @@ const LinkInfo: ILinkInfo[] = [
   { href: 'https://www.instagram.com/nagaeva_podoarta', id: 'instagram', src: instagram, srcW: instagramW, tag: "*" },
   { href: 'https://t.me/PodoArta_nagaeva', id: 'telegramm', src: telegram, srcW: telegramW },
   { href: 'https://wa.me/79998747811?text=Здравствуйте,%20пишу%20Вам%20с%20сайта%20https://podo-arta.vercel.app/%0D%0A', id: 'whatsapp', src: whatsapp, srcW: whatsappW },
-  { href: '#', id: 'contact', src: vk, srcW: vk },
+  { href: '#', id: 'vk', src: vk, srcW: vk_w },
 ]
 
 const SocialLinksBlock: FC<ISocialLinksBlock> = ({ colorType }) => {
@@ -25,7 +26,9 @@ const SocialLinksBlock: FC<ISocialLinksBlock> = ({ colorType }) => {
     <div className={c.svgblock}>
       {LinkInfo.map((link) => {
         return <a key={link.id} href={link.href} target="_blank" className={c.svgblock__item}>
-          <span className={c.tagBlock}><img src={colorType === "grey" ? link.src : link.srcW} /><span className={c.tag}>{link.tag}</span></span>
+          <div className={c.tagBlock}>
+            <img src={colorType === "grey" ? link.src : link.srcW} />
+            <span className={c.tag}>{link.tag}</span></div>
         </a>
       })}
     </div >

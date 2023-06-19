@@ -18,10 +18,31 @@
 .svgblock__item:hover {
     opacity: 0.5;
 }
+
 .tagBlock {
     display: flex;
     flex-direction: row;
 }
+
 .tag {
     margin: -5px 0 0 3px;
+}
+
+.vk, .vk_white {
+    border: 3px solid var(--dark-green);
+    height: 33px;
+    min-width: 33px;
+    border-radius: 8px;
+}
+
+.vk_white {
+    border: 3px solid var(--white);
+}
+
+
+.vk img img,
+.vk_white img {
+    width: 21.35px;
+    height: 13.32px;
+    margin: 8px auto 0;
 }
