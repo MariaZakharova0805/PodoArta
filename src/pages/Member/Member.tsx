@@ -17,12 +17,12 @@ export const Member: FC = () => {
                 <Container key={specialist.id}>
                     <LazyLoadImage src={specialist.img} alt={specialist.param} className={c.img} />
                     <p className={c.about}>{specialist.about}</p>
-                    <HeaderH2 textAlign="center" padding="40px 0">{specialist.name}</HeaderH2>
+                    <HeaderH2 textAlign="center">{specialist.name}</HeaderH2>
                     <div className={c.btn}><Button>
                         <a href='https://widget.sonline.su/ru/services/9298887/?master=662152&placeid=999963927' target="_blank">Записаться на прием</a>
                     </Button></div>
                     <p className={c.description}>{specialist.descrition}</p>
-                    <HeaderH2 padding="20px 0">Образование</HeaderH2>
+                    <HeaderH2>Образование</HeaderH2>
                     <List list={specialist.descrition}></List>
                     <div className={c.diplomas}>{specialist.diplomas.map(diploma =>
                         <LazyLoadImage src={diploma.img} key={diploma.id} placeholderSrc={diploma.placeholder} effect="blur"

@@ -27,7 +27,9 @@ const FeedBackItem: FC<FeedBackItemProps> = ({ client }) => {
                 </div>
             </div>
             <p className={c.block__text}>{client.text}</p>
-            <a className={c.block__link} href={client.link} target='_blank'>смотреть отзыв полностью</a>
+            <div className={c.block__link_container}>
+                <a className={c.block__link} href={client.link} target='_blank'>смотреть отзыв полностью</a>
+            </div>
         </div>
     )
 }

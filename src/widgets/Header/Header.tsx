@@ -3,12 +3,12 @@ import c from "./Header.module.css";
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import SocialLinksBlock from '../../entities/SocialLinksBlock/SocialLinksBlock';
-import { NavBar} from '../../entities/NavBar/NavBar';
-import { NavBarLarge} from '../../entities/NavBar/NavBarLarge';
+import { NavBar } from '../../entities/NavBar/NavBar';
+import { NavBarLarge } from '../../entities/NavBar/NavBarLarge';
 import Logo from '../../entities/Logo/Logo';
 import BurgerMenu from "../../../public/burgerSM.svg";
 import { PhoneLink } from '../../entities/PhoneLink/PhoneLink';
-import { Container } from '../../shared/ui/Container/Container';
+
 type Anchor = 'top';
 
 export default function Header() {
@@ -35,7 +35,7 @@ export default function Header() {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <NavBar/>
+      <NavBar />
     </Box>
   );
 
@@ -43,19 +43,17 @@ export default function Header() {
     <div className={c.header}>
       {(['top'] as const).map((anchor) => (
         <React.Fragment key={anchor}>
-          <Container>
-            <div className={c.header_container}>
-              <Logo />
-              <div className={c.fullscreen_menu}>
-                <NavBarLarge />
-              </div>
-              <div className={c.socialLinksBlock}>
-                <SocialLinksBlock colorType='grey' /></div>
-              <div className={c.phone}>
-                <PhoneLink /></div>
-              <img src={BurgerMenu} onClick={toggleDrawer(anchor, true)} className={c.burberMenu} />
+          <div className={c.header_container}>
+            <Logo />
+            <div className={c.fullscreen_menu}>
+              <NavBarLarge />
             </div>
-          </Container>
+            <div className={c.socialLinksBlock}>
+              <SocialLinksBlock colorType='grey' /></div>
+            <div className={c.phone}>
+              <PhoneLink /></div>
+            <img src={BurgerMenu} onClick={toggleDrawer(anchor, true)} className={c.burberMenu} />
+          </div>
           <Drawer
             anchor={anchor}
             open={state[anchor]}

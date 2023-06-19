@@ -1,5 +1,4 @@
 import { FC } from "react";
-import { ContainerGrey } from "../../shared/ui/ContainerGrey/ContainerGrey"
 import { Container } from "../../shared/ui/Container/Container"
 import { ContactsBlock } from "../../widgets/ContactsBlock/ContactsBlock";
 import IFrame from "../../entities/IFrame/IFrame";
@@ -9,15 +8,15 @@ import { Button } from "../../shared/ui/Button__green/Button";
 
 export const Contacts: FC = () => {
     return (
-        <ContainerGrey>
+        <div className={c.container}>
             <Container>
-                <HeaderH2 textAlign="center" padding="20px 0">Контакты</HeaderH2>
+                <HeaderH2 textAlign="center">Контакты</HeaderH2>
                 <div className={c.grid}>
                     <div><ContactsBlock /><Button width="280px" margin="40px auto"><a href="https://widget.sonline.su/ru/services/?placeid=999963927" target="_blank">онлайн запись</a></Button></div>
                     <IFrame />
                 </div>
             </Container>
-        </ContainerGrey>
+        </div>
     )
 }
 

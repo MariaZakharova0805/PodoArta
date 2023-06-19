@@ -6,7 +6,7 @@
 .link,
 .link_active {
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 400;
     cursor: pointer;
     transition: 0.5s;
     margin: 0 10px;
@@ -18,21 +18,9 @@
 }
 
 .link_active {
-    font-weight: 700;
+    font-weight: 900;
 }
 
-.link:after {
-    display: block;
-    position: relative;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--white);
-    content: "";
-    transition: width 0.3s ease-out;
-}
-
-.link:hover:after,
-.link:focus:after {
-    width: 55%;
+.link:hover {
+    font-weight: 900;
 }

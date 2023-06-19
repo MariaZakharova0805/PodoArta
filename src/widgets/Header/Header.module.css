@@ -11,7 +11,8 @@
 }
 
 .header_container {
-    width: 100%;
+    width: 90%;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -28,6 +29,7 @@
     .header {
         height: 128px;
     }
+
     .phone {
         display: block;
     }

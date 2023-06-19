@@ -2,7 +2,6 @@ import { FC } from "react";
 import c from "./Home.module.css"
 import { Button } from "../../shared/ui/Button__green/Button";
 import { Container } from "../../shared/ui/Container/Container";
-import { ContainerGrey } from "../../shared/ui/ContainerGrey/ContainerGrey";
 import { HeaderH1 } from "../../shared/ui/Headers/HeaderH1";
 import { HeaderH2 } from "../../shared/ui/Headers/HeaderH2";
 import { List } from "../../shared/ui/List/List";
@@ -19,37 +18,34 @@ import { OnlineBooking } from "../../widgets/OnlineBooking/OnlineBooking";
 export const Home: FC = () => {
     const { mainPageText, mainImg, mainImgSm } = useTexts((state) => state);
     const { setActiveCategory } = useServecies((state) => state);
-
     return (
         <>
-            <ContainerGrey>
-                <Container>
-                    <div className={c.topBlock}>
-                        <div className={c.topBlock_text}>
-                            <HeaderH2>Центр подологии</HeaderH2>
-                            <HeaderH1>Ольги Нагаевой</HeaderH1>
-                            <List list={mainPageText} />
-                            <div className={c.center}><Link to={`/specialists/Nagaeva_O`}><Button width={"241px"}>подробнее</Button></Link></div>
-                        </div>
-                        <div className={c.topBlock_img}>
-                            <LazyLoadImage src={mainImg} placeholderSrc={mainImgSm} alt="Podolog Nagaeva Olga" />
-                        </div>
+            <div className={c.container_gray}>
+                <div className={c.topBlock}>
+                    <div className={c.topBlock_text}>
+                        <HeaderH2>Центр подологии</HeaderH2>
+                        <HeaderH1>Ольги Нагаевой</HeaderH1>
+                        <List list={mainPageText} />
+                        <div className={c.topBlock_btn}><Link to={`/specialists/Nagaeva_O`}><Button width={"241px"}>подробнее</Button></Link></div>
                     </div>
-                </Container>
-            </ContainerGrey>
-            <Container padding="0 0 80px 0">
-                <HeaderH2 textAlign="center" margin="140px 0 80px">Услуги</HeaderH2>
+                    <div className={c.topBlock_img}>
+                        <LazyLoadImage src={mainImg} placeholderSrc={mainImgSm} alt="Podolog Nagaeva Olga" />
+                    </div>
+                </div>
+            </div>
+            <Container>
+                <HeaderH2 textAlign="center">Услуги</HeaderH2>
                 <ServeciesBlock />
-                <div className={c.button}><Link to={`/servecies`}><Button onClick={() => setActiveCategory('all')} width="319px">смотреть все услуги</Button></Link></div>
+                <div className={c.button}><Link to={`/servecies`}><Button onClick={() => setActiveCategory('all')}>смотреть все услуги</Button></Link></div>
             </Container>
             <ContainerGreen>
-                <Container padding="80px 0">
-                    <HeaderH2 textAlign="center" margin="0 0 40px">Программы лояльности</HeaderH2>
+                <Container>
+                    <HeaderH2 textAlign="center">Программы лояльности</HeaderH2>
                     <SpecialOffers />
                 </Container>
             </ContainerGreen>
-            <Container padding="80px 0 80px 0">
-                <HeaderH2 textAlign="center" margin="0 0 80px 0">Что клиенты говорят<br />о нашей работе</HeaderH2>
+            <Container>
+                <HeaderH2 textAlign="center">Что клиенты говорят<br />о нашей работе</HeaderH2>
                 <FeedBack />
                 <div className={c.button}>
                     <Link to={`https://yandex.kz/maps/org/podoarta/183344334290/reviews/?ll=37.620510%2C55.793343&z=15`} target="_blank">

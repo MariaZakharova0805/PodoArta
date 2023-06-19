@@ -1,6 +1,5 @@
 import c from "./Footer.module.css"
 import SocialLinksBlock from "../../entities/SocialLinksBlock/SocialLinksBlock"
-import { Container } from "../../shared/ui/Container/Container"
 import { NavBarFooter } from "../../entities/NavBar/NavBarFooter"
 import phoneW from "../../../public/icons/phoneWhite.svg"
 import Logo from "../../entities/Logo/Logo"
@@ -14,7 +13,6 @@ import clock from "../../../public/icons/clock.svg"
 export const Footer = () => {
     return (
         <div className={c.footer}>
-            <Container>
                 <div className={c.footer_inner}>
                     <div className={c.logo}><Logo /></div>
                     <div className={c.navbar}><NavBarFooter /></div>
@@ -42,7 +40,7 @@ export const Footer = () => {
                         <img src={master} /><img src={visa} /><img src={mir} />
                     </div>
                 </div>
-            </Container>
+
         </div>
     )
 } 
