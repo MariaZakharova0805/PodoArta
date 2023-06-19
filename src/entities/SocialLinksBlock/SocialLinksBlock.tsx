@@ -1,5 +1,6 @@
 import c from './SocialLinksBlock.module.css'
 import { ILinkInfo } from "../../shared/inteface";
+import vk from '../../../public/icons/vk.svg'
 import instagram from "../../../public/icons/instagram.svg"
 import telegram from "../../../public/icons/telegram.svg"
 import whatsapp from "../../../public/icons/whatsapp.svg"
@@ -16,7 +17,7 @@ const LinkInfo: ILinkInfo[] = [
   { href: 'https://www.instagram.com/nagaeva_podoarta', id: 'instagram', src: instagram, srcW: instagramW, tag: "*" },
   { href: 'https://t.me/PodoArta_nagaeva', id: 'telegramm', src: telegram, srcW: telegramW },
   { href: 'https://wa.me/79998747811?text=Здравствуйте,%20пишу%20Вам%20с%20сайта%20https://podo-arta.vercel.app/%0D%0A', id: 'whatsapp', src: whatsapp, srcW: whatsappW },
-  // { href: '#', id: 'contact', src: contact, srcW: contactW },
+  { href: '#', id: 'contact', src: vk, srcW: vk },
 ]
 
 const SocialLinksBlock: FC<ISocialLinksBlock> = ({ colorType }) => {
