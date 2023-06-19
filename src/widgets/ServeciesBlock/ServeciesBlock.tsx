@@ -12,10 +12,11 @@ export const ServeciesBlock = () => {
           if (item.category != "all")
             return (
               <Link to="./servecies" key={item.id}>
-                <div onClick={() => setActiveCategory(item.category)} className={c.block__item}
-                  style={{ backgroundImage: `url(${item.img})` }}>
-                  <div className={c.block__item_name}><p className={c.block__item_header}>{item.name}</p><p>{item.details}</p></div>
-                </div>
+                <div className={c.block__bg}>
+                  <a onClick={() => setActiveCategory(item.category)} className={c.block__item}
+                    style={{ backgroundImage: `url(${item.img})` }}>
+                    <div className={c.block__item_name}><p className={c.block__item_header}>{item.name}</p><p>{item.details}</p></div>
+                  </a></div>
               </Link>
             )
         })}

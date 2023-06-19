@@ -3,6 +3,7 @@
     grid-template-rows: 1fr;
     grid-gap: 20px;
     margin-bottom: 40px;
+    transition: 0.8s;
 }
 
 .block__item {
@@ -19,8 +20,12 @@
     transition: 0.5s;
 }
 
-.block__item:hover {
-    opacity: 0.6;
+.block:hover .block__item {
+    opacity: 0.5;
+}
+
+.block:hover .block__item:hover {
+    opacity: 1;
 }
 
 .block__item_name {
