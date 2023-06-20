@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useFeedbacks } from '../../shared/store'
 import { Swiper, SwiperSlide, } from 'swiper/react';
-// @ts-ignore
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';

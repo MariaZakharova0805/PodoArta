@@ -18,6 +18,10 @@
     font-size: 25px;
 }
 
+.sertificate img{
+    margin: 0 auto 100px;
+}
+
 @media (min-width: 576px) {
 
     .bold,

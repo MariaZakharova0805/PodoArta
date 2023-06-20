@@ -1,9 +1,16 @@
 .img {
-    padding-bottom: 60px;
+    padding-bottom: 35px;
     cursor: pointer;
-    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
-.SwiperSlide img{
+.SwiperSlide img {
     width: 100vw;
+}
+
+@media (min-width:540px) {
+    .img {
+        padding-bottom: 60px;
+    }
 }

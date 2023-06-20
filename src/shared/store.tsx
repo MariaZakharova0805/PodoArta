@@ -30,7 +30,30 @@ import cab3 from "../../public/img/cabinet/cab3.jpg"
 import cab3SM from "../../public/img/cabinet/cab3SM.jpg"
 import cab4 from "../../public/img/cabinet/cab4.jpg"
 import cab4SM from "../../public/img/cabinet/cab4SM.jpg"
-
+import cab5 from "../../public/img/cabinet/cab5.jpg"
+import cab5SM from "../../public/img/cabinet/cab5SM.jpg"
+import cab6 from "../../public/img/cabinet/cab6.jpg"
+import cab6SM from "../../public/img/cabinet/cab6SM.jpg"
+import cab7 from "../../public/img/cabinet/cab7.jpg"
+import cab7SM from "../../public/img/cabinet/cab7SM.jpg"
+import cab8 from "../../public/img/cabinet/cab8.jpg"
+import cab8SM from "../../public/img/cabinet/cab8SM.jpg"
+import cab9 from "../../public/img/cabinet/cab9.jpg"
+import cab9SM from "../../public/img/cabinet/cab9SM.jpg"
+import cab10 from "../../public/img/cabinet/cab10.jpg"
+import cab10SM from "../../public/img/cabinet/cab10SM.jpg"
+import cab11 from "../../public/img/cabinet/cab11.jpg"
+import cab11SM from "../../public/img/cabinet/cab11SM.jpg"
+import cab12 from "../../public/img/cabinet/cab12.jpg"
+import cab12SM from "../../public/img/cabinet/cab12SM.jpg"
+import cab13 from "../../public/img/cabinet/cab13.jpg"
+import cab13SM from "../../public/img/cabinet/cab13SM.jpg"
+import cab14 from "../../public/img/cabinet/cab14.jpg"
+import cab14SM from "../../public/img/cabinet/cab14SM.jpg"
+import cab15 from "../../public/img/cabinet/cab15.jpg"
+import cab15SM from "../../public/img/cabinet/cab15SM.jpg"
+import cab16 from "../../public/img/cabinet/cab16.jpg"
+import cab16SM from "../../public/img/cabinet/cab16SM.jpg"
 //NavBar
 type NavBarLinks = {
   links: INavBarLinks[]
@@ -71,8 +94,80 @@ export const useCabinetImages = create<CabinetImages>(() => ({
       id: uuidv1(),
       image: cab4,
       imageSM: cab4SM,
-      placeholder: 'аппарат для Smart педикюра'
-    }
+      placeholder: 'кабинет общий вид'
+    },
+    {
+      id: uuidv1(),
+      image: cab5,
+      imageSM: cab5SM,
+      placeholder: 'кабинет общий вид'
+    },
+    {
+      id: uuidv1(),
+      image: cab6,
+      imageSM: cab6SM,
+      placeholder: 'кабинет общий вид'
+    },
+    {
+      id: uuidv1(),
+      image: cab7,
+      imageSM: cab7SM,
+      placeholder: 'аппарат для подологии'
+    },
+    {
+      id: uuidv1(),
+      image: cab8,
+      imageSM: cab8SM,
+      placeholder: 'аппарат для подологии'
+    },
+    {
+      id: uuidv1(),
+      image: cab9,
+      imageSM: cab9SM,
+      placeholder: 'стирилизованные инструменты'
+    },
+    {
+      id: uuidv1(),
+      image: cab10,
+      imageSM: cab10SM,
+      placeholder: 'уходовые средства для ног и рук'
+    },
+    {
+      id: uuidv1(),
+      image: cab11,
+      imageSM: cab11SM,
+      placeholder: 'уходовые средства PodoFarm'
+    },
+    {
+      id: uuidv1(),
+      image: cab12,
+      imageSM: cab12SM,
+      placeholder: 'уходовые средства'
+    },
+    {
+      id: uuidv1(),
+      image: cab13,
+      imageSM: cab13SM,
+      placeholder: 'вход с улицы'
+    },
+    {
+      id: uuidv1(),
+      image: cab14,
+      imageSM: cab14SM,
+      placeholder: 'вход с улицы'
+    },
+    {
+      id: uuidv1(),
+      image: cab15,
+      imageSM: cab15SM,
+      placeholder: 'вход с улицы'
+    },
+    {
+      id: uuidv1(),
+      image: cab16,
+      imageSM: cab16SM,
+      placeholder: 'вход с улицы'
+    },
   ]
 }))
 

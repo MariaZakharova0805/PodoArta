@@ -3,9 +3,17 @@ import c from "./FeedBacks.module.css"
 import { Link } from 'react-router-dom';
 import { useServecies } from '../../shared/store';
 import { IServece } from '../../shared/inteface';
-import foot from "../../../public/icons/foot.svg"
+import foot from "../../../public/icons/foot.svg";
+
+interface CLientI {
+    text: string
+    nickname: string
+    service: IServece[]
+    link?: string
+}
+
 type FeedBackItemProps = {
-    client: any
+    client: CLientI
 }
 
 const FeedBackItem: FC<FeedBackItemProps> = ({ client }) => {
@@ -20,7 +28,7 @@ const FeedBackItem: FC<FeedBackItemProps> = ({ client }) => {
                     <div className={c.links}>
                         {client.service.map((item: IServece) =>
                             <div className={c.links_name} key={item.id} onClick={() => setActiveCategory(item.link)}>
-                                <Link to="./servecies">{item.name}</Link>
+                                <Link to="./servecies">#{item.name}</Link>
                             </div>
                         )}
                     </div>

@@ -61,10 +61,17 @@ a {
 }
 
 .swiper-pagination-bullet {
-  height: 16px !important;
-  width: 16px !important;
+  height: 10px !important;
+  width: 10px !important;
 }
 
 .swiper-pagination-bullet-active {
   background-color: var(--dark-green) !important;
+}
+
+@media (min-width:500px) {
+  .swiper-pagination-bullet {
+    height: 16px !important;
+    width: 16px !important;
+  }
 }

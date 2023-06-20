@@ -14,7 +14,6 @@ import { ContainerGreen } from "../../shared/ui/ContainerGreen/ContainerGreen";
 import { SpecialOffers } from "../../widgets/SpecialOffers/SpecialOffers";
 import { OnlineBooking } from "../../widgets/OnlineBooking/OnlineBooking";
 
-
 export const Home: FC = () => {
     const { mainPageText, mainImg, mainImgSm } = useTexts((state) => state);
     const { setActiveCategory } = useServecies((state) => state);
@@ -26,7 +25,7 @@ export const Home: FC = () => {
                         <HeaderH2>Центр подологии</HeaderH2>
                         <HeaderH1>Ольги Нагаевой</HeaderH1>
                         <List list={mainPageText} />
-                        <div className={c.topBlock_btn}><Link to={`/specialists/Nagaeva_O`}><Button width={"241px"}>подробнее</Button></Link></div>
+                        <div className={c.topBlock_btn}><Link to={`/about`}><Button width={"241px"}>подробнее</Button></Link></div>
                     </div>
                     <div className={c.topBlock_img}>
                         <LazyLoadImage src={mainImg} placeholderSrc={mainImgSm} alt="Podolog Nagaeva Olga" />

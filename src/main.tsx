@@ -8,7 +8,6 @@ import { Home } from './pages/Home/Home.tsx'
 import { About } from './pages/About/About.tsx'
 import { Servecies } from './pages/Servecies/Servecies.tsx'
 import { Contacts } from './pages/Contacts/Contacts.tsx'
-import { Member } from './pages/Member/Member.tsx'
 import { Examples } from './pages/Examples/Examples.tsx'
 
 const router = createBrowserRouter([
@@ -30,12 +29,8 @@ const router = createBrowserRouter([
         element: <Servecies />,
       },
       {
-        path: "/specialists/:param",
-        element: <Member />,
-      },
-      {
         path: "/gallery",
-        element: <Examples/>,
+        element: <Examples />,
       },
       {
         path: "/contacts",
