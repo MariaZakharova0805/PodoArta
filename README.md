@@ -1,5 +1,5 @@
 # PodoArta
-![Project illustartion](https://github.com/MariaZakharova0805/PodoArta/raw/main/screenshot.jpg)
+<a href="https://podo-arta-29ni.vercel.app/" target="_blank">![Project illustartion](https://github.com/MariaZakharova0805/PodoArta/raw/main/screenshot.jpg)</a>
 Podology center website
 
 ### Project Features
