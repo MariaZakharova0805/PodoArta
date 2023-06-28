@@ -10,7 +10,6 @@ import FeedBackItem from '../../entities/FeedBackItem/FeedBackItem';
 
 export const FeedBack = () => {
   const { feedbacks } = useFeedbacks((state) => state);
-
   const [width, setWidth] = useState(window.innerWidth);
   const [itemWidth, setItemWidth] = useState(window.innerWidth / 2);
   useEffect(() => {
