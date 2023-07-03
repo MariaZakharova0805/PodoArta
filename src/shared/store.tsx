@@ -1,14 +1,11 @@
 import { create } from "zustand";
 import { v1 as uuidv1 } from 'uuid';
-import { INavBarLinks, IServecies, IFeedback, ISpecilaist, IContacts, ISlogan, ICategories, ICabinetImage } from "./inteface";
+import { INavBarLinks, IServecies, IFeedback, IContacts, ISlogan, ICategories, ICabinetImage, ISertificates } from "./inteface";
 import advantage from "../../public/icons/advantage.svg"
 import experinece from "../../public/icons/experinece.svg"
 import care from "../../public/icons/care.svg"
 import mainImg from "../../public/img/main.png"
 import mainImgSm from "../../public/img/mainSM.png"
-import olga from "../../public/img/stuff/olga.jpg"
-import diploma from "../../public/img/stuff/diploma.jpg"
-import placeholder from "../../public/img/stuff/diplomaPH.jpg"
 //Images for servecies
 import pogology from "../../public/img/servecies/podology.jpg"
 import growin from "../../public/img/servecies/growin.jpg"
@@ -54,6 +51,20 @@ import cab15 from "../../public/img/cabinet/cab15.jpg"
 import cab15SM from "../../public/img/cabinet/cab15SM.jpg"
 import cab16 from "../../public/img/cabinet/cab16.jpg"
 import cab16SM from "../../public/img/cabinet/cab16SM.jpg"
+//Images of sertificates 
+import sert0 from "../../public/img/documents/sertificate.jpg"
+import sert0_sm from "../../public/img/documents/sertificate_sm.jpg"
+import sert1 from "../../public/img/documents/sert1.jpg"
+import sert1_sm from "../../public/img/documents/sert1_sm.jpg"
+import sert2 from "../../public/img/documents/sert2.jpg"
+import sert2_sm from "../../public/img/documents/sert1_sm.jpg"
+import sert3 from "../../public/img/documents/sert3.jpg"
+import sert3_sm from "../../public/img/documents/sert3_sm.jpg"
+import sert4 from "../../public/img/documents/sert4.jpg"
+import sert4_sm from "../../public/img/documents/sert4_sm.jpg"
+import sert5 from "../../public/img/documents/sert5.jpg"
+import sert5_sm from "../../public/img/documents/sert5_sm.jpg"
+
 //NavBar
 type NavBarLinks = {
   links: INavBarLinks[]
@@ -692,23 +703,23 @@ export const useServecies = create<Servecies>((set) => ({
     },]
 }))
 
-// Specialists/doctors info
-type Specilaists = { specialists: ISpecilaist[] }
-export const useSpecilaists = create<Specilaists>(() => ({
-  specialists: [
-    {
-      id: uuidv1(),
-      name: 'Нагаева Ольга Владимировна',
-      param: "Nagaeva_O",
-      about: 'Руководитель студии, мастер подологии и маникюра',
-      img: olga,
-      servecies: ['ss', "ddd", "kkk"],
-      descrition: ['Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio'],
-      diplomas: [{ id: uuidv1(), img: diploma, placeholder: placeholder, src: 'diploma1' },
-      { id: uuidv1(), img: diploma, placeholder: placeholder, src: 'diploma1' },
-      { id: uuidv1(), img: diploma, placeholder: placeholder, src: 'diploma1' }],
-    }]
-}))
+// // Specialists/doctors info
+// type Specilaists = { specialists: ISpecilaist[] }
+// export const useSpecilaists = create<Specilaists>(() => ({
+//   specialists: [
+//     {
+//       id: uuidv1(),
+//       name: 'Нагаева Ольга Владимировна',
+//       param: "Nagaeva_O",
+//       about: 'Руководитель студии, мастер подологии и маникюра',
+//       img: olga,
+//       servecies: ['ss', "ddd", "kkk"],
+//       descrition: ['Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio'],
+//       diplomas: [{ id: uuidv1(), img: diploma, placeholder: placeholder, src: 'diploma1' },
+//       { id: uuidv1(), img: diploma, placeholder: placeholder, src: 'diploma1' },
+//       { id: uuidv1(), img: diploma, placeholder: placeholder, src: 'diploma1' }],
+//     }]
+// }))
 
 
 //About page text
@@ -735,5 +746,17 @@ export const useAbout = create<ServeciesTexts>(() => ({
     'ноготь врастает, причиняя боль',
     'появились дискомфортные ощущения при ходьбе',
     'имеются сложные патологии'
+  ]
+}))
+
+type Sertificates = { sertificates: ISertificates[] }
+export const useSertificates = create<Sertificates>(() => ({
+  sertificates: [
+    { id: uuidv1(), image: sert0, imageSM: sert0_sm, alt: 'Сертификат онихолизиц, протезрование ногтевой пластины' },
+    { id: uuidv1(), image: sert1, imageSM: sert1_sm, alt: 'Сертификат SMART мастер' },
+    { id: uuidv1(), image: sert2, imageSM: sert2_sm, alt: 'Сертификат врозший ноготь' },
+    { id: uuidv1(), image: sert3, imageSM: sert3_sm, alt: 'Сертификат SMART мастер' },
+    { id: uuidv1(), image: sert4, imageSM: sert4_sm, alt: 'Сертификат PodiaFarm' },
+    { id: uuidv1(), image: sert5, imageSM: sert5_sm, alt: 'Сертификат медицинский педикюр' },
   ]
 }))

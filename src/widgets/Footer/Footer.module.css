@@ -3,7 +3,8 @@
     background-color: var(--black);
     color: var(--white);
     padding: 40px 0;
-
+    position: relative;
+    overflow: hidden;
 }
 
 .footer_inner {
@@ -25,7 +26,7 @@
     align-items: flex-start;
     transition: 0.8s;
     font-weight: 200;
-
+    font-size: 15px;
 }
 
 .adress,
@@ -114,6 +115,16 @@
     flex-direction: row;
     justify-content: space-between;
     width: 130px;
+}
+
+@media (min-width:355px) {
+
+    .adress,
+    .time,
+    .phone,
+    .email {
+        font-size: 20px;
+    }
 }
 
 

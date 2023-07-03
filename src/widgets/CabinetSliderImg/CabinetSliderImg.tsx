@@ -14,10 +14,11 @@ export const CabinetSliderImg = () => {
     const { cabImg } = useCabinetImages((state) => state);
 
     return (
-        <Swiper 
+        <Swiper
             modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay, EffectFade]}
             effect="fade"
-                  slidesPerView={1}
+            loop={true}
+            slidesPerView={1}
             autoplay={{
                 delay: 3000,
                 disableOnInteraction: false,
@@ -25,9 +26,16 @@ export const CabinetSliderImg = () => {
             navigation
             pagination={{ clickable: true }}
         > {cabImg.map(img => <SwiperSlide key={img.id} className={c.SwiperSlide}>
-            <div className={c.img}><LazyLoadImage src={img.image}
-                placeholderSrc={img.imageSM}
-                alt={img.placeholder} /></div>
+            <div className={c.img}>
+                <LazyLoadImage
+                    alt={img.placeholder}
+                    effect="blur"
+                    src={img.image}
+                    placeholderSrc={img.imageSM}
+                    visibleByDefault={img.image === img.imageSM}
+                    className={c.img}
+                />
+             </div>
         </SwiperSlide>)}
         </Swiper>
     )

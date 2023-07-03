@@ -75,24 +75,6 @@ export interface ICategories {
   imgSM?: string;
 }
 
-// Specialists/doctors info
-interface IDiplomas {
-  id: string;
-  img: string;
-  src: string;
-  placeholder: string;
-}
-export interface ISpecilaist {
-  id: string;
-  name: string;
-  param: string;
-  about: string;
-  descrition: string[];
-  img: string;
-  servecies: string[];
-  diplomas: IDiplomas[];
-}
-
 //SocialLinksBlock
 export interface ILinkInfo {
   href: string,
@@ -112,3 +94,10 @@ export interface ICabinetImage {
 }
 
 
+//Sertificates images
+export interface ISertificates {
+  id: string,
+  image: string,
+  imageSM: string,
+  alt: string
+}

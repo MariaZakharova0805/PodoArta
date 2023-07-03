@@ -6,8 +6,7 @@ import { OurSlogansBlock } from "../../widgets/OurSlogansBlock/OurSlogansBlock";
 import { useAbout } from "../../shared/store";
 import { FC } from "react";
 import { CabinetSliderImg } from "../../widgets/CabinetSliderImg/CabinetSliderImg";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import sertificate from "../../../public/img/documents/sertificate.jpg"
+import { SertificatesSlider } from "../../widgets/SertificatesSlider/SertificatesSlider";
 
 export const About: FC = () => {
     const { servecies, help } = useAbout((state) => state);
@@ -24,7 +23,8 @@ export const About: FC = () => {
             <p className={c.slogan}>Я помогу вашим ногам и стопам стать здоровыми и иметь эстетичный вид!</p>
             <OurSlogansBlock />
             <HeaderH2 textAlign="center">Лицензия</HeaderH2>
-            <div className={c.sertificate}><LazyLoadImage src={sertificate} alt="лицензия" /></div>
+            <SertificatesSlider/>
+            {/* <div className={c.sertificate}><LazyLoadImage src={sertificate} alt="лицензия" /></div> */}
             <HeaderH2 textAlign="center">Кабинет</HeaderH2>
             <CabinetSliderImg />
         </Container>
