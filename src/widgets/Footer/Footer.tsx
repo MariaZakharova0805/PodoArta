@@ -35,7 +35,7 @@ export const Footer = () => {
                     </div>
                     <div className={c.sociallinksblock}><SocialLinksBlock colorType="white" /></div>
                     <a href={contacts[0].link} className={c.phone}><img src={phoneW} />{contacts[0].details}</a>
-                    <a href="mailto:test@test.ru" className={c.email}><img src={mail} />test@test.ru</a>
+                    <a href={contacts[3].link} className={c.email}><img src={mail} />{contacts[3].details}</a>
                     <p className={c.instagaminfo}>*Instagram продукт компании Мета, запрещенной на территории РФ</p>
                     <div className={c.payments}>
                         <img src={master} /><img src={visa} /><img src={mir} />

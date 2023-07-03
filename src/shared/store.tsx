@@ -263,9 +263,9 @@ export const useContacts = create<Contacts>(() => ({
     {
       id: uuidv1(),
       title: 'E-mail:',
-      details: 'test@test.ru',
+      details: 'Nagaevaolga87@gmail.com',
       img: <EmailIcon />,
-      link: 'mailto:atest@test.ru?subject=Сообщение%20с%20сайта%20https://podo-arta.vercel.app/&body=Здравствуйте!%0D%0A%0D%0A',
+      link: 'mailto:Nagaevaolga87@gmail.com?subject=Сообщение%20с%20сайта%20https://podo-arta.vercel.app/&body=Здравствуйте!%0D%0A%0D%0A',
     }
   ]
 }))
