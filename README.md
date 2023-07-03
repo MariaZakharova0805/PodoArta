@@ -1,5 +1,5 @@
 # PodoArta
-<a href="https://podo-arta-29ni.vercel.app/" target="_blank">![Project illustartion](https://github.com/MariaZakharova0805/PodoArta/raw/main/screenshot.jpg)</a>
+<a href="http://www.podoarta.space/" target="_blank">![Project illustartion](https://github.com/MariaZakharova0805/PodoArta/raw/main/screenshot.jpg)</a>
 Podology center website
 
 ### Project Features
@@ -10,7 +10,7 @@ Podology center website
 - Feature-Sliced Design
 
 ## Deploy
-<a href="https://podo-arta-29ni.vercel.app/" target="_blank">podoarta.com</a>
+[<a href="https://podo-arta-29ni.vercel.app/" target="_blank">podoarta.com</a>](http://www.podoarta.space/)
 
 ## Технологии
 - TS
