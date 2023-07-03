@@ -208,7 +208,7 @@ export const useFeedbacks = create<useFeedbacks>(() => ({
       text: "Найти «своего» мастера педикюра достаточно сложно - то выпиливают ногти, то стирают до дыр пятки! Но мне повезло- я нашла Ольгу!! Профессионал с легкими руками, ненавязчивыми советами по правильному домашнему уходу, максимально аккуратно и бережно обрабатывает стопы и пальцы -и, вуаля...",
       specialist: 'Нагава Ольга Владимировна',
       specialistParam: "Nagaeva_O",
-      link: "https://yandex.kz/web-maps/org/183344334290/reviews?reviews[publicId]=5vnx8xbp4n4u9dqy4w3qphw7gg&utm_source=review",
+      link: "https://yandex.kz/web-maps/org/183344334290/reviews?reviews[publicId]=jxp68j1zqqwapnjew377w6v5y8&utm_source=review",
       mainPage: true,
     },
     {
@@ -243,16 +243,16 @@ export const useContacts = create<Contacts>(() => ({
     {
       id: uuidv1(),
       title: 'Телефон',
-      details: '+79045682983',
+      details: '+7 999 87 47 811',
       img: <PhoneInTalkIcon />,
-      link: 'tel:+79045682983',
+      link: 'tel:+79998747811',
     },
     {
       id: uuidv1(),
       title: 'г.Москва',
-      details: 'ул. Сущёвский Вал, 63, 1 этаж',
+      details: 'м.Новослободская, ул. Сущёвская, 9',
       img: <RoomIcon />,
-      link: 'https://yandex.kz/web-maps/org/podoarta/183344334290/?ll=37.620510%2C55.793343&utm_source=review&z=16',
+      link: 'https://yandex.ru/web-maps/213/moscow/house/sushchyovskaya_ulitsa_9/Z04YcAdhT0IFQFtvfXt5cXlkbA==/?ll=37.601672%2C55.780578&utm_source=review&z=17',
     },
     {
       id: uuidv1(),

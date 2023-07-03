@@ -13,10 +13,10 @@ export const ServeciesBlock = () => {
             return (
               <Link to="./servecies" key={item.id}>
                 <div className={c.block__bg}>
-                  <a onClick={() => setActiveCategory(item.category)} className={c.block__item}
+                  <div onClick={() => setActiveCategory(item.category)} className={c.block__item}
                     style={{ backgroundImage: `url(${item.img})` }}>
                     <div className={c.block__item_name}><p className={c.block__item_header}>{item.name}</p><p>{item.details}</p></div>
-                  </a></div>
+                  </div></div>
               </Link>
             )
         })}
