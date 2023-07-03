@@ -10,7 +10,7 @@ Podology center website
 - Feature-Sliced Design
 
 ## Deploy
-<a href="https:/www.podoarta.space/" target="_blank">www.podoarta.space</a>
+<a href="https://www.podoarta.space/" target="_blank">www.podoarta.space</a>
 
 ## Технологии
 - TS
