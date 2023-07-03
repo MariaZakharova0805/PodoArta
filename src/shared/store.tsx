@@ -276,7 +276,7 @@ export const useContacts = create<Contacts>(() => ({
       title: 'E-mail:',
       details: 'Nagaevaolga87@gmail.com',
       img: <EmailIcon />,
-      link: 'mailto:Nagaevaolga87@gmail.com?subject=Сообщение%20с%20сайта%20https://podo-arta.vercel.app/&body=Здравствуйте!%0D%0A%0D%0A',
+      link: 'mailto:Nagaevaolga87@gmail.com?subject=Сообщение%20с%20сайта%20https://www.podoarta.space/&body=Здравствуйте!%0D%0A%0D%0A',
     }
   ]
 }))
@@ -702,25 +702,6 @@ export const useServecies = create<Servecies>((set) => ({
       link: 'https://widget.sonline.su/ru/mastersAndDate/?counts=1&gender=&master=662152&placeid=999963927&services=10390402',
     },]
 }))
-
-// // Specialists/doctors info
-// type Specilaists = { specialists: ISpecilaist[] }
-// export const useSpecilaists = create<Specilaists>(() => ({
-//   specialists: [
-//     {
-//       id: uuidv1(),
-//       name: 'Нагаева Ольга Владимировна',
-//       param: "Nagaeva_O",
-//       about: 'Руководитель студии, мастер подологии и маникюра',
-//       img: olga,
-//       servecies: ['ss', "ddd", "kkk"],
-//       descrition: ['Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quae iure dolore ipsa distinctio'],
-//       diplomas: [{ id: uuidv1(), img: diploma, placeholder: placeholder, src: 'diploma1' },
-//       { id: uuidv1(), img: diploma, placeholder: placeholder, src: 'diploma1' },
-//       { id: uuidv1(), img: diploma, placeholder: placeholder, src: 'diploma1' }],
-//     }]
-// }))
-
 
 //About page text
 type ServeciesTexts = {
