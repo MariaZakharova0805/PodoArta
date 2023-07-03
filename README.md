@@ -1,5 +1,5 @@
 # PodoArta
-![Project illustartion](https://github.com/MariaZakharova0805/PodoArta/raw/main/screenshot.jpg)
+<a href="https://podo-arta-29ni.vercel.app/" target="_blank">![Project illustartion](https://github.com/MariaZakharova0805/PodoArta/raw/main/screenshot.jpg)</a>
 Podology center website
 
 ### Project Features
@@ -48,3 +48,6 @@ $ npm run build
    - swiper
    - uuid
    - zustand
+
+## Design
+Site layout design done by <a href="https://www.behance.net/3a7b044e" target="_blank">Olha Sheretova</a> 
