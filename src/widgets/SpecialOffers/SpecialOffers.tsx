@@ -19,11 +19,10 @@ export const SpecialOffers = () => {
             <div className={c.pension}>
                 <div className={c.pension_img} ><LazyLoadImage src={offer2} placeholderSrc={offer2SM} alt="Скидка 20% пенсионерам 65+" /></div>
                 <div className={c.pension_text}>
-                    <h3>Девушкам 65+</h3>
+                    <h3>Пенсионерам 65+</h3>
                     <h4>Скидка 15% на любую процедуру</h4>
                 </div>
             </div>
-
         </div>
     )
 }

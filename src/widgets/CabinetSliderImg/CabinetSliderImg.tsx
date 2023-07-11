@@ -16,7 +16,6 @@ export const CabinetSliderImg = () => {
     return (
         <Swiper
             modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay, EffectFade]}
-            effect="fade"
             loop={true}
             slidesPerView={1}
             autoplay={{
