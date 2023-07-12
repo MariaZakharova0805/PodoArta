@@ -7,7 +7,6 @@
 }
 
 .block__item {
-    height: 330px;
     width: auto;
     background-repeat: no-repeat;
     background-size: cover;
@@ -18,6 +17,12 @@
     justify-content: center;
     background-position: center bottom;
     transition: 0.5s;
+}
+
+.block__item:after {
+    content: "";
+    padding-top: 120%;
+    display: block;
 }
 
 .block:hover .block__item {
@@ -58,14 +63,13 @@
     .block__item_header {
         font-size: 24px;
     }
-
-}
-
-@media (min-width:992px) {
-    .block__item {
-        height: 500px;
+    .block__item:after {
+        padding-top: 150%;
     }
+
 }
+
+
 
 @media (min-width:1600px) {
     .block {
@@ -74,7 +78,6 @@
     }
 
     .block__item {
-        height: 572px;
         background-position: center center;
     }
 

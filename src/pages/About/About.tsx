@@ -12,6 +12,7 @@ export const About: FC = () => {
     const { servecies, help } = useAbout((state) => state);
     return (
         <Container>
+            <div className={c.textBlock}>
             <HeaderH2 textAlign="center">О центре</HeaderH2>
             <p className={c.slogan}>Доверьте красоту и здоровье ваших ног тому, кому это действителньо важно</p>
             <p className={c.normal}>Ухоженные пяточки и пальцы ног — это акцент, который привнесет в ваш образ завершенность и подарит трудноуловимое, но такое важное для женщины ощущение ненавязчивого шика. Скажите "нет" мозолям, трещинам и грибам на ногах. Красота - это прежде всего здоровье.</p>
@@ -20,11 +21,11 @@ export const About: FC = () => {
             <p className={c.normal}>Перед началом работы я подробно расскажу о причинах проблемы, как ее устранить и как не допустить рецидива, а также дам рекомендации по домашнему уходу.</p>
             <p className={c.normal}>Вам пригодится моя помощь, если:</p>
             <List list={help} />
+            </div>
             <p className={c.slogan}>Я помогу вашим ногам и стопам стать здоровыми и иметь эстетичный вид!</p>
             <OurSlogansBlock />
-            <HeaderH2 textAlign="center">Лицензия</HeaderH2>
+            <HeaderH2 textAlign="center">Сертификаты</HeaderH2>
             <SertificatesSlider/>
-            {/* <div className={c.sertificate}><LazyLoadImage src={sertificate} alt="лицензия" /></div> */}
             <HeaderH2 textAlign="center">Кабинет</HeaderH2>
             <CabinetSliderImg />
         </Container>

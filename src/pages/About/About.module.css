@@ -1,3 +1,7 @@
+.textBlock {
+    margin-bottom: 80px;
+}
+
 .bold {
     font-weight: 600;
 }
@@ -18,7 +22,7 @@
     font-size: 25px;
 }
 
-.sertificate img{
+.sertificate img {
     margin: 0 auto 100px;
 }
 
@@ -27,6 +31,17 @@
     .bold,
     .normal {
         text-align: justify;
-        /* text-indent:20px; */
+    }
+}
+
+@media (min-width: 768px) {
+    .textBlock {
+        margin-bottom: 100px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .textBlock {
+        margin-bottom: 180px;
     }
 }
