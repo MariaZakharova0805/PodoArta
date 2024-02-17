@@ -15,7 +15,7 @@ const IFrame: FC<InterfaceIframe> = () => {
     <div className={c.iframe}>
       <Iframe
         url=""
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2243.7287242270677!2d37.59891017699447!3d55.78058318985092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b535ad81edae41%3A0xdb8c568b2493c236!2zUG9kb0FydGEuINCh0YLRg9C00LjRjyDQv9C-0LTQvtC70L7Qs9C40Lgg0Lgg0Y3RgdGC0LXRgtC40LrQuCDQndCw0LPQsNC10LLQvtC5INCe0LvRjNCz0Lg!5e0!3m2!1sru!2sru!4v1704544493837!5m2!1sru!2sru"
+        src="https://yandex.ru/map-widget/v1/?ll=37.598928%2C55.782590&mode=poi&poi%5Bpoint%5D=37.601401%2C55.780634&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D210589391248&utm_source=share&z=19"
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
       />

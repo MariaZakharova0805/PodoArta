@@ -15,7 +15,7 @@ export const contacts = [
   {
     id: uuidv1(),
     title: "г.Москва",
-    details: "м.Менделеевская, ул. Новослободская 14/19с8",
+    details: "м.Новослободская, ул. Новослободская 14/19с8",
     img: <RoomIcon />,
     link: "https://yandex.kz/web-maps/org/podoarta/210589391248/?ll=37.601372%2C55.780636&utm_source=review&z=17",
   },
@@ -38,4 +38,4 @@ export const solineLink =
   "https://profsalon.org/online/ros_podoarta/?back_url=http%3A%2F%2Fwww.podoarta.space%2F&source=100&employees=&skip_places=false";
 
 export const yandexLink =
-  "https://yandex.kz/maps/ru/org/podoarta/210589391248/?indoorLevel=1&lang=ru&ll=37.601340%2C55.780639&z=17";
+  "https://yandex.ru/maps/213/moscow/?ll=37.598928%2C55.782590&mode=poi&poi%5Bpoint%5D=37.601401%2C55.780634&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D210589391248&utm_source=share&z=19";
