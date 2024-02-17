@@ -15,7 +15,7 @@ export const contacts = [
   {
     id: uuidv1(),
     title: "г.Москва",
-    details: "м.Новослободская, ул. Сущёвская, д.9/10, стр.5",
+    details: "м.Менделеевская, ул. Новослободская 14/19с8",
     img: <RoomIcon />,
     link: "https://yandex.kz/web-maps/org/podoarta/210589391248/?ll=37.601372%2C55.780636&utm_source=review&z=17",
   },
