@@ -1,7 +1,6 @@
 import Iframe from "react-iframe";
 import c from "./IFrame.module.css";
 import { FC } from "react";
-import { YandexButton } from "../../shared/ui/YandexButton/YandexButton";
 
 interface InterfaceIframe {
   url?: string;
