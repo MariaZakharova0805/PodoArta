@@ -8,16 +8,16 @@ export const contacts = [
   {
     id: uuidv1(),
     title: "Телефон",
-    details: "+7 (985) 973-02-82",
+    details: "+7 (999) 874 78 11",
     img: <PhoneInTalkIcon />,
     link: "tel:+79998747811",
   },
   {
     id: uuidv1(),
     title: "г.Москва",
-    details: "м.Новослободская, ул. Новослободская 14/19с8",
+    details: "м.Проспект мира, Слесарный переулок,5",
     img: <RoomIcon />,
-    link: "https://yandex.kz/web-maps/org/podoarta/210589391248/?ll=37.601372%2C55.780636&utm_source=review&z=17",
+    link: "https://yandex.kz/maps/ru/-/CDVAQ6Jb",
   },
   {
     id: uuidv1(),

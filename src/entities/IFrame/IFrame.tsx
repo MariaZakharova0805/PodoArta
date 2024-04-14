@@ -15,11 +15,11 @@ const IFrame: FC<InterfaceIframe> = () => {
     <div className={c.iframe}>
       <Iframe
         url=""
-        src="https://yandex.ru/map-widget/v1/?ll=37.598928%2C55.782590&mode=poi&poi%5Bpoint%5D=37.601401%2C55.780634&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D210589391248&utm_source=share&z=19"
+        src="https://yandex.kz/map-widget/v1/?ll=37.636949%2C55.784592&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1Njc0MDk3NBJC0KDQvtGB0YHQuNGPLCDQnNC-0YHQutCy0LAsINCh0LvQtdGB0LDRgNC90YvQuSDQv9C10YDQtdGD0LvQvtC6LCA1IgoNO4wWQhVsI19C&tab=inside&z=17"
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
       />
-      <YandexButton />
+      {/* <YandexButton /> */}
     </div>
   );
 };
