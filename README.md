@@ -4,7 +4,7 @@ Podology center website
 
 ### Project Features
 - SPA
-- Responsive layout "mobile first"
+- Responsive layout "mobile first" 
 - Picture slider
 - Sending a pre-appointment details by mail from the site
 - Feature-Sliced Design
